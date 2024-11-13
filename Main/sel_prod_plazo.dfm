@@ -1,0 +1,218 @@
+object Fsel_prod_plazo: TFsel_prod_plazo
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fsel_prod_plazo'
+  ClientHeight = 338
+  ClientWidth = 669
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poMainFormCenter
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 669
+    Height = 289
+    Align = alTop
+    Caption = ''
+    TabOrder = 0
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 666
+      Height = 25
+      Buttons.ConfirmDelete = False
+      Buttons.CustomButtons = <>
+      Buttons.PriorPage.Enabled = False
+      Buttons.PriorPage.Visible = False
+      Buttons.NextPage.Enabled = False
+      Buttons.NextPage.Visible = False
+      Buttons.Insert.Enabled = False
+      Buttons.Insert.Visible = False
+      Buttons.Append.Enabled = False
+      Buttons.Delete.Enabled = False
+      Buttons.Delete.Visible = False
+      Buttons.Edit.Enabled = False
+      Buttons.Edit.Visible = False
+      Buttons.Post.Enabled = False
+      Buttons.Post.Visible = False
+      Buttons.Cancel.Enabled = False
+      Buttons.Cancel.Visible = False
+      Buttons.SaveBookmark.Enabled = False
+      Buttons.SaveBookmark.Visible = False
+      Buttons.GotoBookmark.Enabled = False
+      Buttons.GotoBookmark.Visible = False
+      DataSource = DataSource1
+      Align = alTop
+      TabOrder = 0
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 25
+      Width = 669
+      Height = 264
+      Align = alClient
+      TabOrder = 1
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1contratoid: TcxGridDBColumn
+          DataBinding.FieldName = 'contratoid'
+        end
+        object cxGrid1DBTableView1clienteid: TcxGridDBColumn
+          DataBinding.FieldName = 'clienteid'
+        end
+        object cxGrid1DBTableView1anexoid: TcxGridDBColumn
+          DataBinding.FieldName = 'anexoid'
+        end
+        object cxGrid1DBTableView1productoid: TcxGridDBColumn
+          DataBinding.FieldName = 'productoid'
+        end
+        object cxGrid1DBTableView1plazoid: TcxGridDBColumn
+          DataBinding.FieldName = 'plazoid'
+          Width = 110
+        end
+        object cxGrid1DBTableView1cantidad_contratada: TcxGridDBColumn
+          DataBinding.FieldName = 'cantidad_contratada'
+          Width = 106
+        end
+        object cxGrid1DBTableView1fecha_entrega: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_entrega'
+          Width = 91
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object CurvyPanel2: TCurvyPanel
+    Left = 0
+    Top = 289
+    Width = 669
+    Height = 49
+    Align = alClient
+    Caption = ''
+    TabOrder = 1
+    DesignSize = (
+      669
+      49)
+    object AdvSmoothButton1: TAdvSmoothButton
+      Left = 3
+      Top = 6
+      Width = 120
+      Height = 35
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Appearance.SimpleLayout = False
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Aceptar'
+      Color = 15784647
+      ParentFont = False
+      TabOrder = 0
+      Version = '2.2.3.1'
+      OnClick = AdvSmoothButton1Click
+      TMSStyle = 8
+    end
+    object AdvSmoothButton2: TAdvSmoothButton
+      Left = 546
+      Top = 6
+      Width = 120
+      Height = 35
+      Anchors = [akTop, akRight]
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Appearance.SimpleLayout = False
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Cancelar'
+      Color = 15784647
+      ParentFont = False
+      TabOrder = 1
+      Version = '2.2.3.1'
+      OnClick = AdvSmoothButton2Click
+      TMSStyle = 8
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 96
+    Top = 128
+  end
+  object UniQuery1: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from plazos_entrega')
+    Left = 264
+    Top = 160
+    object UniQuery1contratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object UniQuery1clienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object UniQuery1anexoid: TFloatField
+      FieldName = 'anexoid'
+      Required = True
+    end
+    object UniQuery1plazoid: TIntegerField
+      FieldName = 'plazoid'
+    end
+    object UniQuery1productoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object UniQuery1cantidad_contratada: TFloatField
+      FieldName = 'cantidad_contratada'
+      Required = True
+    end
+    object UniQuery1fecha_entrega: TDateField
+      FieldName = 'fecha_entrega'
+      Required = True
+    end
+  end
+end

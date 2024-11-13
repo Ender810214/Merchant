@@ -1,0 +1,63 @@
+unit sel_contrato;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, AdvSmoothLabel, CurvyControls,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
+  dxSkinsCore,  cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGrid, AdvSmoothButton,
+  cxDataControllerConditionalFormattingRulesManagerDialog, dxDateRanges;
+
+type
+  TFsel_contrato = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    AdvSmoothLabel1: TAdvSmoothLabel;
+    CurvyPanel2: TCurvyPanel;
+    CurvyPanel3: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    cxGrid1DBTableView1contratoid: TcxGridDBColumn;
+    cxGrid1DBTableView1clienteid: TcxGridDBColumn;
+    cxGrid1DBTableView1tipo: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_inicio: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_vencimiento: TcxGridDBColumn;
+    cxGrid1DBTableView1estado: TcxGridDBColumn;
+    cxGrid1DBTableView1monto_general: TcxGridDBColumn;
+    cxGrid1DBTableView1monto_cuc: TcxGridDBColumn;
+    cxGrid1DBTableView1monto_cup: TcxGridDBColumn;
+    cxGrid1DBTableView1codigo: TcxGridDBColumn;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fsel_contrato: TFsel_contrato;
+
+implementation
+  uses main,anexos;
+{$R *.dfm}
+
+procedure TFsel_contrato.AdvSmoothButton1Click(Sender: TObject);
+begin
+   fmain.Qanexoscontratoid.Value:=Fmain.QContratoscontratoid.Value;
+  Fmain.Qanexosclienteid.Value:=Fmain.QContratosclienteid.Value;
+  close;
+end;
+
+procedure TFsel_contrato.AdvSmoothButton2Click(Sender: TObject);
+begin
+Close;
+end;
+
+end.

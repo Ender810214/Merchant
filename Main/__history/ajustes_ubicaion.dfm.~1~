@@ -1,0 +1,79 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form3'
+  ClientHeight = 564
+  ClientWidth = 906
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 906
+    Height = 564
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 456
+    ExplicitTop = 264
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+  end
+  object Qubicacion: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from ubicacion')
+    Left = 408
+    Top = 328
+    object Qubicacioncodcliente: TStringField
+      FieldName = 'codcliente'
+      Size = 15
+    end
+    object Qubicacioncodcontrato: TStringField
+      FieldName = 'codcontrato'
+      Size = 15
+    end
+    object Qubicacionanexo: TIntegerField
+      FieldName = 'anexo'
+      Required = True
+    end
+    object Qubicacionposicion_anexo: TIntegerField
+      FieldName = 'posicion_anexo'
+      Required = True
+    end
+    object Qubicacioncodigo_producto: TStringField
+      FieldName = 'codigo_producto'
+    end
+    object Qubicaciondescripcion_producto: TStringField
+      FieldName = 'descripcion_producto'
+      Size = 150
+    end
+    object Qubicacionprecio_cup: TFloatField
+      FieldName = 'precio_cup'
+      Required = True
+    end
+    object Qubicacionprecio_usd: TFloatField
+      FieldName = 'precio_usd'
+      Required = True
+    end
+    object Qubicacioncosto_unitario: TFloatField
+      FieldName = 'costo_unitario'
+      Required = True
+    end
+    object Qubicacionfecha_entrada: TDateField
+      FieldName = 'fecha_entrada'
+    end
+    object Qubicacionvale: TStringField
+      FieldName = 'vale'
+      Required = True
+      Size = 10
+    end
+  end
+end

@@ -1,0 +1,117 @@
+unit prod_fact;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter,
+  cxData, cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxContainer,
+  cxLabel, cxDBLabel, Vcl.StdCtrls, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
+  cxDBNavigator, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalc, cxDBEdit,
+  Vcl.Mask, JvExMask, JvToolEdit, JvDBControls, MemDS, DBAccess, Uni,
+  AdvSmoothButton, cxDataControllerConditionalFormattingRulesManagerDialog,
+   dxDateRanges;
+
+type
+  TFprod_fact = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    cxDBLabel1: TcxDBLabel;
+    cxDBLabel2: TcxDBLabel;
+    cxDBLabel3: TcxDBLabel;
+    JvDBComboEdit1: TJvDBComboEdit;
+    Label5: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    CurvyPanel3: TCurvyPanel;
+    QProd_Fact: TUniQuery;
+    AdvSmoothButton1: TAdvSmoothButton;
+    QProd_Factfacturaid: TIntegerField;
+    QProd_Factalmacenid: TStringField;
+    QProd_Factcontratoid: TIntegerField;
+    QProd_Factclienteid: TIntegerField;
+    QProd_Factcantidad_factura: TFloatField;
+    QProd_Factproductoid: TIntegerField;
+    cxGrid1DBTableView1facturaid: TcxGridDBColumn;
+    cxGrid1DBTableView1almacenid: TcxGridDBColumn;
+    cxGrid1DBTableView1contratoid: TcxGridDBColumn;
+    cxGrid1DBTableView1clienteid: TcxGridDBColumn;
+    cxGrid1DBTableView1productoid: TcxGridDBColumn;
+    cxGrid1DBTableView1cantidad_factura: TcxGridDBColumn;
+    UniQuery1: TUniQuery;
+    QProd_Factubicacionid: TIntegerField;
+    cxGrid1DBTableView1ubicacionid: TcxGridDBColumn;
+    QProd_Factposicion_anexo: TIntegerField;
+    QProd_Factanexoid: TIntegerField;
+    Label6: TLabel;
+    cxDBLabel4: TcxDBLabel;
+    Label7: TLabel;
+    cxDBLabel5: TcxDBLabel;
+    Label8: TLabel;
+    cxGrid1DBTableView1anexoid: TcxGridDBColumn;
+    cxGrid1DBTableView1posicion_anexo: TcxGridDBColumn;
+    cxLabel1: TcxLabel;
+    Label9: TLabel;
+    procedure JvDBComboEdit1ButtonClick(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure QProd_FactAfterInsert(DataSet: TDataSet);
+    procedure FormCreate(Sender: TObject);
+    procedure UniQuery1BeforePost(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fprod_fact: TFprod_fact;
+  vdisponible: Float64;
+  vreservado: Float64;
+implementation
+ uses main,sel_prod_alm,facturas;
+{$R *.dfm}
+
+procedure TFprod_fact.AdvSmoothButton1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFprod_fact.FormCreate(Sender: TObject);
+begin
+
+ QProd_Fact.Open;
+end;
+
+procedure TFprod_fact.JvDBComboEdit1ButtonClick(Sender: TObject);
+begin
+FSel_Prod_Alm:=TFSel_Prod_Alm.Create(Application);
+
+FSel_Prod_Alm.ShowModal;
+end;
+
+procedure TFprod_fact.QProd_FactAfterInsert(DataSet: TDataSet);
+begin
+QProd_Factfacturaid.Value:=ffacturas.UniQuery2facturaid.Value;
+
+end;
+
+procedure TFprod_fact.UniQuery1BeforePost(DataSet: TDataSet);
+begin
+if QProd_Factcantidad_factura.Value>vdisponible then
+begin
+ShowMessage('La Cantidad a Facturar Supera la Cantidad Disponible del Producto, Revise ');
+QProd_Fact.Cancel;
+end;
+end;
+
+end.

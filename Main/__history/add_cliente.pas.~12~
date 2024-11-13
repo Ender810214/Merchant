@@ -1,0 +1,68 @@
+unit add_cliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, dxSkinsCore,
+  dxSkinsDefaultPainters, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
+  cxNavigator, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  MemDS, DBAccess, Uni, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
+  AdvSmoothButton;
+
+type
+  TFadd_cliente = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    QClientes: TUniQuery;
+    QClientesnombre: TStringField;
+    QClientesorganismoid: TStringField;
+    QClientesprovinciaid: TStringField;
+    QClientescodigo: TStringField;
+    DataSource1: TDataSource;
+    cxGrid1DBTableView1codigo: TcxGridDBColumn;
+    cxGrid1DBTableView1nombre: TcxGridDBColumn;
+    AdvSmoothButton1: TAdvSmoothButton;
+    QClientesclienteid: TIntegerField;
+    AdvSmoothButton2: TAdvSmoothButton;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fadd_cliente: TFadd_cliente;
+
+implementation
+
+{$R *.dfm}
+ uses main, despacho,add_despacho;
+procedure TFadd_cliente.AdvSmoothButton1Click(Sender: TObject);
+begin
+FDespacho.QDespachoclienteid.Value:=QClientesclienteid.Value;
+Fadd_despacho.JvDBComboEdit1.Text:=inttostr(QClientesclienteid.Value);
+free;
+end;
+
+procedure TFadd_cliente.AdvSmoothButton2Click(Sender: TObject);
+begin
+free;
+end;
+
+procedure TFadd_cliente.FormCreate(Sender: TObject);
+begin
+QClientes.ExecSQL;
+QClientes.Open;
+end;
+
+end.

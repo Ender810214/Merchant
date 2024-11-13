@@ -1,0 +1,48 @@
+unit nom_prod_compras;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, cxDBData, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid,
+  cxDBNavigator;
+
+type
+  TFnom_prod_compras = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    QCompras_UM: TUniQuery;
+    QCompras_UMumid: TIntegerField;
+    QCompras_UMcodum: TStringField;
+    QCompras_UMdescripcion: TStringField;
+    CurvyPanel2: TCurvyPanel;
+    DataSource1: TDataSource;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1codum: TcxGridDBColumn;
+    cxGrid1DBTableView1descripcion: TcxGridDBColumn;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fnom_prod_compras: TFnom_prod_compras;
+
+implementation
+
+{$R *.dfm}
+  uses main;
+procedure TFnom_prod_compras.FormCreate(Sender: TObject);
+begin
+QCompras_UM.open;
+end;
+
+end.

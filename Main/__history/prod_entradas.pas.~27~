@@ -1,0 +1,100 @@
+unit prod_entradas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, dxSkinsCore, dxSkinsDefaultPainters, cxStyles,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, cxDataControllerConditionalFormattingRulesManagerDialog,
+  Data.DB, cxDBData, MemDS, DBAccess, Uni, cxGridLevel, cxClasses,
+  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGrid, cxDBNavigator, CurvyControls, cxButtonEdit, AdvSmoothButton;
+
+type
+  TFprod_entradas = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    QProd_Entradas: TUniQuery;
+    CurvyPanel3: TCurvyPanel;
+    DataSource1: TDataSource;
+    QProd_Entradasentradaid: TIntegerField;
+    QProd_Entradasclienteid: TIntegerField;
+    QProd_Entradascontratoid: TIntegerField;
+    QProd_Entradasanexoid: TIntegerField;
+    QProd_Entradasplazoid: TIntegerField;
+    QProd_Entradasproductoid: TIntegerField;
+    AdvSmoothButton1: TAdvSmoothButton;
+    QProd_Entradascantidad: TFloatField;
+    QProd_Entradasprecio_cuc: TFloatField;
+    QProd_Entradasprecio_cup: TFloatField;
+    QProd_Entradasprecio_usd: TFloatField;
+    QProd_Entradascod_contrato: TStringField;
+    QProd_Entradascod_cliente: TStringField;
+    QProd_Entradascod_producto: TStringField;
+    QProd_Entradasdes_producto: TStringField;
+    QProd_Entradasprecio_total: TFloatField;
+    cxGrid1DBTableView1cod_contrato: TcxGridDBColumn;
+    cxGrid1DBTableView1cod_cliente: TcxGridDBColumn;
+    cxGrid1DBTableView1cod_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1des_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1cantidad: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_cuc: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_cup: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_usd: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_total: TcxGridDBColumn;
+    procedure cxGrid1DBTableView1codprodPropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure QProd_EntradasAfterInsert(DataSet: TDataSet);
+    procedure QProd_EntradasBeforePost(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fprod_entradas: TFprod_entradas;
+
+implementation
+
+{$R *.dfm}
+ uses main,sel_prod_entradas,entradas;
+procedure TFprod_entradas.AdvSmoothButton1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFprod_entradas.cxGrid1DBTableView1codprodPropertiesButtonClick(
+  Sender: TObject; AButtonIndex: Integer);
+begin
+ FSel_prod_Entradas:=TFSel_prod_Entradas.Create(Application);
+ FSel_prod_Entradas.ShowModal;
+end;
+
+
+procedure TFprod_entradas.FormCreate(Sender: TObject);
+begin
+ QProd_Entradas.ParamByName('ventradaid').Value:=Fentradas.Qentradasentradaid.Value;
+ QProd_Entradas.ExecSQL;
+ QProd_Entradas.Open;
+end;
+
+procedure TFprod_entradas.QProd_EntradasAfterInsert(DataSet: TDataSet);
+begin
+QProd_Entradasentradaid.Value:=Fentradas.Qentradasentradaid.Value;
+end;
+
+procedure TFprod_entradas.QProd_EntradasBeforePost(DataSet: TDataSet);
+begin
+QProd_Entradasentradaid.Value:=Fentradas.Qentradasentradaid.Value;
+end;
+
+end.

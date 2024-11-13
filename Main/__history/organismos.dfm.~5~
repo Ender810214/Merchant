@@ -1,0 +1,106 @@
+object Forganismos: TForganismos
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  ClientHeight = 576
+  ClientWidth = 721
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 721
+    Height = 576
+    Align = alClient
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 721
+      Height = 193
+      Align = alTop
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 24
+        Top = 48
+        Width = 33
+        Height = 13
+        Caption = 'C'#243'digo'
+      end
+      object Label2: TLabel
+        Left = 176
+        Top = 48
+        Width = 37
+        Height = 13
+        Caption = 'Nombre'
+        FocusControl = cxDBTextEdit2
+      end
+      object cxDBTextEdit1: TcxDBTextEdit
+        Left = 24
+        Top = 64
+        DataBinding.DataField = 'organismoid'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 0
+        Width = 121
+      end
+      object cxDBTextEdit2: TcxDBTextEdit
+        Left = 176
+        Top = 64
+        DataBinding.DataField = 'descripcion'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 1
+        Width = 361
+      end
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 720
+        Height = 42
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        LookAndFeel.SkinName = 'MetropolisDark'
+        Align = alTop
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 193
+      Width = 721
+      Height = 383
+      Align = alClient
+      TabOrder = 1
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1organismoid: TcxGridDBColumn
+          DataBinding.FieldName = 'organismoid'
+        end
+        object cxGrid1DBTableView1descripcion: TcxGridDBColumn
+          DataBinding.FieldName = 'descripcion'
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Fmain.Qorganismos
+    Left = 344
+    Top = 272
+  end
+end

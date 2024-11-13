@@ -1,0 +1,32 @@
+unit prod_prefact;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, Data.DB, MemDS, DBAccess,
+  Uni;
+
+type
+  TFprod_prefact = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    UniQuery1: TUniQuery;
+    UniQuery1facturaid: TIntegerField;
+    UniQuery1codigo: TStringField;
+    UniQuery1descripcion: TStringField;
+    UniQuery1cantidad_factura: TFloatField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fprod_prefact: TFprod_prefact;
+
+implementation
+  uses main, prefacturas;
+{$R *.dfm}
+
+end.

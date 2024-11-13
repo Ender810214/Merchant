@@ -1,0 +1,73 @@
+unit ajustes_ubi;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, cxDBData, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid,
+  cxDBNavigator, cxContainer, cxLabel, AdvSmoothButton;
+
+type
+  TFajustes_ = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    Qubicacion: TUniQuery;
+    Qubicacioncodcontrato: TStringField;
+    Qubicacionanexo: TIntegerField;
+    Qubicacionposicion_anexo: TIntegerField;
+    Qubicacionprecio_cup: TFloatField;
+    Qubicacionprecio_usd: TFloatField;
+    Qubicacioncodigo_producto: TStringField;
+    Qubicaciondescripcion_producto: TStringField;
+    Qubicacioncosto_unitario: TFloatField;
+    Qubicacioncodcliente: TStringField;
+    Qubicacionfecha_entrada: TDateField;
+    Qubicacionvale: TStringField;
+    cxDBNavigator1: TcxDBNavigator;
+    CurvyPanel2: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataSource1: TDataSource;
+    cxGrid1DBTableView1codcliente: TcxGridDBColumn;
+    cxGrid1DBTableView1codcontrato: TcxGridDBColumn;
+    cxGrid1DBTableView1anexo: TcxGridDBColumn;
+    cxGrid1DBTableView1posicion_anexo: TcxGridDBColumn;
+    cxGrid1DBTableView1codigo_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1descripcion_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_cup: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_usd: TcxGridDBColumn;
+    cxGrid1DBTableView1costo_unitario: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_entrada: TcxGridDBColumn;
+    cxGrid1DBTableView1vale: TcxGridDBColumn;
+    cxLabel1: TcxLabel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fajustes_: TFajustes_;
+
+implementation
+
+{$R *.dfm}
+  uses main;
+procedure TFajustes_.AdvSmoothButton1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFajustes_.FormCreate(Sender: TObject);
+begin
+Qubicacion.Open;
+end;
+
+end.

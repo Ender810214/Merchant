@@ -1,0 +1,278 @@
+unit transferencias;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxSpinEdit, cxDBEdit,
+  Vcl.StdCtrls, cxNavigator, cxDBNavigator, cxButtonEdit, cxLabel, cxDBLabel,
+  cxCalendar, cxDropDownEdit, cxCalc, AdvSmoothButton, cxStyles, cxCustomData,
+  cxFilter, cxData, cxDataStorage, dxDateRanges, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel,
+  cxClasses, cxGridCustomView, cxGrid, dxScrollbarAnnotations, cxCheckBox;
+
+type
+  TFTransferencias = class(TForm)
+    Qtransf: TUniQuery;
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    cxdbbuu: TDataSource;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label3: TLabel;
+    CurvyPanel3: TCurvyPanel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    Qtransftransferenciaid: TIntegerField;
+    Qtransfubicacionf: TIntegerField;
+    Qtransfplazoid: TIntegerField;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    cxDBCalcEdit2: TcxDBCalcEdit;
+    Qtransfestado: TStringField;
+    Label6: TLabel;
+    cxDBLabel1: TcxDBLabel;
+    cxDBButtonEdit1: TcxDBButtonEdit;
+    Qubicacion: TUniQuery;
+    cxDBLabel2: TcxDBLabel;
+    cxDBLabel3: TcxDBLabel;
+    cxDBLabel4: TcxDBLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    cxDBLabel5: TcxDBLabel;
+    Label22: TLabel;
+    cxDBLabel6: TcxDBLabel;
+    Label23: TLabel;
+    cxDBLabel7: TcxDBLabel;
+    DataSource1: TDataSource;
+    Qplazos: TUniQuery;
+    Qplazoscontratoid: TIntegerField;
+    Qplazosclienteid: TIntegerField;
+    Qplazosanexoid: TIntegerField;
+    Qplazosplazoid: TIntegerField;
+    Qplazosproductoid: TIntegerField;
+    Qplazoscantidad_contratada: TFloatField;
+    Qplazosfecha_entrega: TDateField;
+    Qplazoscant_facturada: TIntegerField;
+    Qplazosnumero_factura: TIntegerField;
+    Qplazoscodcontrato: TStringField;
+    Qplazoscodcliente: TStringField;
+    Qplazoscodproducto: TStringField;
+    Qplazosposicion_anexo: TIntegerField;
+    Qplazoscant_entrada: TFloatField;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    DataSource2: TDataSource;
+    Label44: TLabel;
+    cxDBLabel8: TcxDBLabel;
+    cxDBLabel9: TcxDBLabel;
+    cxDBLabel10: TcxDBLabel;
+    cxDBLabel11: TcxDBLabel;
+    cxDBLabel12: TcxDBLabel;
+    Label43: TLabel;
+    cxDBLabel13: TcxDBLabel;
+    cxDBLabel14: TcxDBLabel;
+    cxDBButtonEdit2: TcxDBButtonEdit;
+    UniStoredProc1: TUniStoredProc;
+    cxGrid1DBTableView1transferenciaid: TcxGridDBColumn;
+    cxGrid1DBTableView1ubicacionf: TcxGridDBColumn;
+    cxGrid1DBTableView1plazoid: TcxGridDBColumn;
+    cxGrid1DBTableView1cantidad_transf: TcxGridDBColumn;
+    cxGrid1DBTableView1estado: TcxGridDBColumn;
+    Qtransffecha: TDateField;
+    Label45: TLabel;
+    cxDBDateEdit1: TcxDBDateEdit;
+    cxGrid1DBTableView1fecha: TcxGridDBColumn;
+    Qtransfcantidad_transf: TFloatField;
+    Qubicacionalmacenid: TStringField;
+    Qubicacionubicacionid: TIntegerField;
+    Qubicacioncontratoid: TIntegerField;
+    Qubicacionclienteid: TIntegerField;
+    Qubicacionproductoid: TIntegerField;
+    Qubicacioncodcontrato: TStringField;
+    Qubicacionanexo: TIntegerField;
+    Qubicacionposicion_anexo: TIntegerField;
+    Qubicacioncant_facturada: TFloatField;
+    Qubicacionfacturado: TStringField;
+    Qubicacionreservado: TFloatField;
+    Qubicacionprecio_cup: TCurrencyField;
+    Qubicacionprecio_cuc: TCurrencyField;
+    Qubicacionprecio_usd: TCurrencyField;
+    Qubicacioncodigo_producto: TStringField;
+    Qubicaciondescripcion_producto: TStringField;
+    Qubicacionexistencia: TFloatField;
+    Qubicacioncosto_unitario: TCurrencyField;
+    Qubicacioncosto_total: TCurrencyField;
+    Qubicacioncodcliente: TStringField;
+    Qubicacionfecha_entrada: TDateField;
+    Qubicacionvale: TStringField;
+    Qubicacionueb: TStringField;
+    Qubicaciontranfid: TIntegerField;
+    AdvSmoothButton2: TAdvSmoothButton;
+    Qperiodo: TUniQuery;
+    Qperiodoperiodoid: TIntegerField;
+    Qperiododesde: TDateField;
+    Qperiodohasta: TDateField;
+    Qperiodoactivo: TStringField;
+    Label46: TLabel;
+    Qtransfcambio_precio_usd: TStringField;
+    CheckBox1: TCheckBox;
+    cxGrid1DBTableView1cambio_precio_usd: TcxGridDBColumn;
+    Qtransfnuevo_precio_usd: TFloatField;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    cxGrid1DBTableView1nuevo_precio_usd: TcxGridDBColumn;
+    procedure cxDBButtonEdit1PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure FormCreate(Sender: TObject);
+    procedure QtransfAfterCancel(DataSet: TDataSet);
+    procedure cxDBButtonEdit2PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure QtransfAfterScroll(DataSet: TDataSet);
+    procedure cxDBCheckBox1PropertiesChange(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FTransferencias: TFTransferencias;
+
+implementation
+
+uses main, sel_prod_transf1, sel_plazo_transf;
+{$R *.dfm}
+
+procedure TFTransferencias.AdvSmoothButton1Click(Sender: TObject);
+begin
+  if Qtransfestado.value = 'En Proceso' then
+  begin
+
+    UniStoredProc1.ParamByName('in_ubicacion').value := Qtransfubicacionf.value;
+    UniStoredProc1.ParamByName('in_plazo').value := Qtransfplazoid.value;
+    UniStoredProc1.ParamByName('in_cant').value := Qtransfcantidad_transf.value;
+    UniStoredProc1.ParamByName('in_fecha').value := cxDBDateEdit1.Date;
+    UniStoredProc1.ParamByName('in_tranf').value :=Qtransftransferenciaid.value;
+    UniStoredProc1.ParamByName('in_cambio_precio').Value:=Qtransfcambio_precio_usd.Value;
+    if checkBox1.Checked=true then
+    begin
+      Edit1.Visible:=True;
+      UniStoredProc1.ParamByName('in_cambio_precio').Value:='S';
+      UniStoredProc1.ParamByName('in_nuevo_precio_usd').Value:=StrToFloat(edit1.text);
+    end;
+
+    UniStoredProc1.ExecProc;
+
+      Qtransf.Refresh;
+  end
+  else
+    ShowMessage
+      ('La Transferencia ya esta registrada, seleccione una transferencia en Proceso');
+end;
+
+procedure TFTransferencias.AdvSmoothButton2Click(Sender: TObject);
+begin
+Qtransf.Edit;
+Qtransfestado.Value:='En Proceso';
+Qtransf.Post;
+end;
+
+
+
+procedure TFTransferencias.CheckBox1Click(Sender: TObject);
+begin
+if CheckBox1.Checked=true then
+begin
+   Qtransfcambio_precio_usd.Value:='S';
+   Edit1.Visible:=True;
+
+end;
+end;
+
+
+procedure TFTransferencias.cxDBButtonEdit1PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+begin
+  Fsel_prod_transf := TFsel_prod_transf.Create(Application);
+  Fsel_prod_transf.ShowModal;
+end;
+
+procedure TFTransferencias.cxDBButtonEdit2PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+begin
+  Fsel_plazo_transf := Tfsel_plazo_transf.Create(Application);
+  Fsel_plazo_transf.ShowModal;
+end;
+
+procedure TFTransferencias.cxDBCheckBox1PropertiesChange(Sender: TObject);
+begin
+Qtransfcambio_precio_usd.Value:='S';
+edit1.Visible:=true;
+
+end;
+
+procedure TFTransferencias.FormCreate(Sender: TObject);
+begin
+  Qperiodo.Open;
+  Qtransf.ParamByName('infecha1').Value:=Qperiododesde.Value;
+  Qtransf.ParamByName('infecha2').Value:=Qperiodohasta.Value;
+
+  Qtransf.Open;
+  Qubicacion.Open;
+  Qplazos.Open;
+end;
+
+procedure TFTransferencias.QtransfAfterCancel(DataSet: TDataSet);
+begin
+  Qubicacion.Close;
+end;
+
+procedure TFTransferencias.QtransfAfterScroll(DataSet: TDataSet);
+begin
+// Qubicacion.ParamByName('ubicacionid').value := Qtransfubicacionf.value;
+ // Qplazos.ParamByName('plazo').value := Qtransfplazoid.value;
+ //Qubicacion.Execute;
+ //Qplazos.Execute;
+end;
+
+end.

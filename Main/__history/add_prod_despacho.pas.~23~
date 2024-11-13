@@ -1,0 +1,96 @@
+unit add_prod_despacho;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinsDefaultPainters,
+  cxNavigator, cxDBNavigator, Data.DB, MemDS, DBAccess, Uni, cxContainer,
+  cxEdit, Vcl.StdCtrls, Vcl.Mask, JvExMask, JvToolEdit, JvDBControls, cxDBEdit,
+  cxTextEdit, cxMaskEdit, cxSpinEdit, cxDropDownEdit, cxCalc, cxStyles,
+  cxCustomData, cxFilter, cxData, cxDataStorage, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel,
+  cxClasses, cxGridCustomView, cxGrid;
+
+type
+  TFadd_prod = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    Qprod_despacho: TUniQuery;
+    Qprod_despachoordenid: TIntegerField;
+    Qprod_despachoproductoid: TStringField;
+    Qprod_despachocantidad_despachar: TFloatField;
+    Qprod_despachocant_real_despachada: TFloatField;
+    Qprod_despachoprecio_mn: TFloatField;
+    Qprod_despachoimporte_mn: TFloatField;
+    Qprod_despachoprecio_cuc: TFloatField;
+    Qprod_despachoimporte_cuc: TFloatField;
+    cxDBNavigator1: TcxDBNavigator;
+    Qprod_despachodesprod: TStringField;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    cxDBSpinEdit1: TcxDBSpinEdit;
+    Label2: TLabel;
+    JvDBComboEdit1: TJvDBComboEdit;
+    Label4: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    Label5: TLabel;
+    cxDBCalcEdit2: TcxDBCalcEdit;
+    Label6: TLabel;
+    cxDBCalcEdit3: TcxDBCalcEdit;
+    Label7: TLabel;
+    cxDBCalcEdit4: TcxDBCalcEdit;
+    Label8: TLabel;
+    cxDBCalcEdit5: TcxDBCalcEdit;
+    Label9: TLabel;
+    cxDBCalcEdit6: TcxDBCalcEdit;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1ordenid: TcxGridDBColumn;
+    cxGrid1DBTableView1cantidad_despachar: TcxGridDBColumn;
+    cxGrid1DBTableView1cant_real_despachada: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_mn: TcxGridDBColumn;
+    cxGrid1DBTableView1importe_mn: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_cuc: TcxGridDBColumn;
+    cxGrid1DBTableView1importe_cuc: TcxGridDBColumn;
+    procedure FormCreate(Sender: TObject);
+    procedure JvDBComboEdit1ButtonClick(Sender: TObject);
+    procedure Qprod_despachoNewRecord(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fadd_prod: TFadd_prod;
+
+implementation
+
+{$R *.dfm}
+ uses main,add_producto,despacho;
+procedure TFadd_prod.FormCreate(Sender: TObject);
+begin
+Qprod_despacho.ParamByName('ordenid').Value:=FDespacho.QDespachoordenid.Value;
+Qprod_despacho.ExecSQL;
+Qprod_despacho.Open;
+
+
+
+end;
+
+procedure TFadd_prod.JvDBComboEdit1ButtonClick(Sender: TObject);
+begin
+  Fadd_producto:=TFadd_producto.Create(Application);
+  Fadd_producto.ShowModal;
+end;
+
+procedure TFadd_prod.Qprod_despachoNewRecord(DataSet: TDataSet);
+begin
+  Qprod_despachoordenid.Value:=FDespacho.QDespachoordenid.Value;
+end;
+
+end.

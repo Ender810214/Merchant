@@ -1,0 +1,128 @@
+object fadd_contrato: Tfadd_contrato
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 295
+  ClientWidth = 594
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 594
+    Height = 295
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 240
+    ExplicitTop = 104
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 239
+      Width = 594
+      Height = 56
+      Align = alBottom
+      TabOrder = 0
+      ExplicitTop = 208
+      ExplicitWidth = 509
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 0
+      Width = 594
+      Height = 239
+      Align = alClient
+      TabOrder = 1
+      ExplicitLeft = 160
+      ExplicitTop = 40
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object UniQuery1: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO contratos'
+      
+        '  (contratoid, clienteid, tipo, fecha_inicio, fecha_vencimiento,' +
+        ' estado, monto_general, monto_cuc, monto_cup, codigo)'
+      'VALUES'
+      
+        '  (:contratoid, :clienteid, :tipo, :fecha_inicio, :fecha_vencimi' +
+        'ento, :estado, :monto_general, :monto_cuc, :monto_cup, :codigo)')
+    SQLDelete.Strings = (
+      'DELETE FROM contratos'
+      'WHERE'
+      '  contratoid = :Old_contratoid AND clienteid = :Old_clienteid')
+    SQLUpdate.Strings = (
+      'UPDATE contratos'
+      'SET'
+      
+        '  contratoid = :contratoid, clienteid = :clienteid, tipo = :tipo' +
+        ', fecha_inicio = :fecha_inicio, fecha_vencimiento = :fecha_venci' +
+        'miento, estado = :estado, monto_general = :monto_general, monto_' +
+        'cuc = :monto_cuc, monto_cup = :monto_cup, codigo = :codigo'
+      'WHERE'
+      '  contratoid = :Old_contratoid AND clienteid = :Old_clienteid')
+    SQLRefresh.Strings = (
+      
+        'SELECT contratoid, clienteid, tipo, fecha_inicio, fecha_vencimie' +
+        'nto, estado, monto_general, monto_cuc, monto_cup, codigo FROM co' +
+        'ntratos'
+      'WHERE'
+      '  contratoid = :contratoid AND clienteid = :clienteid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'Select * from contratos where clienteid=:clienteid')
+    Left = 144
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'clienteid'
+        Value = nil
+      end>
+    object UniQuery1codigo: TStringField
+      FieldName = 'codigo'
+      Required = True
+      Size = 15
+    end
+    object UniQuery1fecha_inicio: TDateField
+      FieldName = 'fecha_inicio'
+      Required = True
+    end
+    object UniQuery1fecha_vencimiento: TDateField
+      FieldName = 'fecha_vencimiento'
+      Required = True
+    end
+    object UniQuery1estado: TStringField
+      FieldName = 'estado'
+      Required = True
+      Size = 10
+    end
+    object UniQuery1contratoid: TIntegerField
+      FieldName = 'contratoid'
+    end
+    object UniQuery1clienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+  end
+end

@@ -1,0 +1,79 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 338
+  ClientWidth = 695
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 695
+    Height = 338
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 128
+    ExplicitTop = 64
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 693
+      Height = 25
+      Buttons.CustomButtons = <>
+      Buttons.Insert.Enabled = False
+      Buttons.Insert.Visible = False
+      Buttons.Append.Enabled = False
+      Buttons.Delete.Enabled = False
+      Buttons.Delete.Visible = False
+      Buttons.Edit.Enabled = False
+      Buttons.Edit.Visible = False
+      Buttons.Post.Enabled = False
+      Buttons.Post.Visible = False
+      Align = alTop
+      TabOrder = 0
+      ExplicitWidth = 638
+    end
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 284
+      Width = 695
+      Height = 54
+      Align = alBottom
+      TabOrder = 1
+      ExplicitTop = 224
+      ExplicitWidth = 651
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 25
+      Width = 695
+      Height = 259
+      Align = alClient
+      TabOrder = 2
+      ExplicitLeft = 288
+      ExplicitTop = 72
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+end

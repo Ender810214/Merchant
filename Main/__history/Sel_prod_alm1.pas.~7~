@@ -1,0 +1,87 @@
+unit Sel_prod_alm1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, dxSkinsCore, dxSkinBlack,
+  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
+  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
+  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, cxDBNavigator,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, MemDS, DBAccess,
+  Uni, AdvSmoothButton, cxGridLevel, cxClasses, cxGridCustomView, cxGrid,
+  Vcl.Buttons, cxDataControllerConditionalFormattingRulesManagerDialog;
+
+type
+  TFSel_Prod_Alm1 = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    CurvyPanel2: TCurvyPanel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    cxDBNavigator1: TcxDBNavigator;
+    UniQuery1: TUniQuery;
+    DataSource2: TDataSource;
+    SpeedButton1: TSpeedButton;
+    cxGrid1DBTableView1contratoid: TcxGridDBColumn;
+    cxGrid1DBTableView1clienteid: TcxGridDBColumn;
+    cxGrid1DBTableView1anexoid: TcxGridDBColumn;
+    cxGrid1DBTableView1productoid: TcxGridDBColumn;
+    UniQuery1contratoid: TIntegerField;
+    UniQuery1clienteid: TIntegerField;
+    UniQuery1anexoid: TFloatField;
+    UniQuery1productoid: TStringField;
+    UniQuery1plazoid: TIntegerField;
+    UniQuery1cantidad_contratada: TFloatField;
+    UniQuery1fecha_entrega: TDateField;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FSel_Prod_Alm1: TFSel_Prod_Alm1;
+
+implementation
+ uses main, entradas;
+{$R *.dfm}
+
+procedure TFSel_Prod_Alm1.AdvSmoothButton1Click(Sender: TObject);
+begin
+
+
+
+  Close;
+end;
+
+procedure TFSel_Prod_Alm1.AdvSmoothButton2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TFSel_Prod_Alm1.FormCreate(Sender: TObject);
+begin
+UniQuery1.Open;
+end;
+
+end.

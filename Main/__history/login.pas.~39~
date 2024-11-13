@@ -1,0 +1,168 @@
+unit login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, AdvSmoothPanel, AdvSmoothLabel, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, AdvEdit, AdvSmoothButton, MemDS,
+  DBAccess, Uni, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, dxSkinsCore,  cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, cxDBData, cxGridLevel, cxClasses,
+  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGrid,UITYPES;
+
+type
+  TFlogin = class(TForm)
+    AdvSmoothPanel1: TAdvSmoothPanel;
+    AdvSmoothLabel1: TAdvSmoothLabel;
+    AdvSmoothLabel2: TAdvSmoothLabel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    UniQuery1: TUniQuery;
+    UniQuery1usuarioid: TIntegerField;
+    UniQuery1catid: TIntegerField;
+    UniQuery1nombre: TStringField;
+    UniQuery1password: TStringField;
+    DataSource1: TDataSource;
+    UniQuery2: TUniQuery;
+    UniQuery2catid: TIntegerField;
+    UniQuery2descripcion: TStringField;
+    UniQuery2level: TIntegerField;
+    Edit1: TEdit;
+    DBGrid1: TDBGrid;
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Flogin: TFlogin;
+
+implementation
+  uses main;
+{$R *.dfm}
+
+procedure TFlogin.AdvSmoothButton1Click(Sender: TObject);
+begin
+if Edit1.Text=UniQuery1password.Value then
+begin
+UniQuery2.ParamByName('in_catid').Value:=UniQuery1catid.Value;
+UniQuery2.Execute;
+Userlevel:=UniQuery2level.Value;
+Close;
+if userlevel=2 then
+begin
+fmain.AdvPolyList1.Items[3].Enabled:=false;
+fmain.AdvPolyList1.Items[4].Enabled:=false;
+fmain.AdvPolyList1.Items[5].Enabled:=false;
+fmain.AdvPolyList1.Items[9].Enabled:=false;
+fmain.AdvPolyList1.Items[11].Enabled:=false;
+fmain.AdvPolyList1.Items[12].Enabled:=false;
+fmain.AdvPolyList1.Items[13].Enabled:=false;
+fmain.AdvPolyList1.Items[7].Enabled:=false;
+
+end;
+ if userlevel=3 then
+ begin
+fmain.AdvPolyList1.Items[1].Enabled:=false;
+fmain.AdvPolyList1.Items[2].Enabled:=false;
+fmain.AdvPolyList1.Items[3].Enabled:=false;
+fmain.AdvPolyList1.Items[4].Enabled:=false;
+fmain.AdvPolyList1.Items[5].Enabled:=false;
+fmain.AdvPolyList1.Items[7].Enabled:=false;
+fmain.AdvPolyList1.Items[8].Enabled:=false;
+fmain.AdvPolyList1.Items[9].Enabled:=false;
+fmain.AdvPolyList1.Items[11].Enabled:=false;
+fmain.AdvPolyList1.Items[12].Enabled:=false;
+fmain.AdvPolyList1.Items[13].Enabled:=false;
+fmain.AdvPolyList1.Items[10].Enabled:=false;
+fmain.AdvPolyList1.Items[14].Enabled:=false;
+fmain.AdvPolyList1.Items[13].Enabled:=false;
+fmain.AdvPolyList1.Items[15].Enabled:=false;
+fmain.AdvPolyList1.Items[16].Enabled:=false;
+fmain.AdvPolyList1.Items[17].Enabled:=false;
+fmain.AdvPolyList1.Items[18].Enabled:=false;
+fmain.AdvPolyList1.Items[6].Enabled:=false;
+fmain.AdvPolyList1.Items[19].Enabled:=false;
+fmain.AdvPolyList1.Items[20].Enabled:=false;
+fmain.AdvPolyList1.Items[21].Enabled:=false;
+fmain.AdvPolyList1.Items[22].Enabled:=false;
+fmain.AdvPolyList1.Items[23].Enabled:=false;
+//fmain.AdvPolyList1.Items[25].Enabled:=false;
+fmain.AdvPolyList1.Items[26].Enabled:=false;
+
+
+ end;
+
+  if userlevel=4 then
+ begin
+fmain.AdvPolyList1.Items[1].Enabled:=false;
+fmain.AdvPolyList1.Items[2].Enabled:=false;
+fmain.AdvPolyList1.Items[3].Enabled:=false;
+fmain.AdvPolyList1.Items[4].Enabled:=false;
+fmain.AdvPolyList1.Items[5].Enabled:=false;
+fmain.AdvPolyList1.Items[7].Enabled:=false;
+fmain.AdvPolyList1.Items[8].Enabled:=false;
+fmain.AdvPolyList1.Items[9].Enabled:=false;
+fmain.AdvPolyList1.Items[10].Enabled:=false;
+fmain.AdvPolyList1.Items[11].Enabled:=true;
+fmain.AdvPolyList1.Items[12].Enabled:=false;
+fmain.AdvPolyList1.Items[13].Enabled:=false;
+fmain.AdvPolyList1.Items[14].Enabled:=false;
+fmain.AdvPolyList1.Items[15].Enabled:=false;
+fmain.AdvPolyList1.Items[16].Enabled:=false;
+fmain.AdvPolyList1.Items[17].Enabled:=false;
+fmain.AdvPolyList1.Items[18].Enabled:=false;
+fmain.AdvPolyList1.Items[21].Enabled:=false;
+fmain.AdvPolyList1.Items[22].Enabled:=false;
+fmain.AdvPolyList1.Items[25].Enabled:=false;
+fmain.AdvPolyList1.Items[26].Enabled:=false;
+
+
+ end;
+
+ end
+
+else
+ShowMessage('La contraseña introducida es incorrecta. Introdusca la contraseña correcta o pongase en contacto con su administrador');
+end;
+
+procedure TFlogin.AdvSmoothButton2Click(Sender: TObject);
+begin
+if MessageDlg('Realmente desea salir del programa?',mtwarning,mbYesNo,0)=mryes then
+Application.Terminate;
+end;
+
+procedure TFlogin.FormCreate(Sender: TObject);
+var
+  ininame: string;
+  paramsResult:   boolean;
+begin
+
+if Fmain.UniConnection1.Connected=true then
+   Fmain.UniConnection1.Connected:=false;
+
+   ininame:= ExtractFilePath(Application.ExeName)+'merchant.ini';
+
+   Fmain.UniDACInitManager1.OpenFilePath:= ininame;
+   paramsResult:= false;
+
+if FileExists( ininame) then
+   paramsResult:= Fmain.UniDACInitManager1.LoadParameters
+   else
+    paramsResult:= Fmain.UniDACInitManager1.CreateParameters;
+
+    if paramsResult then
+          Fmain.UniDACInitManager1.SaveParameters;
+
+
+
+
+end;
+
+end.

@@ -1,0 +1,257 @@
+unit facturas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters,  cxEdit, cxLabel, cxDBLabel, Vcl.StdCtrls,
+  Vcl.Mask, JvExMask, JvToolEdit, JvDBControls, cxTextEdit, cxMaskEdit,
+  cxSpinEdit, cxDBEdit, Data.DB, cxNavigator, cxDBNavigator, AdvSmoothButton,
+  cxStyles, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage,
+  cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGrid, MemDS, DBAccess, Uni,
+  cxCalc, cxDropDownEdit, cxCalendar,
+  cxDataControllerConditionalFormattingRulesManagerDialog,
+  dxDateRanges, cxContainer, frxClass, frxDACComponents, frxUniDACComponents,
+  dxSkinsCore, dxSkinsDefaultPainters, dxSkinBasic, dxSkinBlack, dxSkinBlue,
+  dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkroom, dxSkinDarkSide,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinOffice2019Black, dxSkinOffice2019Colorful, dxSkinOffice2019DarkGray,
+  dxSkinOffice2019White, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringtime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinTheBezier, dxSkinValentine,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, dxScrollbarAnnotations;
+
+type
+  TFfacturas = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    JvDBComboEdit1: TJvDBComboEdit;
+    CurvyPanel3: TCurvyPanel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    JvDBComboEdit2: TJvDBComboEdit;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    Label5: TLabel;
+    cxDBLabel2: TcxDBLabel;
+    AdvSmoothButton2: TAdvSmoothButton;
+    Qcontratos1: TUniQuery;
+    Label6: TLabel;
+    cxDBDateEdit1: TcxDBDateEdit;
+    Label7: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    JvDBComboEdit3: TJvDBComboEdit;
+    cxDBLabel1: TcxDBLabel;
+    Qcontratos1tipo: TStringField;
+    Qcontratos1fecha_inicio: TDateField;
+    Qcontratos1fecha_vencimiento: TDateField;
+    Qcontratos1estado: TStringField;
+    Qclientes1: TUniQuery;
+    Qclientes1nombre: TStringField;
+    Qclientes1organismoid: TStringField;
+    Qclientes1fecha_acr: TDateField;
+    Qclientes1tipo_cliente: TStringField;
+    DataSource2: TDataSource;
+    DataSource3: TDataSource;
+    QCompradores: TUniQuery;
+    QCompradoresnombre_comprador: TStringField;
+    QCompradorescomprador_ci: TStringField;
+    QCompradorescomprador_cargo: TStringField;
+    DataSource4: TDataSource;
+    Label9: TLabel;
+    cxDBLabel3: TcxDBLabel;
+    Qcontratos1contratoid: TIntegerField;
+    Qcontratos1clienteid: TIntegerField;
+    Qclientes1clienteid: TIntegerField;
+    QCompradoresclienteid: TIntegerField;
+    AdvSmoothButton3: TAdvSmoothButton;
+    AdvSmoothButton4: TAdvSmoothButton;
+    Qcontratos1codigo: TStringField;
+    DataSource5: TDataSource;
+    AdvSmoothButton5: TAdvSmoothButton;
+    UniStoredProc1: TUniStoredProc;
+    cxGrid1DBTableView1facturaid: TcxGridDBColumn;
+    cxGrid1DBTableView1compradorid: TcxGridDBColumn;
+    cxGrid1DBTableView1estado: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha: TcxGridDBColumn;
+    cxGrid1DBTableView1transp_mn: TcxGridDBColumn;
+    cxGrid1DBTableView1pagada: TcxGridDBColumn;
+    UniQuery2: TUniQuery;
+    UniQuery2facturaid: TIntegerField;
+    UniQuery2clienteid: TIntegerField;
+    UniQuery2contratoid: TIntegerField;
+    UniQuery2compradorid: TStringField;
+    UniQuery2estado: TStringField;
+    UniQuery2fecha: TDateField;
+    UniQuery2transp_mn: TFloatField;
+    UniQuery2transpcuc: TFloatField;
+    UniQuery2pagada: TStringField;
+    Qclientes1codigo: TStringField;
+    UniQuery2codcliente: TStringField;
+    UniQuery2codcontrato: TStringField;
+    cxGrid1DBTableView1codcliente: TcxGridDBColumn;
+    cxGrid1DBTableView1codcontrato: TcxGridDBColumn;
+    AdvSmoothButton6: TAdvSmoothButton;
+    frxReport1: TfrxReport;
+    AdvSmoothButton7: TAdvSmoothButton;
+    UniStoredProc2: TUniStoredProc;
+    UniQuery1: TUniQuery;
+    UniQuery2fecha_contasble: TDateField;
+    Label8: TLabel;
+    cxDBDateEdit2: TcxDBDateEdit;
+    cxGrid1DBTableView1fecha_contasble: TcxGridDBColumn;
+    AdvSmoothButton8: TAdvSmoothButton;
+    AdvSmoothButton9: TAdvSmoothButton;
+    frxUniDACComponents1: TfrxUniDACComponents;
+    procedure JvDBComboEdit1ButtonClick(Sender: TObject);
+    procedure JvDBComboEdit2ButtonClick(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure JvDBComboEdit3ButtonClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton3Click(Sender: TObject);
+    procedure AdvSmoothButton4Click(Sender: TObject);
+    procedure AdvSmoothButton7Click(Sender: TObject);
+    procedure AdvSmoothButton6Click(Sender: TObject);
+    procedure AdvSmoothButton5Click(Sender: TObject);
+    procedure AdvSmoothButton8Click(Sender: TObject);
+    procedure AdvSmoothButton9Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Ffacturas: TFfacturas;
+
+implementation
+  uses main,sel_cliente_fac,sel_comp,prod_fact,sel_contrato_fac,transfact, facturadores,sel_ordend_factura,change_number;
+{$R *.dfm}
+
+procedure TFfacturas.AdvSmoothButton1Click(Sender: TObject);
+begin
+   if UniQuery2estado.Value='En Trayecto' then
+   begin
+  fprod_fact:=TFprod_fact.Create(Application);
+  Fprod_fact.QProd_Fact.ParamByName('factura').Value:=UniQuery2facturaid.Value;
+  Fprod_fact.QProd_Fact.ParamByName('fecha').Value:=UniQuery2fecha.Value;
+  Fprod_fact.QProd_Fact.ExecSQL;
+  fprod_fact.ShowModal;
+   end
+   else
+   ShowMessage('La Factura ya Está Cerrada');
+
+end;
+
+procedure TFfacturas.AdvSmoothButton2Click(Sender: TObject);
+begin
+  if UniQuery2estado.value='En Trayecto' then
+   begin
+        UniQuery2.Edit;
+        UniQuery2estado.value:='Terminado';
+        UniQuery2.Post;
+   end
+  Else
+  ShowMessage('La Factura ya Está Cerrada');
+
+ End;
+
+
+
+procedure TFfacturas.AdvSmoothButton3Click(Sender: TObject);
+begin
+  Ftransportista:=TFtransportista.Create(Application);
+  Ftransportista.ShowModal;
+
+end;
+
+procedure TFfacturas.AdvSmoothButton4Click(Sender: TObject);
+begin
+  FFacturadores:=TFFacturadores.Create(Application);
+  FFacturadores.ShowModal;
+end;
+
+procedure TFfacturas.AdvSmoothButton5Click(Sender: TObject);
+begin
+Fchange:=TFchange.Create(Application);
+Fchange.ShowModal;
+end;
+
+procedure TFfacturas.AdvSmoothButton6Click(Sender: TObject);
+begin
+frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'\Reportes\rep_facturas_v.fr3');
+frxReport1.ShowReport();
+end;
+
+procedure TFfacturas.AdvSmoothButton7Click(Sender: TObject);
+begin
+frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'\Reportes\vale_exp.fr3');
+frxReport1.ShowReport();
+end;
+
+procedure TFfacturas.AdvSmoothButton8Click(Sender: TObject);
+begin
+ frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'\Reportes\rep_facturas_mlc.fr3');
+frxReport1.ShowReport();
+end;
+
+procedure TFfacturas.AdvSmoothButton9Click(Sender: TObject);
+begin
+if MessageDlg('Esta operación devolverá la factura seleccionada al estado EN PROCESO y retornará los productos facturados al AlMACEN, Desea Continuar?',TMsgDlgType.mtWarning,mbYesNo,0)=mrYes then
+begin
+UniQuery2.Edit;
+UniQuery2estado.Value:='En Trayecto';
+UniQuery2.Post;
+end;
+end;
+
+procedure TFfacturas.FormCreate(Sender: TObject);
+begin
+Qclientes1.Open;
+Qcontratos1.Open;
+QCompradores.Open;
+UniQuery2.Open;
+end;
+
+procedure TFfacturas.JvDBComboEdit1ButtonClick(Sender: TObject);
+begin
+ Fmain.QFacturas.Edit;
+ Fsel_Cliente_fac:=TFsel_Cliente_fac.Create(self);
+ Fsel_Cliente_fac.ShowModal;
+end;
+
+procedure TFfacturas.JvDBComboEdit2ButtonClick(Sender: TObject);
+begin
+
+FSel_Comp:=TFSel_Comp.Create(self);
+FSel_Comp.ShowModal;
+
+
+end;
+
+procedure TFfacturas.JvDBComboEdit3ButtonClick(Sender: TObject);
+begin
+Fsel_contratoF:=TFsel_contratoF.Create(self);
+Fsel_contratoF.ShowModal;
+
+end;
+
+end.

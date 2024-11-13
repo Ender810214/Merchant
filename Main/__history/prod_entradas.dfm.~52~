@@ -1,0 +1,305 @@
+object Fprod_entradas: TFprod_entradas
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fprod_entradas'
+  ClientHeight = 364
+  ClientWidth = 1084
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1084
+    Height = 364
+    Align = alClient
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 1084
+      Height = 289
+      Align = alTop
+      TabOrder = 0
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 1080
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        Align = alTop
+        TabOrder = 0
+      end
+      object cxGrid1: TcxGrid
+        Left = 0
+        Top = 41
+        Width = 1084
+        Height = 248
+        Align = alClient
+        TabOrder = 1
+        LookAndFeel.SkinName = 'UserSkin'
+        object cxGrid1DBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          DataController.DataSource = DataSource1
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          object cxGrid1DBTableView1cod_contrato: TcxGridDBColumn
+            DataBinding.FieldName = 'cod_contrato'
+          end
+          object cxGrid1DBTableView1cod_cliente: TcxGridDBColumn
+            DataBinding.FieldName = 'cod_cliente'
+          end
+          object cxGrid1DBTableView1cod_producto: TcxGridDBColumn
+            Caption = 'C'#243'digo del Producto'
+            DataBinding.FieldName = 'cod_producto'
+            PropertiesClassName = 'TcxButtonEditProperties'
+            Properties.Buttons = <
+              item
+                Default = True
+                Kind = bkEllipsis
+              end>
+            Properties.OnButtonClick = cxGrid1DBTableView1codprodPropertiesButtonClick
+          end
+          object cxGrid1DBTableView1des_producto: TcxGridDBColumn
+            Caption = 'Descripci'#243'n del Producto'
+            DataBinding.FieldName = 'des_producto'
+            Width = 150
+          end
+          object cxGrid1DBTableView1cantidad: TcxGridDBColumn
+            DataBinding.FieldName = 'cantidad'
+          end
+          object cxGrid1DBTableView1costo_unitario: TcxGridDBColumn
+            DataBinding.FieldName = 'costo_unitario'
+            Width = 85
+          end
+          object cxGrid1DBTableView1costo_total: TcxGridDBColumn
+            DataBinding.FieldName = 'costo_total'
+          end
+          object cxGrid1DBTableView1precio_cup: TcxGridDBColumn
+            DataBinding.FieldName = 'precio_cup'
+          end
+          object cxGrid1DBTableView1precio_usd: TcxGridDBColumn
+            Caption = 'Precio MLC'
+            DataBinding.FieldName = 'precio_usd'
+          end
+          object cxGrid1DBTableView1precio_total: TcxGridDBColumn
+            Caption = 'Precio Total'
+            DataBinding.FieldName = 'precio_total'
+          end
+          object cxGrid1DBTableView1importe_mn: TcxGridDBColumn
+            DataBinding.FieldName = 'importe_mn'
+          end
+        end
+        object cxGrid1Level1: TcxGridLevel
+          GridView = cxGrid1DBTableView1
+        end
+      end
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 289
+      Width = 1084
+      Height = 75
+      Align = alClient
+      TabOrder = 1
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 464
+        Top = 16
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cerrar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.1.3.0'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 13
+      end
+    end
+  end
+  object QProd_Entradas: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO prod_entradas'
+      
+        '  (entradaid, productoid, cantidad, precio_cup, precio_cuc, prec' +
+        'io_usd, costo_unitario, costo_total, importe_cuc, importe_mn, cl' +
+        'ienteid, contratoid, anexoid, plazoid, cod_contrato, cod_cliente' +
+        ', cod_producto, des_producto, precio_total, posicion_anexo)'
+      'VALUES'
+      
+        '  (:entradaid, :productoid, :cantidad, :precio_cup, :precio_cuc,' +
+        ' :precio_usd, :costo_unitario, :costo_total, :importe_cuc, :impo' +
+        'rte_mn, :clienteid, :contratoid, :anexoid, :plazoid, :cod_contra' +
+        'to, :cod_cliente, :cod_producto, :des_producto, :precio_total, :' +
+        'posicion_anexo)')
+    SQLDelete.Strings = (
+      'DELETE FROM prod_entradas'
+      'WHERE'
+      
+        '  entradaid = :Old_entradaid AND productoid = :Old_productoid AN' +
+        'D cod_contrato = :Old_cod_contrato AND cod_cliente = :Old_cod_cl' +
+        'iente')
+    SQLUpdate.Strings = (
+      'UPDATE prod_entradas'
+      'SET'
+      
+        '  entradaid = :entradaid, productoid = :productoid, cantidad = :' +
+        'cantidad, precio_cup = :precio_cup, precio_cuc = :precio_cuc, pr' +
+        'ecio_usd = :precio_usd, costo_unitario = :costo_unitario, costo_' +
+        'total = :costo_total, importe_cuc = :importe_cuc, importe_mn = :' +
+        'importe_mn, clienteid = :clienteid, contratoid = :contratoid, an' +
+        'exoid = :anexoid, plazoid = :plazoid, cod_contrato = :cod_contra' +
+        'to, cod_cliente = :cod_cliente, cod_producto = :cod_producto, de' +
+        's_producto = :des_producto, precio_total = :precio_total, posici' +
+        'on_anexo = :posicion_anexo'
+      'WHERE'
+      
+        '  entradaid = :Old_entradaid AND productoid = :Old_productoid AN' +
+        'D cod_contrato = :Old_cod_contrato AND cod_cliente = :Old_cod_cl' +
+        'iente')
+    SQLRefresh.Strings = (
+      
+        'SELECT entradaid, productoid, cantidad, precio_cup, precio_cuc, ' +
+        'precio_usd, costo_unitario, costo_total, importe_cuc, importe_mn' +
+        ', clienteid, contratoid, anexoid, plazoid, cod_contrato, cod_cli' +
+        'ente, cod_producto, des_producto, precio_total, posicion_anexo F' +
+        'ROM prod_entradas'
+      'WHERE'
+      
+        '  entradaid = :entradaid AND productoid = :productoid AND cod_co' +
+        'ntrato = :cod_contrato AND cod_cliente = :cod_cliente')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from prod_entradas where entradaid=:ventradaid'
+      '')
+    AfterInsert = QProd_EntradasAfterInsert
+    BeforePost = QProd_EntradasBeforePost
+    Left = 296
+    Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ventradaid'
+        Value = nil
+      end>
+    object QProd_Entradasentradaid: TIntegerField
+      DisplayLabel = 'No. Entrada'
+      FieldName = 'entradaid'
+    end
+    object QProd_Entradasclienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object QProd_Entradascontratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object QProd_Entradascod_contrato: TStringField
+      DisplayLabel = 'C'#243'digo Contrato'
+      FieldName = 'cod_contrato'
+      Size = 15
+    end
+    object QProd_Entradascod_cliente: TStringField
+      DisplayLabel = 'C'#243'digo Cliente'
+      FieldName = 'cod_cliente'
+      Size = 15
+    end
+    object QProd_Entradasanexoid: TIntegerField
+      DisplayLabel = 'No. Anexo'
+      FieldName = 'anexoid'
+      Required = True
+    end
+    object QProd_Entradasplazoid: TIntegerField
+      FieldName = 'plazoid'
+      Required = True
+    end
+    object QProd_Entradasproductoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object QProd_Entradascod_producto: TStringField
+      FieldName = 'cod_producto'
+      Size = 15
+    end
+    object QProd_Entradasdes_producto: TStringField
+      FieldName = 'des_producto'
+      Size = 500
+    end
+    object QProd_Entradascantidad: TFloatField
+      FieldName = 'cantidad'
+      Required = True
+    end
+    object QProd_Entradasprecio_cuc: TFloatField
+      DisplayLabel = 'Precio CUC'
+      FieldName = 'precio_cuc'
+    end
+    object QProd_Entradasprecio_cup: TFloatField
+      DisplayLabel = 'Precio CUP'
+      FieldName = 'precio_cup'
+      Required = True
+    end
+    object QProd_Entradasprecio_usd: TFloatField
+      FieldName = 'precio_usd'
+      Required = True
+    end
+    object QProd_Entradasprecio_total: TFloatField
+      FieldName = 'precio_total'
+    end
+    object QProd_Entradascosto_unitario: TFloatField
+      DisplayLabel = 'Costo Unitario'
+      FieldName = 'costo_unitario'
+    end
+    object QProd_Entradascosto_total: TFloatField
+      DisplayLabel = 'Costo Total'
+      FieldName = 'costo_total'
+    end
+    object QProd_Entradasimporte_cuc: TFloatField
+      DisplayLabel = 'Importe CUC'
+      FieldName = 'importe_cuc'
+    end
+    object QProd_Entradasimporte_mn: TFloatField
+      DisplayLabel = 'Importe MN'
+      FieldName = 'importe_mn'
+    end
+    object QProd_Entradasposicion_anexo: TIntegerField
+      FieldName = 'posicion_anexo'
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = QProd_Entradas
+    Left = 320
+    Top = 313
+  end
+end

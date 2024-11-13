@@ -1,0 +1,200 @@
+object Fsel_prod_prefact: TFsel_prod_prefact
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fsel_prod_prefact'
+  ClientHeight = 370
+  ClientWidth = 746
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 746
+    Height = 370
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 735
+      Height = 33
+      Buttons.CustomButtons = <>
+      Align = alTop
+      TabOrder = 0
+    end
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 280
+      Width = 746
+      Height = 90
+      Align = alBottom
+      Caption = ''
+      TabOrder = 1
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 24
+        Top = 32
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Aceptar'
+        Color = 14922381
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 8
+      end
+      object AdvSmoothButton2: TAdvSmoothButton
+        Left = 608
+        Top = 32
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cancelar'
+        Color = 14922381
+        ParentFont = False
+        TabOrder = 1
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton2Click
+        TMSStyle = 8
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 33
+      Width = 746
+      Height = 247
+      Align = alClient
+      TabOrder = 2
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1codigo: TcxGridDBColumn
+          Caption = 'C'#243'digo'
+          DataBinding.FieldName = 'codigo'
+        end
+        object cxGrid1DBTableView1um: TcxGridDBColumn
+          Caption = 'UM'
+          DataBinding.FieldName = 'um'
+          Width = 30
+        end
+        object cxGrid1DBTableView1precio_cup: TcxGridDBColumn
+          Caption = 'Precio CUP'
+          DataBinding.FieldName = 'precio_cup'
+          Width = 100
+        end
+        object cxGrid1DBTableView1precio_usd: TcxGridDBColumn
+          Caption = 'Precio MLC'
+          DataBinding.FieldName = 'precio_usd'
+          Width = 100
+        end
+        object cxGrid1DBTableView1ueb: TcxGridDBColumn
+          Caption = 'UEB'
+          DataBinding.FieldName = 'ueb'
+          Width = 100
+        end
+        object cxGrid1DBTableView1descripcion: TcxGridDBColumn
+          Caption = 'Descripci'#243'n'
+          DataBinding.FieldName = 'descripcion'
+          Width = 500
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object UniQuery1: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from productos')
+    Left = 408
+    Top = 184
+    object UniQuery1codigo: TStringField
+      FieldName = 'codigo'
+      Required = True
+    end
+    object UniQuery1um: TStringField
+      FieldName = 'um'
+      Required = True
+      Size = 3
+    end
+    object UniQuery1precio_cup: TFloatField
+      FieldName = 'precio_cup'
+    end
+    object UniQuery1precio_usd: TFloatField
+      FieldName = 'precio_usd'
+    end
+    object UniQuery1ueb: TStringField
+      FieldName = 'ueb'
+      Required = True
+      Size = 3
+    end
+    object UniQuery1descripcion: TStringField
+      FieldName = 'descripcion'
+      Required = True
+      Size = 250
+    end
+    object UniQuery1productoid: TIntegerField
+      FieldName = 'productoid'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 216
+    Top = 216
+  end
+end

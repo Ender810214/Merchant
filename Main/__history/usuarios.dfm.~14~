@@ -1,0 +1,216 @@
+object Fusuarios: TFusuarios
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  ClientHeight = 837
+  ClientWidth = 1089
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnCreate = FormCreate
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1089
+    Height = 837
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 313
+      Height = 837
+      Align = alLeft
+      Caption = ''
+      TabOrder = 0
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 300
+        Height = 33
+        Buttons.CustomButtons = <>
+        Align = alTop
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object cxGrid1: TcxGrid
+        Left = 0
+        Top = 33
+        Width = 313
+        Height = 804
+        Align = alClient
+        TabOrder = 1
+        object cxGrid1DBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          ScrollbarAnnotations.CustomAnnotations = <>
+          DataController.DataSource = DataSource1
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          object cxGrid1DBTableView1descripcion: TcxGridDBColumn
+            Caption = 'Descripci'#243'n'
+            DataBinding.FieldName = 'descripcion'
+            Width = 150
+          end
+          object cxGrid1DBTableView1level: TcxGridDBColumn
+            Caption = 'Nivel de Acceso'
+            DataBinding.FieldName = 'level'
+            Width = 100
+          end
+        end
+        object cxGrid1Level1: TcxGridLevel
+          GridView = cxGrid1DBTableView1
+        end
+      end
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 313
+      Top = 0
+      Width = 776
+      Height = 837
+      Align = alClient
+      Caption = ''
+      TabOrder = 1
+      object Label1: TLabel
+        Left = 32
+        Top = 56
+        Width = 115
+        Height = 13
+        Caption = 'Identificador de Usuario'
+        FocusControl = cxDBTextEdit1
+      end
+      object Label2: TLabel
+        Left = 215
+        Top = 53
+        Width = 56
+        Height = 13
+        Caption = 'Contrase'#241'a'
+      end
+      object Label3: TLabel
+        Left = 487
+        Top = 56
+        Width = 94
+        Height = 13
+        Caption = 'Repetir Contrase'#241'a'
+      end
+      object cxDBNavigator2: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 765
+        Height = 25
+        Buttons.CustomButtons = <>
+        Align = alTop
+        TabOrder = 0
+      end
+      object cxDBTextEdit1: TcxDBTextEdit
+        Left = 32
+        Top = 72
+        DataBinding.DataField = 'nombre'
+        DataBinding.DataSource = DataSource2
+        TabOrder = 1
+        Width = 177
+      end
+      object Edit1: TEdit
+        Left = 215
+        Top = 72
+        Width = 266
+        Height = 21
+        PasswordChar = '*'
+        TabOrder = 2
+      end
+      object Edit2: TEdit
+        Left = 487
+        Top = 72
+        Width = 266
+        Height = 21
+        PasswordChar = '*'
+        TabOrder = 3
+      end
+    end
+  end
+  object Qusuarios: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from usuarios where catid=:catid'
+      ' ')
+    Left = 672
+    Top = 336
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'catid'
+        Value = nil
+      end>
+    object Qusuarioscatid: TIntegerField
+      FieldName = 'catid'
+      Required = True
+    end
+    object Qusuariosnombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 30
+    end
+    object Qusuariospassword: TStringField
+      DisplayLabel = 'Contrase'#241'a'
+      FieldName = 'password'
+      Required = True
+      Size = 15
+    end
+  end
+  object Qcat_user: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO users_cat'
+      '  ( descripcion, level)'
+      'VALUES'
+      '  ( :descripcion, :level)')
+    SQLDelete.Strings = (
+      'DELETE FROM users_cat'
+      'WHERE'
+      '  catid = :Old_catid')
+    SQLUpdate.Strings = (
+      'UPDATE users_cat'
+      'SET'
+      '  catid = :catid, descripcion = :descripcion, level = :level'
+      'WHERE'
+      '  catid = :Old_catid')
+    SQLRefresh.Strings = (
+      'SELECT catid, descripcion, level FROM users_cat'
+      'WHERE'
+      '  catid = :catid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from users_cat')
+    Left = 384
+    Top = 416
+    object Qcat_usercatid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'catid'
+    end
+    object Qcat_userdescripcion: TStringField
+      FieldName = 'descripcion'
+      Required = True
+      Size = 50
+    end
+    object Qcat_userlevel: TIntegerField
+      FieldName = 'level'
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qcat_user
+    Left = 544
+    Top = 504
+  end
+  object DataSource2: TDataSource
+    DataSet = Qusuarios
+    Left = 776
+    Top = 448
+  end
+end

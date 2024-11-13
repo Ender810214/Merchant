@@ -1,0 +1,128 @@
+unit prefacturas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, dxSkinsCore, cxCustomData,
+  cxFilter, cxData, cxDataStorage, cxEdit,
+  cxNavigator, cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB,
+  cxDBData, MemDS, DBAccess, Uni, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
+  cxContainer, cxTextEdit, cxMaskEdit, cxSpinEdit, cxDBEdit, Vcl.StdCtrls,
+  cxDBNavigator, cxCalc, cxDropDownEdit, cxCalendar, Vcl.Mask, JvExMask,
+  JvToolEdit, JvDBControls, cxLabel, cxDBLabel, AdvSmoothButton, dxDateRanges,
+  cxButtonEdit, dxSkinBasic, dxSkinBlack, dxSkinBlue, dxSkinBlueprint,
+  dxSkinCaramel, dxSkinCoffee, dxSkinDarkroom, dxSkinDarkSide,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinOffice2019Black, dxSkinOffice2019Colorful, dxSkinOffice2019DarkGray,
+  dxSkinOffice2019White, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringtime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinTheBezier,
+  dxSkinsDefaultPainters, dxSkinValentine, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxSkinVS2010,
+  dxSkinWhiteprint, dxSkinXmas2008Blue, dxScrollbarAnnotations;
+
+type
+  TFprefacturas = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    CurvyPanel3: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    DataSource1: TDataSource;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    UniQuery1: TUniQuery;
+    UniQuery1clienteid: TIntegerField;
+    UniQuery1contratoid: TIntegerField;
+    UniQuery1compradorid: TStringField;
+    UniQuery1fecha: TDateField;
+    UniQuery1transp_mn: TFloatField;
+    DataSource2: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    cxDBSpinEdit3: TcxDBSpinEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    cxDBDateEdit1: TcxDBDateEdit;
+    Label6: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    cxDBButtonEdit1: TcxDBButtonEdit;
+    cxDBButtonEdit2: TcxDBButtonEdit;
+    cxDBLabel1: TcxDBLabel;
+    cxGrid1DBTableView1clienteid: TcxGridDBColumn;
+    cxGrid1DBTableView1contratoid: TcxGridDBColumn;
+    cxGrid1DBTableView1compradorid: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha: TcxGridDBColumn;
+    cxGrid1DBTableView1transp_mn: TcxGridDBColumn;
+    UniQuery1prefacturaid: TIntegerField;
+    cxGrid1DBTableView1prefacturaid: TcxGridDBColumn;
+    Qperiodo: TUniQuery;
+    Qperiodoperiodoid: TIntegerField;
+    Qperiododesde: TDateField;
+    Qperiodohasta: TDateField;
+    Qperiodoactivo: TStringField;
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure cxDBButtonEdit1PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxDBButtonEdit2PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fprefacturas: TFprefacturas;
+
+implementation
+
+{$R *.dfm}
+
+uses main, prod_prefact, sel_contrato_prefact, sel_comp_prefact;
+
+procedure TFprefacturas.AdvSmoothButton1Click(Sender: TObject);
+begin
+  Fprod_prefact := TFprod_prefact.Create(Application);
+  Fprod_prefact.ShowModal;
+
+end;
+
+procedure TFprefacturas.cxDBButtonEdit1PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+begin
+  Fsel_cont_prefact := TFsel_cont_prefact.Create(Application);
+  Fsel_cont_prefact.ShowModal;
+end;
+
+procedure TFprefacturas.cxDBButtonEdit2PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+begin
+  Fsel_comp_prefact := TFsel_comp_prefact.Create(Application);
+  Fsel_comp_prefact.ShowModal;
+end;
+
+procedure TFprefacturas.FormCreate(Sender: TObject);
+begin
+  Qperiodo.Open;
+  UniQuery1.ParamByName('infecha1').Value:=Qperiododesde.Value;
+  UniQuery1.ParamByName('infecha2').Value:=Qperiodohasta.Value;
+  UniQuery1.Open;
+end;
+
+end.

@@ -1,0 +1,24 @@
+unit nom_prod_compras;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TF_nom_prod_compras = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_nom_prod_compras: TF_nom_prod_compras;
+
+implementation
+
+{$R *.dfm}
+
+end.

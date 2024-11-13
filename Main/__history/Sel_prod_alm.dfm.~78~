@@ -1,0 +1,456 @@
+object FSel_Prod_Alm: TFSel_Prod_Alm
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'FSel_Prod_Alm'
+  ClientHeight = 400
+  ClientWidth = 1068
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poMainFormCenter
+  OnShow = FormShow
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1068
+    Height = 400
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 41
+      Width = 1068
+      Height = 232
+      Align = alTop
+      TabOrder = 0
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource2
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1codcontrato: TcxGridDBColumn
+          Caption = 'Cod. Contrato.'
+          DataBinding.FieldName = 'codcontrato'
+          Width = 79
+        end
+        object cxGrid1DBTableView1codcliente: TcxGridDBColumn
+          Caption = 'C'#243'd. Cliente'
+          DataBinding.FieldName = 'codcliente'
+        end
+        object cxGrid1DBTableView1codigo_producto: TcxGridDBColumn
+          Caption = 'C'#243'digo Producto'
+          DataBinding.FieldName = 'codigo_producto'
+          Width = 85
+        end
+        object cxGrid1DBTableView1descripcion_producto: TcxGridDBColumn
+          Caption = 'Descripcion'
+          DataBinding.FieldName = 'descripcion_producto'
+          Width = 300
+        end
+        object cxGrid1DBTableView1anexo: TcxGridDBColumn
+          Caption = 'Anexo'
+          DataBinding.FieldName = 'anexo'
+        end
+        object cxGrid1DBTableView1posicion_anexo: TcxGridDBColumn
+          Caption = 'Posici'#243'n'
+          DataBinding.FieldName = 'posicion_anexo'
+          Width = 80
+        end
+        object cxGrid1DBTableView1costo_unitario: TcxGridDBColumn
+          Caption = 'Costo'
+          DataBinding.FieldName = 'costo_unitario'
+          Width = 86
+        end
+        object cxGrid1DBTableView1precio_cup: TcxGridDBColumn
+          Caption = 'Precio CUP'
+          DataBinding.FieldName = 'precio_cup'
+        end
+        object cxGrid1DBTableView1precio_usd: TcxGridDBColumn
+          Caption = 'Precio MLC'
+          DataBinding.FieldName = 'precio_usd'
+        end
+        object cxGrid1DBTableView1existencia: TcxGridDBColumn
+          Caption = 'Existencia'
+          DataBinding.FieldName = 'existencia'
+        end
+        object cxGrid1DBTableView1ueb: TcxGridDBColumn
+          Caption = 'Unidad Fabricante'
+          DataBinding.FieldName = 'ueb'
+          Width = 100
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 273
+      Width = 1068
+      Height = 127
+      Align = alClient
+      Caption = ''
+      TabOrder = 1
+      DesignSize = (
+        1068
+        127)
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 3
+        Top = 16
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Aceptar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 8
+      end
+      object AdvSmoothButton2: TAdvSmoothButton
+        Left = 945
+        Top = 16
+        Width = 120
+        Height = 35
+        Anchors = [akTop, akRight]
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cancelar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 1
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton2Click
+        TMSStyle = 8
+      end
+      object AdvSmoothButton3: TAdvSmoothButton
+        Left = 440
+        Top = 16
+        Width = 120
+        Height = 35
+        Anchors = []
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Seleccionar Todo'
+        Color = 14922381
+        ParentFont = False
+        TabOrder = 2
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton3Click
+        TMSStyle = 8
+      end
+    end
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 1064
+      Height = 41
+      Buttons.CustomButtons = <>
+      Buttons.PriorPage.Enabled = False
+      Buttons.PriorPage.Visible = False
+      Buttons.NextPage.Enabled = False
+      Buttons.NextPage.Visible = False
+      Buttons.Insert.Enabled = False
+      Buttons.Insert.Visible = False
+      Buttons.Delete.Enabled = False
+      Buttons.Delete.Visible = False
+      Buttons.Edit.Enabled = False
+      Buttons.Edit.Visible = False
+      Buttons.Post.Enabled = False
+      Buttons.Post.Visible = False
+      Buttons.Cancel.Enabled = False
+      Buttons.Cancel.Visible = False
+      Buttons.SaveBookmark.Enabled = False
+      Buttons.SaveBookmark.Visible = False
+      Buttons.GotoBookmark.Enabled = False
+      DataSource = DataSource2
+      Align = alTop
+      TabOrder = 2
+    end
+  end
+  object UniQuery1: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO ubicacion'
+      
+        '  (almacenid, ubicacionid, contratoid, clienteid, productoid, ex' +
+        'istencia, precio_cup, precio_cuc, precio_usd, codigo_producto, d' +
+        'escripcion_producto)'
+      'VALUES'
+      
+        '  (:almacenid, :ubicacionid, :contratoid, :clienteid, :productoi' +
+        'd, :existencia, :precio_cup, :precio_cuc, :precio_usd, :codigo_p' +
+        'roducto, :descripcion_producto)')
+    SQLDelete.Strings = (
+      'DELETE FROM ubicacion'
+      'WHERE'
+      
+        '  almacenid = :Old_almacenid AND ubicacionid = :Old_ubicacionid ' +
+        'AND contratoid = :Old_contratoid AND clienteid = :Old_clienteid ' +
+        'AND productoid = :Old_productoid')
+    SQLUpdate.Strings = (
+      'UPDATE ubicacion'
+      'SET'
+      
+        '  almacenid = :almacenid, ubicacionid = :ubicacionid, contratoid' +
+        ' = :contratoid, clienteid = :clienteid, productoid = :productoid' +
+        ', existencia = :existencia, precio_cup = :precio_cup, precio_cuc' +
+        ' = :precio_cuc, precio_usd = :precio_usd, codigo_producto = :cod' +
+        'igo_producto, descripcion_producto = :descripcion_producto'
+      'WHERE'
+      
+        '  almacenid = :Old_almacenid AND ubicacionid = :Old_ubicacionid ' +
+        'AND contratoid = :Old_contratoid AND clienteid = :Old_clienteid ' +
+        'AND productoid = :Old_productoid')
+    SQLRefresh.Strings = (
+      
+        'SELECT almacenid, ubicacionid, contratoid, clienteid, productoid' +
+        ', existencia, precio_cup, precio_cuc, precio_usd, codigo_product' +
+        'o, descripcion_producto FROM ubicacion'
+      'WHERE'
+      
+        '  almacenid = :almacenid AND ubicacionid = :ubicacionid AND cont' +
+        'ratoid = :contratoid AND clienteid = :clienteid AND productoid =' +
+        ' :productoid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      
+        'select ubicacionid, existencia, contratoid,clienteid,codcontrato' +
+        ',codcliente, productoid,almacenid,precio_cup,'
+      
+        'codigo_producto,descripcion_producto, precio_usd,anexo,posicion_' +
+        'anexo,costo_unitario, reservado, ueb from ubicacion where contra' +
+        'toid=:contrato and clienteid=:cliente and existencia>0'
+      '')
+    Left = 56
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'contrato'
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'cliente'
+        Value = nil
+      end>
+    object UniQuery1ubicacionid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'ubicacionid'
+    end
+    object UniQuery1existencia: TFloatField
+      FieldName = 'existencia'
+      Required = True
+    end
+    object UniQuery1contratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object UniQuery1clienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object UniQuery1codcontrato: TStringField
+      FieldName = 'codcontrato'
+      Size = 15
+    end
+    object UniQuery1codcliente: TStringField
+      FieldName = 'codcliente'
+      Size = 15
+    end
+    object UniQuery1productoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object UniQuery1almacenid: TStringField
+      FieldName = 'almacenid'
+      Required = True
+      Size = 10
+    end
+    object UniQuery1precio_cup: TFloatField
+      FieldName = 'precio_cup'
+      Required = True
+    end
+    object UniQuery1codigo_producto: TStringField
+      FieldName = 'codigo_producto'
+      Size = 15
+    end
+    object UniQuery1descripcion_producto: TStringField
+      FieldName = 'descripcion_producto'
+      Size = 150
+    end
+    object UniQuery1precio_usd: TFloatField
+      FieldName = 'precio_usd'
+    end
+    object UniQuery1anexo: TIntegerField
+      FieldName = 'anexo'
+      Required = True
+    end
+    object UniQuery1posicion_anexo: TIntegerField
+      FieldName = 'posicion_anexo'
+      Required = True
+    end
+    object UniQuery1costo_unitario: TFloatField
+      FieldName = 'costo_unitario'
+      Required = True
+    end
+    object UniQuery1reservado: TFloatField
+      FieldName = 'reservado'
+      Required = True
+    end
+    object UniQuery1ueb: TStringField
+      FieldName = 'ueb'
+      Size = 5
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = UniQuery1
+    Left = 48
+    Top = 192
+  end
+  object UniStoredProc1: TUniStoredProc
+    StoredProcName = 'f_reservado'
+    SQL.Strings = (
+      
+        'SELECT * FROM f_reservado(:in_cliente, :in_contrato, :in_anexo, ' +
+        ':in_posicion, :in_producto, :in_ubicacion)')
+    Connection = Fmain.UniConnection1
+    Left = 504
+    Top = 345
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'in_cliente'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_contrato'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_anexo'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_posicion'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_producto'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_ubicacion'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'f_reservado'
+  end
+  object UniStoredProc2: TUniStoredProc
+    StoredProcName = 'f_seleccion_todos_prod_contrato'
+    SQL.Strings = (
+      
+        'SELECT * FROM f_seleccion_todos_prod_contrato(:in_cliente, :in_c' +
+        'ontrato, :in_factura)')
+    Connection = Fmain.UniConnection1
+    Left = 368
+    Top = 345
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'in_cliente'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_contrato'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_factura'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'f_seleccion_todos_prod_contrato'
+  end
+end

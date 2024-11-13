@@ -1,0 +1,486 @@
+object Fcontrol711: TFcontrol711
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'Fcontrol711'
+  ClientHeight = 805
+  ClientWidth = 1065
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1065
+    Height = 805
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 868
+    ExplicitHeight = 645
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 1065
+      Height = 240
+      Align = alTop
+      TabOrder = 0
+      ExplicitWidth = 868
+      object Label1: TLabel
+        Left = 16
+        Top = 120
+        Width = 74
+        Height = 13
+        Caption = 'No. Documento'
+      end
+      object Label2: TLabel
+        Left = 229
+        Top = 117
+        Width = 54
+        Height = 13
+        Caption = 'Descripci'#243'n'
+        FocusControl = cxDBTextEdit1
+      end
+      object Label3: TLabel
+        Left = 480
+        Top = 176
+        Width = 101
+        Height = 13
+        Caption = 'Fecha de Aprobaci'#243'n'
+        FocusControl = cxDBDateEdit1
+      end
+      object Label4: TLabel
+        Left = 16
+        Top = 176
+        Width = 50
+        Height = 13
+        Caption = 'Proveedor'
+      end
+      object Label5: TLabel
+        Left = 660
+        Top = 117
+        Width = 75
+        Height = 13
+        Caption = 'Tipo de Compra'
+      end
+      object Label6: TLabel
+        Left = 290
+        Top = 173
+        Width = 58
+        Height = 13
+        Caption = 'Unidad Org.'
+      end
+      object Label7: TLabel
+        Left = 607
+        Top = 173
+        Width = 56
+        Height = 13
+        Caption = 'Importe MN'
+      end
+      object Label8: TLabel
+        Left = 734
+        Top = 173
+        Width = 62
+        Height = 13
+        Caption = 'Importe CUC'
+      end
+      object Label9: TLabel
+        Left = 102
+        Top = 120
+        Width = 92
+        Height = 13
+        Caption = 'Tipo de Documento'
+      end
+      object cxDBTextEdit1: TcxDBTextEdit
+        Left = 229
+        Top = 136
+        DataBinding.DataField = 'descripcion'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 0
+        Width = 425
+      end
+      object cxDBDateEdit1: TcxDBDateEdit
+        Left = 480
+        Top = 192
+        DataBinding.DataField = 'fecha_aprobacion'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 4
+        Width = 121
+      end
+      object cxDBCalcEdit1: TcxDBCalcEdit
+        Left = 607
+        Top = 192
+        DataBinding.DataField = 'importemn'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 5
+        Width = 121
+      end
+      object cxDBCalcEdit2: TcxDBCalcEdit
+        Left = 734
+        Top = 192
+        DataBinding.DataField = 'importecuc'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 7
+        Width = 121
+      end
+      object cxDBTextEdit4: TcxDBTextEdit
+        Left = 16
+        Top = 136
+        DataBinding.DataField = 'id_doc'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 6
+        Width = 80
+      end
+      object DBLookupComboBox1: TDBLookupComboBox
+        Left = 16
+        Top = 192
+        Width = 268
+        Height = 21
+        DataField = 'proveedor'
+        DataSource = DataSource1
+        KeyField = 'clienteid'
+        ListField = 'nombre'
+        ListSource = DataSource2
+        TabOrder = 2
+      end
+      object DBLookupComboBox2: TDBLookupComboBox
+        Left = 290
+        Top = 192
+        Width = 184
+        Height = 21
+        DataField = 'unidadid'
+        DataSource = DataSource1
+        KeyField = 'unidadid'
+        ListField = 'nombre'
+        ListSource = DataSource3
+        TabOrder = 3
+      end
+      object DBComboBox2: TDBComboBox
+        Left = 660
+        Top = 136
+        Width = 145
+        Height = 21
+        DataField = 'tipo_compra'
+        DataSource = DataSource1
+        Items.Strings = (
+          'Compra en Plaza'
+          'Importaci'#243'n'
+          'Servicio'
+          'Compra')
+        TabOrder = 1
+      end
+      object CurvyPanel2: TCurvyPanel
+        Left = 0
+        Top = 0
+        Width = 1065
+        Height = 89
+        Align = alTop
+        TabOrder = 8
+        object cxDBNavigator1: TcxDBNavigator
+          Left = 0
+          Top = 0
+          Width = 1065
+          Height = 33
+          Buttons.CustomButtons = <>
+          DataSource = DataSource1
+          Align = alTop
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          ExplicitTop = 8
+        end
+        object AdvGlowButton1: TAdvGlowButton
+          Left = 944
+          Top = 39
+          Width = 100
+          Height = 41
+          Caption = 'Registrar Documento'
+          NotesFont.Charset = DEFAULT_CHARSET
+          NotesFont.Color = clWindowText
+          NotesFont.Height = -11
+          NotesFont.Name = 'Tahoma'
+          NotesFont.Style = []
+          TabOrder = 1
+          Appearance.ColorChecked = 16111818
+          Appearance.ColorCheckedTo = 16367008
+          Appearance.ColorDisabled = 15921906
+          Appearance.ColorDisabledTo = 15921906
+          Appearance.ColorDown = 16111818
+          Appearance.ColorDownTo = 16367008
+          Appearance.ColorHot = 16117985
+          Appearance.ColorHotTo = 16372402
+          Appearance.ColorMirrorHot = 16107693
+          Appearance.ColorMirrorHotTo = 16775412
+          Appearance.ColorMirrorDown = 16102556
+          Appearance.ColorMirrorDownTo = 16768988
+          Appearance.ColorMirrorChecked = 16102556
+          Appearance.ColorMirrorCheckedTo = 16768988
+          Appearance.ColorMirrorDisabled = 11974326
+          Appearance.ColorMirrorDisabledTo = 15921906
+        end
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 240
+      Width = 1065
+      Height = 565
+      Align = alClient
+      TabOrder = 2
+      ExplicitTop = 246
+      ExplicitWidth = 1050
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1id_doc: TcxGridDBColumn
+          DataBinding.FieldName = 'id_doc'
+        end
+        object cxGrid1DBTableView1tipo_doc: TcxGridDBColumn
+          DataBinding.FieldName = 'tipo_doc'
+        end
+        object cxGrid1DBTableView1descripcion: TcxGridDBColumn
+          DataBinding.FieldName = 'descripcion'
+          Width = 350
+        end
+        object cxGrid1DBTableView1tipo_compra: TcxGridDBColumn
+          DataBinding.FieldName = 'tipo_compra'
+          Width = 100
+        end
+        object cxGrid1DBTableView1fecha_aprobacion: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_aprobacion'
+          Width = 100
+        end
+        object cxGrid1DBTableView1proveedor: TcxGridDBColumn
+          DataBinding.FieldName = 'proveedor'
+          Width = 100
+        end
+        object cxGrid1DBTableView1unidadid: TcxGridDBColumn
+          DataBinding.FieldName = 'unidadid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1importemn: TcxGridDBColumn
+          DataBinding.FieldName = 'importemn'
+        end
+        object cxGrid1DBTableView1importecuc: TcxGridDBColumn
+          DataBinding.FieldName = 'importecuc'
+        end
+        object cxGrid1DBTableView1registrado: TcxGridDBColumn
+          DataBinding.FieldName = 'registrado'
+          Width = 58
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+    object DBComboBox1: TDBComboBox
+      Left = 102
+      Top = 136
+      Width = 121
+      Height = 21
+      DataField = 'tipo_doc'
+      DataSource = DataSource1
+      Items.Strings = (
+        '711'
+        '712')
+      TabOrder = 1
+      OnChange = DBComboBox1Change
+    end
+  end
+  object Qcontrol711: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO control_doc'
+      
+        '  (id_doc, descripcion, importemn, importecuc, fecha_aprobacion,' +
+        ' tipo_compra, unidadid, tipo_doc, proveedor, registrado)'
+      'VALUES'
+      
+        '  (:id_doc, :descripcion, :importemn, :importecuc, :fecha_aproba' +
+        'cion, :tipo_compra, :unidadid, :tipo_doc, :proveedor, :registrad' +
+        'o)')
+    SQLDelete.Strings = (
+      'DELETE FROM control_doc'
+      'WHERE'
+      
+        '  id_doc = :Old_id_doc AND unidadid = :Old_unidadid AND tipo_doc' +
+        ' = :Old_tipo_doc')
+    SQLUpdate.Strings = (
+      'UPDATE control_doc'
+      'SET'
+      
+        '  id_doc = :id_doc, descripcion = :descripcion, importemn = :imp' +
+        'ortemn, importecuc = :importecuc, fecha_aprobacion = :fecha_apro' +
+        'bacion, tipo_compra = :tipo_compra, unidadid = :unidadid, tipo_d' +
+        'oc = :tipo_doc, proveedor = :proveedor, registrado = :registrado'
+      'WHERE'
+      
+        '  id_doc = :Old_id_doc AND unidadid = :Old_unidadid AND tipo_doc' +
+        ' = :Old_tipo_doc')
+    SQLRefresh.Strings = (
+      
+        'SELECT id_doc, descripcion, importemn, importecuc, fecha_aprobac' +
+        'ion, tipo_compra, unidadid, tipo_doc, proveedor, registrado FROM' +
+        ' control_doc'
+      'WHERE'
+      
+        '  id_doc = :id_doc AND unidadid = :unidadid AND tipo_doc = :tipo' +
+        '_doc')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from control_doc')
+    Active = True
+    Left = 120
+    Top = 344
+    object Qcontrol711id_doc: TStringField
+      FieldName = 'id_doc'
+      Required = True
+      Size = 10
+    end
+    object Qcontrol711descripcion: TStringField
+      DisplayLabel = 'Descripci'#243'n'
+      FieldName = 'descripcion'
+      Required = True
+      Size = 250
+    end
+    object Qcontrol711importemn: TFloatField
+      FieldName = 'importemn'
+    end
+    object Qcontrol711importecuc: TFloatField
+      FieldName = 'importecuc'
+    end
+    object Qcontrol711fecha_aprobacion: TDateField
+      DisplayLabel = 'Fecha de Aprobaci'#243'n'
+      FieldName = 'fecha_aprobacion'
+      Required = True
+    end
+    object Qcontrol711tipo_compra: TStringField
+      DisplayLabel = 'Tipo de Compra'
+      FieldName = 'tipo_compra'
+      Required = True
+      Size = 100
+    end
+    object Qcontrol711unidadid: TStringField
+      DisplayLabel = 'Unidad Org.'
+      FieldName = 'unidadid'
+      Required = True
+      Size = 3
+    end
+    object Qcontrol711tipo_doc: TFloatField
+      FieldName = 'tipo_doc'
+      Required = True
+    end
+    object Qcontrol711proveedor: TStringField
+      FieldName = 'proveedor'
+      Required = True
+      Size = 15
+    end
+    object Qcontrol711registrado: TStringField
+      FieldName = 'registrado'
+      Required = True
+      Size = 1
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qcontrol711
+    Left = 360
+    Top = 384
+  end
+  object UniQuery1: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from clientes')
+    Active = True
+    Left = 144
+    Top = 440
+    object UniQuery1clienteid: TStringField
+      FieldName = 'clienteid'
+      Required = True
+      Size = 15
+    end
+    object UniQuery1nombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 250
+    end
+    object UniQuery1organismoid: TStringField
+      FieldName = 'organismoid'
+      Required = True
+      Size = 10
+    end
+    object UniQuery1provinciaid: TStringField
+      FieldName = 'provinciaid'
+      Required = True
+      Size = 5
+    end
+    object UniQuery1telefono: TStringField
+      FieldName = 'telefono'
+      Size = 10
+    end
+    object UniQuery1fax: TStringField
+      FieldName = 'fax'
+      Size = 15
+    end
+    object UniQuery1correo: TStringField
+      FieldName = 'correo'
+      Size = 30
+    end
+    object UniQuery1nit: TStringField
+      FieldName = 'nit'
+      Required = True
+      Size = 15
+    end
+    object UniQuery1fecha_acr: TDateField
+      FieldName = 'fecha_acr'
+      Required = True
+    end
+    object UniQuery1tipo_cliente: TStringField
+      FieldName = 'tipo_cliente'
+      Required = True
+      Size = 15
+    end
+    object UniQuery1direccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 250
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = UniQuery1
+    Left = 296
+    Top = 480
+  end
+  object UniQuery2: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from unidades_organizativas')
+    Active = True
+    Left = 512
+    Top = 424
+    object UniQuery2unidadid: TStringField
+      FieldName = 'unidadid'
+      Required = True
+      Size = 3
+    end
+    object UniQuery2nombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 15
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = UniQuery2
+    Left = 448
+    Top = 496
+  end
+end

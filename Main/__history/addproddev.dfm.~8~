@@ -1,0 +1,323 @@
+object Faddproddev: TFaddproddev
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Faddproddev'
+  ClientHeight = 465
+  ClientWidth = 940
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 940
+    Height = 465
+    Align = alClient
+    TabOrder = 0
+    ExplicitHeight = 625
+    object Label1: TLabel
+      Left = 40
+      Top = 304
+      Width = 96
+      Height = 13
+      Caption = 'C'#243'digo del Contrato'
+    end
+    object Label2: TLabel
+      Left = 176
+      Top = 304
+      Width = 86
+      Height = 13
+      Caption = 'C'#243'digo del Cliente'
+    end
+    object Label3: TLabel
+      Left = 303
+      Top = 304
+      Width = 90
+      Height = 13
+      Caption = 'Nombre del Cliente'
+    end
+    object Label4: TLabel
+      Left = 40
+      Top = 285
+      Width = 136
+      Height = 13
+      Caption = 'Datos del Contrato y Cliente'
+    end
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 935
+      Height = 33
+      Buttons.CustomButtons = <>
+      Buttons.Insert.Enabled = False
+      Buttons.Insert.Visible = False
+      Buttons.Append.Enabled = False
+      Buttons.Append.Visible = False
+      Buttons.Delete.Enabled = False
+      Buttons.Delete.Visible = False
+      Buttons.Edit.Enabled = False
+      Buttons.Edit.Visible = False
+      Buttons.Post.Enabled = False
+      Buttons.Post.Visible = False
+      DataSource = DataSource1
+      Align = alTop
+      TabOrder = 0
+      ExplicitWidth = 737
+    end
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 33
+      Width = 940
+      Height = 224
+      Align = alTop
+      TabOrder = 1
+      ExplicitWidth = 755
+      object cxGrid1: TcxGrid
+        Left = 0
+        Top = 0
+        Width = 940
+        Height = 224
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 184
+        ExplicitTop = 56
+        ExplicitWidth = 250
+        ExplicitHeight = 200
+        object cxGrid1DBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          DataController.DataSource = DataSource1
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          object cxGrid1DBTableView1ubicacionid: TcxGridDBColumn
+            DataBinding.FieldName = 'ubicacionid'
+          end
+          object cxGrid1DBTableView1codigo_producto: TcxGridDBColumn
+            DataBinding.FieldName = 'codigo_producto'
+            Width = 100
+          end
+          object cxGrid1DBTableView1descripcion_producto: TcxGridDBColumn
+            DataBinding.FieldName = 'descripcion_producto'
+            Width = 200
+          end
+          object cxGrid1DBTableView1precio_cup: TcxGridDBColumn
+            DataBinding.FieldName = 'precio_cup'
+          end
+          object cxGrid1DBTableView1precio_cuc: TcxGridDBColumn
+            DataBinding.FieldName = 'precio_cuc'
+          end
+          object cxGrid1DBTableView1precio_usd: TcxGridDBColumn
+            DataBinding.FieldName = 'precio_usd'
+          end
+        end
+        object cxGrid1Level1: TcxGridLevel
+          GridView = cxGrid1DBTableView1
+        end
+      end
+    end
+    object cxDBLabel1: TcxDBLabel
+      Left = 40
+      Top = 323
+      DataBinding.DataField = 'codigo'
+      DataBinding.DataSource = DataSource2
+      Height = 21
+      Width = 121
+    end
+    object cxDBLabel2: TcxDBLabel
+      Left = 176
+      Top = 323
+      DataBinding.DataField = 'codcliente'
+      DataBinding.DataSource = DataSource2
+      Height = 21
+      Width = 121
+    end
+    object cxDBLabel3: TcxDBLabel
+      Left = 303
+      Top = 323
+      DataBinding.DataField = 'nombrecliente'
+      DataBinding.DataSource = DataSource2
+      Height = 21
+      Width = 362
+    end
+    object AdvSmoothButton1: TAdvSmoothButton
+      Left = 40
+      Top = 408
+      Width = 120
+      Height = 35
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Cancelar'
+      Color = 15590880
+      ParentFont = False
+      TabOrder = 5
+      Version = '2.1.3.0'
+      TMSStyle = 14
+    end
+    object AdvSmoothButton2: TAdvSmoothButton
+      Left = 792
+      Top = 408
+      Width = 120
+      Height = 35
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Cancelar'
+      Color = 15590880
+      ParentFont = False
+      TabOrder = 6
+      Version = '2.1.3.0'
+      TMSStyle = 14
+    end
+  end
+  object Qproductos: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from ubicacion')
+    Active = True
+    Left = 296
+    Top = 192
+    object Qproductosubicacionid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      DisplayLabel = 'Ubicaci'#243'n'
+      FieldName = 'ubicacionid'
+    end
+    object Qproductoscontratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object Qproductosclienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object Qproductosproductoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object Qproductosprecio_cup: TFloatField
+      DisplayLabel = 'Precio CUP'
+      FieldName = 'precio_cup'
+      Required = True
+    end
+    object Qproductosprecio_cuc: TFloatField
+      DisplayLabel = 'Precio CUC'
+      FieldName = 'precio_cuc'
+      Required = True
+    end
+    object Qproductosprecio_usd: TFloatField
+      DisplayLabel = 'Precio USD'
+      FieldName = 'precio_usd'
+    end
+    object Qproductoscodigo_producto: TStringField
+      DisplayLabel = 'C'#243'digo del Producto'
+      FieldName = 'codigo_producto'
+      Size = 15
+    end
+    object Qproductosdescripcion_producto: TStringField
+      DisplayLabel = 'Descripci'#243'n'
+      FieldName = 'descripcion_producto'
+      Size = 150
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qproductos
+    Left = 216
+    Top = 408
+  end
+  object UniQuery1: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select codigo,clienteid,'
+      
+        '(select codigo from clientes where clienteid=clienteid)as codcli' +
+        'ente,'
+      
+        '(select nombre from clientes where clienteid=clienteid)as nombre' +
+        'cliente'
+      'from contratos')
+    MasterSource = DataSource1
+    MasterFields = 'contratoid;clienteid'
+    DetailFields = 'codigo;clienteid'
+    Active = True
+    Left = 448
+    Top = 336
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'contratoid'
+        ParamType = ptInput
+        Value = 1
+      end
+      item
+        DataType = ftInteger
+        Name = 'clienteid'
+        ParamType = ptInput
+        Value = 1
+      end>
+    object UniQuery1codigo: TStringField
+      FieldName = 'codigo'
+      Required = True
+      Size = 15
+    end
+    object UniQuery1clienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object UniQuery1codcliente: TStringField
+      FieldName = 'codcliente'
+      ReadOnly = True
+      Size = 15
+    end
+    object UniQuery1nombrecliente: TStringField
+      FieldName = 'nombrecliente'
+      ReadOnly = True
+      Size = 250
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = UniQuery1
+    Left = 520
+    Top = 392
+  end
+end

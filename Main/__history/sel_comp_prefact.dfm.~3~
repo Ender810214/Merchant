@@ -1,0 +1,29 @@
+object Fsel_comp_prefact: TFsel_comp_prefact
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fsel_comp_prefact'
+  ClientHeight = 362
+  ClientWidth = 768
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 768
+    Height = 362
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 248
+    ExplicitTop = 192
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+  end
+end

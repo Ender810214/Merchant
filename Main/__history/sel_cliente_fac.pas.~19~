@@ -1,0 +1,64 @@
+unit sel_cliente_fac;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxStyles,cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, CurvyControls,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGrid, cxDBNavigator, AdvSmoothButton,
+  AdvSmoothLabel, MemDS, DBAccess, Uni, dxDateRanges;
+
+type
+  TFsel_Cliente_fac = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    CurvyPanel2: TCurvyPanel;
+    AdvSmoothLabel1: TAdvSmoothLabel;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1DBTableView1clienteid: TcxGridDBColumn;
+    cxGrid1DBTableView1nombre: TcxGridDBColumn;
+    cxGrid1DBTableView1organismoid: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_acr: TcxGridDBColumn;
+    cxGrid1DBTableView1tipo_cliente: TcxGridDBColumn;
+    cxGrid1DBTableView1codigo: TcxGridDBColumn;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fsel_Cliente_fac: TFsel_Cliente_fac;
+
+implementation
+  uses main,facturas;
+{$R *.dfm}
+
+procedure TFsel_Cliente_fac.AdvSmoothButton1Click(Sender: TObject);
+begin
+Ffacturas.UniQuery2clienteid.value:=ffacturas.Qclientes1clienteid.Value;
+ffacturas.UniQuery2
+Close;
+end;
+
+procedure TFsel_Cliente_fac.AdvSmoothButton2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFsel_Cliente_fac.FormCreate(Sender: TObject);
+begin
+Ffacturas.Qclientes1.Open;
+end;
+
+end.

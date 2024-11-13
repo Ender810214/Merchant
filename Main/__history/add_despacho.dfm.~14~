@@ -1,0 +1,158 @@
+object Fadd_despacho: TFadd_despacho
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fadd_despacho'
+  ClientHeight = 199
+  ClientWidth = 625
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 625
+    Height = 199
+    Align = alClient
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Top = 24
+      Width = 115
+      Height = 13
+      Caption = 'No. Orden de Despacho'
+      FocusControl = cxDBSpinEdit1
+    end
+    object Label2: TLabel
+      Left = 151
+      Top = 24
+      Width = 53
+      Height = 13
+      Caption = 'No. Cliente'
+    end
+    object Label3: TLabel
+      Left = 278
+      Top = 24
+      Width = 63
+      Height = 13
+      Caption = 'No. Contrato'
+    end
+    object Label4: TLabel
+      Left = 405
+      Top = 24
+      Width = 33
+      Height = 13
+      Caption = 'Estado'
+    end
+    object cxDBSpinEdit1: TcxDBSpinEdit
+      Left = 24
+      Top = 40
+      DataBinding.DataField = 'ordenid'
+      DataBinding.DataSource = FDespacho.DataSource1
+      TabOrder = 0
+      Width = 121
+    end
+    object AdvSmoothButton1: TAdvSmoothButton
+      Left = 24
+      Top = 128
+      Width = 120
+      Height = 35
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Aceptar'
+      Color = 15784647
+      ParentFont = False
+      TabOrder = 1
+      Version = '2.1.1.9'
+      OnClick = AdvSmoothButton1Click
+      TMSStyle = 13
+    end
+    object AdvSmoothButton2: TAdvSmoothButton
+      Left = 438
+      Top = 128
+      Width = 120
+      Height = 35
+      Appearance.Font.Charset = DEFAULT_CHARSET
+      Appearance.Font.Color = clBlack
+      Appearance.Font.Height = -11
+      Appearance.Font.Name = 'Tahoma'
+      Appearance.Font.Style = []
+      Status.Caption = '0'
+      Status.Appearance.Fill.Color = clRed
+      Status.Appearance.Fill.ColorMirror = clNone
+      Status.Appearance.Fill.ColorMirrorTo = clNone
+      Status.Appearance.Fill.GradientType = gtSolid
+      Status.Appearance.Fill.GradientMirrorType = gtSolid
+      Status.Appearance.Fill.BorderColor = clGray
+      Status.Appearance.Fill.Rounding = 0
+      Status.Appearance.Fill.ShadowOffset = 0
+      Status.Appearance.Fill.Glow = gmNone
+      Status.Appearance.Font.Charset = DEFAULT_CHARSET
+      Status.Appearance.Font.Color = clWhite
+      Status.Appearance.Font.Height = -11
+      Status.Appearance.Font.Name = 'Tahoma'
+      Status.Appearance.Font.Style = []
+      Caption = 'Cancelar'
+      Color = 15784647
+      ParentFont = False
+      TabOrder = 2
+      Version = '2.1.1.9'
+      OnClick = AdvSmoothButton2Click
+      TMSStyle = 13
+    end
+    object JvDBComboEdit1: TJvDBComboEdit
+      Left = 151
+      Top = 40
+      Width = 121
+      Height = 21
+      TabOrder = 3
+      OnButtonClick = JvComboEdit1ButtonClick
+    end
+    object JvDBComboEdit2: TJvDBComboEdit
+      Left = 278
+      Top = 40
+      Width = 121
+      Height = 21
+      TabOrder = 4
+      OnButtonClick = JvComboEdit2ButtonClick
+    end
+    object DBComboBox1: TDBComboBox
+      Left = 405
+      Top = 40
+      Width = 145
+      Height = 21
+      DataField = 'estado'
+      DataSource = FDespacho.DataSource1
+      Items.Strings = (
+        'En Proceso'
+        'Terminado'
+        'Cancelado')
+      TabOrder = 5
+    end
+  end
+end

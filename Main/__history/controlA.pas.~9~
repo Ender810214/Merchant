@@ -1,0 +1,73 @@
+unit controlA;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue,
+  dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
+  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, cxContainer, cxEdit, Vcl.StdCtrls, Vcl.Mask, JvExMask,
+  JvToolEdit, JvDBControls, cxLabel, cxDBLabel, cxTextEdit, cxMaskEdit,
+  cxDropDownEdit, cxCalc, cxDBEdit, Data.DB, cxNavigator, cxDBNavigator;
+
+type
+  TFcontrolA = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    DataSource2: TDataSource;
+    CurvyPanel3: TCurvyPanel;
+    cxDBLabel2: TcxDBLabel;
+    JvDBComboEdit1: TJvDBComboEdit;
+    DataSource3: TDataSource;
+    cxDBNavigator2: TcxDBNavigator;
+    Label4: TLabel;
+    JvDBComboEdit2: TJvDBComboEdit;
+    cxDBLabel1: TcxDBLabel;
+    procedure JvDBComboEdit1ButtonClick(Sender: TObject);
+    procedure JvDBComboEdit2ButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FcontrolA: TFcontrolA;
+
+implementation
+  uses main,sel_contrato,sel_productos;
+{$R *.dfm}
+
+procedure TFcontrolA.JvDBComboEdit1ButtonClick(Sender: TObject);
+begin
+Fsel_contrato:=TFsel_contrato.Create(Application);
+Fsel_contrato.ShowModal;
+end;
+
+procedure TFcontrolA.JvDBComboEdit2ButtonClick(Sender: TObject);
+begin
+ Fsel_producto:=TFsel_producto.Create(Application);
+ Fsel_producto.ShowModal;
+end;
+
+end.

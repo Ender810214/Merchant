@@ -1,0 +1,334 @@
+object Fcheques: TFcheques
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'Fcheques'
+  ClientHeight = 686
+  ClientWidth = 949
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 949
+    Height = 249
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Top = 109
+      Width = 137
+      Height = 13
+      Caption = 'No. Cheque O Transferencia'
+      FocusControl = cxDBCalcEdit1
+    end
+    object Label2: TLabel
+      Left = 164
+      Top = 109
+      Width = 55
+      Height = 13
+      Caption = 'No. factura'
+    end
+    object Label3: TLabel
+      Left = 291
+      Top = 106
+      Width = 76
+      Height = 13
+      Caption = 'Tipo de moneda'
+    end
+    object Label4: TLabel
+      Left = 418
+      Top = 109
+      Width = 56
+      Height = 13
+      Caption = 'Importe MN'
+      FocusControl = cxDBCalcEdit2
+    end
+    object Label5: TLabel
+      Left = 545
+      Top = 109
+      Width = 62
+      Height = 13
+      Caption = 'Importe CUC'
+      FocusControl = cxDBCalcEdit3
+    end
+    object Label6: TLabel
+      Left = 672
+      Top = 109
+      Width = 96
+      Height = 13
+      Caption = 'Fecha de Recepci'#243'n'
+      FocusControl = cxDBDateEdit1
+    end
+    object Label7: TLabel
+      Left = 799
+      Top = 106
+      Width = 52
+      Height = 13
+      Caption = 'Registrado'
+    end
+    object cxDBCalcEdit1: TcxDBCalcEdit
+      Left = 24
+      Top = 125
+      DataBinding.DataField = 'chequeid'
+      DataBinding.DataSource = DataSource1
+      TabOrder = 0
+      Width = 134
+    end
+    object cxDBCalcEdit2: TcxDBCalcEdit
+      Left = 418
+      Top = 125
+      DataBinding.DataField = 'importe_mn'
+      DataBinding.DataSource = DataSource1
+      TabOrder = 1
+      Width = 121
+    end
+    object cxDBCalcEdit3: TcxDBCalcEdit
+      Left = 545
+      Top = 125
+      DataBinding.DataField = 'importe_cuc'
+      DataBinding.DataSource = DataSource1
+      TabOrder = 2
+      Width = 121
+    end
+    object cxDBDateEdit1: TcxDBDateEdit
+      Left = 672
+      Top = 125
+      DataBinding.DataField = 'fecha_recepcion'
+      DataBinding.DataSource = DataSource1
+      TabOrder = 3
+      Width = 121
+    end
+    object cxDBSpinEdit1: TcxDBSpinEdit
+      Left = 164
+      Top = 125
+      DataBinding.DataField = 'facturaid'
+      DataBinding.DataSource = DataSource1
+      TabOrder = 4
+      Width = 121
+    end
+    object cxDBComboBox1: TcxDBComboBox
+      Left = 291
+      Top = 125
+      DataBinding.DataField = 'tipo_moneda'
+      DataBinding.DataSource = DataSource1
+      Properties.Items.Strings = (
+        'MN'
+        'CUC')
+      TabOrder = 5
+      Width = 121
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 949
+      Height = 100
+      Align = alTop
+      TabOrder = 6
+      DesignSize = (
+        949
+        100)
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 949
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        Align = alTop
+        TabOrder = 0
+        ExplicitWidth = 945
+      end
+      object AdvGlassButton1: TAdvGlassButton
+        Left = 846
+        Top = 47
+        Width = 100
+        Height = 32
+        Anchors = [akTop, akRight]
+        BackColor = clBlack
+        Caption = 'Registrar Cheque'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ForeColor = clWhite
+        GlowColor = 16760205
+        InnerBorderColor = clBlack
+        OuterBorderColor = clWhite
+        ParentFont = False
+        ShineColor = clWhite
+        TabOrder = 1
+        Version = '1.3.1.0'
+        OnClick = AdvGlassButton1Click
+      end
+    end
+    object cxDBComboBox2: TcxDBComboBox
+      Left = 799
+      Top = 125
+      DataBinding.DataField = 'registrado'
+      DataBinding.DataSource = DataSource1
+      Properties.Items.Strings = (
+        'S'
+        'N')
+      TabOrder = 7
+      Width = 121
+    end
+  end
+  object CurvyPanel2: TCurvyPanel
+    Left = 0
+    Top = 249
+    Width = 949
+    Height = 437
+    Align = alClient
+    TabOrder = 1
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 0
+      Width = 949
+      Height = 437
+      Align = alClient
+      TabOrder = 0
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1chequeid: TcxGridDBColumn
+          DataBinding.FieldName = 'chequeid'
+          Width = 74
+        end
+        object cxGrid1DBTableView1facturaid: TcxGridDBColumn
+          DataBinding.FieldName = 'facturaid'
+          Width = 89
+        end
+        object cxGrid1DBTableView1tipo_moneda: TcxGridDBColumn
+          DataBinding.FieldName = 'tipo_moneda'
+          Width = 104
+        end
+        object cxGrid1DBTableView1importe_mn: TcxGridDBColumn
+          DataBinding.FieldName = 'importe_mn'
+          Width = 87
+        end
+        object cxGrid1DBTableView1importe_cuc: TcxGridDBColumn
+          DataBinding.FieldName = 'importe_cuc'
+          Width = 87
+        end
+        object cxGrid1DBTableView1fecha_recepcion: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_recepcion'
+          Width = 106
+        end
+        object cxGrid1DBTableView1registrado: TcxGridDBColumn
+          DataBinding.FieldName = 'registrado'
+          Width = 83
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object Qcheques: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO control_cheques'
+      
+        '  (chequeid, facturaid, tipo_moneda, importe_mn, importe_cuc, fe' +
+        'cha_recepcion, registrado)'
+      'VALUES'
+      
+        '  (:chequeid, :facturaid, :tipo_moneda, :importe_mn, :importe_cu' +
+        'c, :fecha_recepcion, :registrado)')
+    SQLDelete.Strings = (
+      'DELETE FROM control_cheques'
+      'WHERE'
+      '  chequeid = :Old_chequeid AND facturaid = :Old_facturaid')
+    SQLUpdate.Strings = (
+      'UPDATE control_cheques'
+      'SET'
+      
+        '  chequeid = :chequeid, facturaid = :facturaid, tipo_moneda = :t' +
+        'ipo_moneda, importe_mn = :importe_mn, importe_cuc = :importe_cuc' +
+        ', fecha_recepcion = :fecha_recepcion, registrado = :registrado'
+      'WHERE'
+      '  chequeid = :Old_chequeid AND facturaid = :Old_facturaid')
+    SQLRefresh.Strings = (
+      
+        'SELECT chequeid, facturaid, tipo_moneda, importe_mn, importe_cuc' +
+        ', fecha_recepcion, registrado FROM control_cheques'
+      'WHERE'
+      '  chequeid = :chequeid AND facturaid = :facturaid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from control_cheques')
+    RefreshOptions = [roAfterInsert, roAfterUpdate]
+    Active = True
+    Left = 320
+    Top = 328
+    object Qchequeschequeid: TFloatField
+      DisplayLabel = 'No. Cheque'
+      FieldName = 'chequeid'
+      Required = True
+    end
+    object Qchequesfacturaid: TIntegerField
+      DisplayLabel = 'No. factura'
+      FieldName = 'facturaid'
+      Required = True
+    end
+    object Qchequestipo_moneda: TStringField
+      DisplayLabel = 'Tipo de moneda'
+      FieldName = 'tipo_moneda'
+      Required = True
+      Size = 3
+    end
+    object Qchequesimporte_mn: TFloatField
+      DisplayLabel = 'Importe MN'
+      FieldName = 'importe_mn'
+      Required = True
+    end
+    object Qchequesimporte_cuc: TFloatField
+      DisplayLabel = 'Importe CUC'
+      FieldName = 'importe_cuc'
+      Required = True
+    end
+    object Qchequesfecha_recepcion: TDateField
+      DisplayLabel = 'Fecha de Recepci'#243'n'
+      FieldName = 'fecha_recepcion'
+      Required = True
+    end
+    object Qchequesregistrado: TStringField
+      FieldName = 'registrado'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qcheques
+    Left = 464
+    Top = 328
+  end
+  object Qfacturas: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select facturaid from facturas')
+    Left = 592
+    Top = 441
+    object Qfacturasfacturaid: TIntegerField
+      FieldName = 'facturaid'
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = Qfacturas
+    Left = 448
+    Top = 424
+  end
+end

@@ -1,0 +1,152 @@
+unit control711;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxContainer, cxEdit, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinBlueprint,
+  dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
+  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, cxDropDownEdit, cxCalendar, cxDBEdit, cxTextEdit,
+  cxMaskEdit, cxSpinEdit, Vcl.StdCtrls, cxStyles, dxSkinscxPCPainter,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator, cxDBData, cxLabel,
+  cxDBLabel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxDBNavigator, cxCalc,
+  Vcl.DBCtrls, AdvGlowButton,
+  cxDataControllerConditionalFormattingRulesManagerDialog;
+
+type
+  TFcontrol711 = class(TForm)
+    Qcontrol711: TUniQuery;
+    Qcontrol711descripcion: TStringField;
+    Qcontrol711fecha_aprobacion: TDateField;
+    Qcontrol711tipo_compra: TStringField;
+    Qcontrol711unidadid: TStringField;
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel3: TCurvyPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    cxDBTextEdit1: TcxDBTextEdit;
+    Label3: TLabel;
+    cxDBDateEdit1: TcxDBDateEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    Label7: TLabel;
+    Label8: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    cxDBCalcEdit2: TcxDBCalcEdit;
+    Qcontrol711id_doc: TStringField;
+    Qcontrol711tipo_doc: TFloatField;
+    Label9: TLabel;
+    DBComboBox1: TDBComboBox;
+    cxDBTextEdit4: TcxDBTextEdit;
+    DataSource1: TDataSource;
+    UniQuery1: TUniQuery;
+    UniQuery1nombre: TStringField;
+    UniQuery1organismoid: TStringField;
+    UniQuery1provinciaid: TStringField;
+    UniQuery1telefono: TStringField;
+    UniQuery1fax: TStringField;
+    UniQuery1correo: TStringField;
+    UniQuery1nit: TStringField;
+    UniQuery1fecha_acr: TDateField;
+    UniQuery1tipo_cliente: TStringField;
+    UniQuery1direccion: TStringField;
+    DataSource2: TDataSource;
+    Qcontrol711importemn: TFloatField;
+    Qcontrol711importecuc: TFloatField;
+    cxGrid1DBTableView1id_doc: TcxGridDBColumn;
+    cxGrid1DBTableView1descripcion: TcxGridDBColumn;
+    cxGrid1DBTableView1importemn: TcxGridDBColumn;
+    cxGrid1DBTableView1importecuc: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_aprobacion: TcxGridDBColumn;
+    cxGrid1DBTableView1proveedor: TcxGridDBColumn;
+    cxGrid1DBTableView1tipo_compra: TcxGridDBColumn;
+    cxGrid1DBTableView1unidadid: TcxGridDBColumn;
+    cxGrid1DBTableView1tipo_doc: TcxGridDBColumn;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    UniQuery2: TUniQuery;
+    UniQuery2unidadid: TStringField;
+    UniQuery2nombre: TStringField;
+    DataSource3: TDataSource;
+    DBComboBox2: TDBComboBox;
+    Qcontrol711proveedor: TStringField;
+    cxGrid1DBTableView1registrado: TcxGridDBColumn;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    AdvGlowButton1: TAdvGlowButton;
+    Qcontrol711registrado: TStringField;
+    Qcontrol711facturaid: TFloatField;
+    Label10: TLabel;
+    cxDBCalcEdit3: TcxDBCalcEdit;
+    UniQuery1clienteid: TIntegerField;
+    UniQuery1codigo: TStringField;
+    procedure FormCreate(Sender: TObject);
+    procedure DBComboBox1Change(Sender: TObject);
+    procedure AdvGlowButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fcontrol711: TFcontrol711;
+
+implementation
+  uses main;
+{$R *.dfm}
+
+procedure TFcontrol711.AdvGlowButton1Click(Sender: TObject);
+begin
+if MessageDlg('Está a punto de registrar un documento, esta acción es irreversible, esta seguro(a) de querer continuar',mtconfirmation,[mbYes, mbNo],0,mbyes)= mryes then
+Begin
+  Qcontrol711.Edit;
+  Qcontrol711registrado.Value:='S';
+  Qcontrol711.post;
+End;
+
+
+end;
+
+procedure TFcontrol711.DBComboBox1Change(Sender: TObject);
+begin
+if DBComboBox1.ItemIndex=0 then
+begin
+cxDBCalcEdit1.Enabled:=false;
+cxDBCalcEdit2.Enabled:=true;
+end;
+if DBComboBox1.ItemIndex=1 then
+begin
+cxDBCalcEdit1.Enabled:=true;
+cxDBCalcEdit2.Enabled:=false;
+end;
+end;
+
+procedure TFcontrol711.FormCreate(Sender: TObject);
+begin
+Qcontrol711.Open;
+UniQuery1.Open;
+UniQuery2.Open;
+end;
+
+end.

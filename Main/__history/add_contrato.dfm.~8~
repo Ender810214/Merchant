@@ -1,0 +1,215 @@
+object fadd_contrato: Tfadd_contrato
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 295
+  ClientWidth = 594
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 594
+    Height = 295
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 240
+    ExplicitTop = 104
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 239
+      Width = 594
+      Height = 56
+      Align = alBottom
+      TabOrder = 0
+      ExplicitTop = 208
+      ExplicitWidth = 509
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 3
+        Top = 9
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Aceptar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.1.1.9'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 13
+      end
+      object AdvSmoothButton2: TAdvSmoothButton
+        Left = 458
+        Top = 9
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cancelar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 1
+        Version = '2.1.1.9'
+        OnClick = AdvSmoothButton2Click
+        TMSStyle = 13
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 0
+      Width = 594
+      Height = 239
+      Align = alClient
+      TabOrder = 1
+      ExplicitLeft = 160
+      ExplicitTop = 40
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1codigo: TcxGridDBColumn
+          DataBinding.FieldName = 'codigo'
+        end
+        object cxGrid1DBTableView1fecha_inicio: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_inicio'
+          Width = 62
+        end
+        object cxGrid1DBTableView1fecha_vencimiento: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_vencimiento'
+          Width = 108
+        end
+        object cxGrid1DBTableView1estado: TcxGridDBColumn
+          DataBinding.FieldName = 'estado'
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object Qcontratos: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO contratos'
+      
+        '  (contratoid, clienteid, tipo, fecha_inicio, fecha_vencimiento,' +
+        ' estado, monto_general, monto_cuc, monto_cup, codigo)'
+      'VALUES'
+      
+        '  (:contratoid, :clienteid, :tipo, :fecha_inicio, :fecha_vencimi' +
+        'ento, :estado, :monto_general, :monto_cuc, :monto_cup, :codigo)')
+    SQLDelete.Strings = (
+      'DELETE FROM contratos'
+      'WHERE'
+      '  contratoid = :Old_contratoid AND clienteid = :Old_clienteid')
+    SQLUpdate.Strings = (
+      'UPDATE contratos'
+      'SET'
+      
+        '  contratoid = :contratoid, clienteid = :clienteid, tipo = :tipo' +
+        ', fecha_inicio = :fecha_inicio, fecha_vencimiento = :fecha_venci' +
+        'miento, estado = :estado, monto_general = :monto_general, monto_' +
+        'cuc = :monto_cuc, monto_cup = :monto_cup, codigo = :codigo'
+      'WHERE'
+      '  contratoid = :Old_contratoid AND clienteid = :Old_clienteid')
+    SQLRefresh.Strings = (
+      
+        'SELECT contratoid, clienteid, tipo, fecha_inicio, fecha_vencimie' +
+        'nto, estado, monto_general, monto_cuc, monto_cup, codigo FROM co' +
+        'ntratos'
+      'WHERE'
+      '  contratoid = :contratoid AND clienteid = :clienteid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'Select * from contratos where clienteid=:clienteid')
+    Left = 144
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'clienteid'
+        Value = nil
+      end>
+    object Qcontratoscodigo: TStringField
+      FieldName = 'codigo'
+      Required = True
+      Size = 15
+    end
+    object Qcontratosfecha_inicio: TDateField
+      FieldName = 'fecha_inicio'
+      Required = True
+    end
+    object Qcontratosfecha_vencimiento: TDateField
+      FieldName = 'fecha_vencimiento'
+      Required = True
+    end
+    object Qcontratosestado: TStringField
+      FieldName = 'estado'
+      Required = True
+      Size = 10
+    end
+    object Qcontratoscontratoid: TIntegerField
+      FieldName = 'contratoid'
+    end
+    object Qcontratosclienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qcontratos
+    Left = 208
+    Top = 184
+  end
+end

@@ -1,0 +1,97 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 287
+  ClientWidth = 748
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 748
+    Height = 287
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 312
+    ExplicitTop = 88
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 216
+      Width = 748
+      Height = 71
+      Align = alBottom
+      TabOrder = 0
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 0
+      Width = 748
+      Height = 216
+      Align = alClient
+      TabOrder = 1
+      ExplicitLeft = 112
+      ExplicitTop = 56
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1codigo: TcxGridDBColumn
+          DataBinding.FieldName = 'codigo'
+        end
+        object cxGrid1DBTableView1nombre: TcxGridDBColumn
+          DataBinding.FieldName = 'nombre'
+          Width = 250
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object QClientes: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from clientes')
+    Left = 216
+    Top = 160
+    object QClientescodigo: TStringField
+      FieldName = 'codigo'
+      Required = True
+      Size = 15
+    end
+    object QClientesnombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 250
+    end
+    object QClientesorganismoid: TStringField
+      FieldName = 'organismoid'
+      Required = True
+      Size = 10
+    end
+    object QClientesprovinciaid: TStringField
+      FieldName = 'provinciaid'
+      Required = True
+      Size = 5
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = QClientes
+    Left = 136
+    Top = 112
+  end
+end

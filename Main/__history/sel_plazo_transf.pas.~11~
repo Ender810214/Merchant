@@ -1,0 +1,86 @@
+unit sel_plazo_transf;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, Data.DB, cxNavigator, cxDBNavigator, MemDS, DBAccess,
+  Uni, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
+  dxDateRanges, cxDBData, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid,
+  CurvyControls, AdvSmoothButton;
+
+type
+  TFsel_plazo_transf = class(TForm)
+    Qplazos: TUniQuery;
+    DataSource1: TDataSource;
+    CurvyPanel1: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    CurvyPanel2: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    Qplazoscontratoid: TIntegerField;
+    Qplazosclienteid: TIntegerField;
+    Qplazosanexoid: TIntegerField;
+    Qplazosplazoid: TIntegerField;
+    Qplazosproductoid: TIntegerField;
+    Qplazoscantidad_contratada: TFloatField;
+    Qplazosfecha_entrega: TDateField;
+    Qplazoscant_facturada: TIntegerField;
+    Qplazosnumero_factura: TIntegerField;
+    Qplazoscodcontrato: TStringField;
+    Qplazoscodcliente: TStringField;
+    Qplazoscodproducto: TStringField;
+    Qplazosposicion_anexo: TIntegerField;
+    Qplazoscant_entrada: TFloatField;
+    cxGrid1DBTableView1anexoid: TcxGridDBColumn;
+    cxGrid1DBTableView1cantidad_contratada: TcxGridDBColumn;
+    cxGrid1DBTableView1codcontrato: TcxGridDBColumn;
+    cxGrid1DBTableView1codcliente: TcxGridDBColumn;
+    cxGrid1DBTableView1codproducto: TcxGridDBColumn;
+    cxGrid1DBTableView1posicion_anexo: TcxGridDBColumn;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    cxGrid1DBTableView1fecha_entrega: TcxGridDBColumn;
+    UniQuery1: TUniQuery;
+    UniQuery1descripcion: TStringField;
+    UniQuery1productoid: TIntegerField;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fsel_plazo_transf: TFsel_plazo_transf;
+
+implementation
+
+{$R *.dfm}
+ uses main, transferencias;
+procedure TFsel_plazo_transf.AdvSmoothButton1Click(Sender: TObject);
+begin
+ FTransferencias.Qtransfplazoid.Value:=Qplazosplazoid.Value;
+ FTransferencias.Qplazos.Close;
+ FTransferencias.Qplazos.ParamByName('plazo').Value:=Qplazosplazoid.Value;
+ FTransferencias.Qplazos.ExecSQL;
+ FTransferencias.Qplazos.Open;
+ close;
+end;
+
+procedure TFsel_plazo_transf.AdvSmoothButton2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFsel_plazo_transf.FormCreate(Sender: TObject);
+begin
+Qplazos.Open;
+end;
+
+end.

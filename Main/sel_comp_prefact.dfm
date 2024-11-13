@@ -1,0 +1,199 @@
+object Fsel_comp_prefact: TFsel_comp_prefact
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Fsel_comp_prefact'
+  ClientHeight = 362
+  ClientWidth = 768
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnCreate = FormCreate
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 768
+    Height = 362
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    ExplicitLeft = 248
+    ExplicitTop = 192
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 304
+      Width = 768
+      Height = 58
+      Align = alBottom
+      Caption = ''
+      TabOrder = 0
+      DesignSize = (
+        768
+        58)
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 3
+        Top = 6
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Aceptar'
+        Color = 14922381
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 8
+      end
+      object AdvSmoothButton2: TAdvSmoothButton
+        Left = 640
+        Top = 6
+        Width = 120
+        Height = 35
+        Anchors = [akTop, akRight]
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cancelar'
+        Color = 14922381
+        ParentFont = False
+        TabOrder = 1
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton2Click
+        TMSStyle = 8
+      end
+    end
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 0
+      Width = 768
+      Height = 41
+      Buttons.CustomButtons = <>
+      Buttons.PriorPage.Visible = False
+      Buttons.NextPage.Visible = False
+      Buttons.Insert.Visible = False
+      Buttons.Delete.Visible = False
+      Buttons.Edit.Visible = False
+      Buttons.Post.Visible = False
+      Buttons.SaveBookmark.Visible = False
+      Buttons.GotoBookmark.Visible = False
+      DataSource = DataSource1
+      Align = alTop
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      ExplicitWidth = 763
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 41
+      Width = 768
+      Height = 263
+      Align = alClient
+      TabOrder = 2
+      ExplicitLeft = 264
+      ExplicitTop = 176
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1nombre_comprador: TcxGridDBColumn
+          DataBinding.FieldName = 'nombre_comprador'
+          Width = 300
+        end
+        object cxGrid1DBTableView1comprador_ci: TcxGridDBColumn
+          DataBinding.FieldName = 'comprador_ci'
+          Width = 150
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object UniQuery1: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from ficha_cliente')
+    MasterSource = Fprefacturas.DataSource1
+    MasterFields = 'clienteid'
+    DetailFields = 'clienteid'
+    Left = 360
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'clienteid'
+        Value = nil
+      end>
+    object UniQuery1clienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object UniQuery1nombre_comprador: TStringField
+      DisplayLabel = 'Nombre del Comprador'
+      FieldName = 'nombre_comprador'
+      Required = True
+      Size = 100
+    end
+    object UniQuery1comprador_ci: TStringField
+      DisplayLabel = 'Carnet de Identidad'
+      FieldName = 'comprador_ci'
+      Required = True
+      Size = 11
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 296
+    Top = 184
+  end
+end

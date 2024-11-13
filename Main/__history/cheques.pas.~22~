@@ -1,0 +1,86 @@
+unit cheques;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer,
+  cxEdit, dxSkinsCore,  cxNavigator, cxDBNavigator, cxCalendar, cxDBEdit,
+  cxSpinEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalc, Vcl.StdCtrls,
+  CurvyControls, Vcl.Mask, JvExMask, JvToolEdit, JvDBControls, cxStyles,
+  dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGrid, AdvGlassButton,
+  cxDataControllerConditionalFormattingRulesManagerDialog, dxDateRanges,
+  cxLabel, cxDBLabel;
+
+type
+  TFcheques = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    CurvyPanel3: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    AdvGlassButton1: TAdvGlassButton;
+    QPagos: TUniQuery;
+    QPagospagoid: TIntegerField;
+    QPagosno_cheque: TStringField;
+    QPagosfacturaid: TIntegerField;
+    QPagosclienteid: TIntegerField;
+    QPagoscod_cliente: TStringField;
+    QPagosimporte: TFloatField;
+    QPagosregistrado: TStringField;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    cxDBTextEdit1: TcxDBTextEdit;
+    Label2: TLabel;
+    cxDBSpinEdit1: TcxDBSpinEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    cxDBCalcEdit1: TcxDBCalcEdit;
+    Label5: TLabel;
+    cxDBLabel1: TcxDBLabel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1no_cheque: TcxGridDBColumn;
+    cxGrid1DBTableView1facturaid: TcxGridDBColumn;
+    cxGrid1DBTableView1cod_cliente: TcxGridDBColumn;
+    cxGrid1DBTableView1importe: TcxGridDBColumn;
+    cxGrid1DBTableView1registrado: TcxGridDBColumn;
+    cxDBLabel2: TcxDBLabel;
+    procedure AdvGlassButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fcheques: TFcheques;
+
+implementation
+
+{$R *.dfm}
+ uses main;
+procedure TFcheques.AdvGlassButton1Click(Sender: TObject);
+begin
+if QPagosregistrado.Value='N' then
+begin
+Qpagos.Edit;
+Qpagosregistrado.Value:='S';
+Qpagos.post;
+
+end
+else
+ShowMessage('El Registro seleccionado ya esta registrado.')
+
+end;
+
+procedure TFcheques.FormCreate(Sender: TObject);
+begin
+QPagos.Open;
+end;
+
+end.

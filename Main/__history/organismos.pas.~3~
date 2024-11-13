@@ -1,0 +1,25 @@
+unit organismos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls;
+
+type
+  TForganismos = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Forganismos: TForganismos;
+
+implementation
+  uses main;
+{$R *.dfm}
+
+end.

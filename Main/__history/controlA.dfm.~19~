@@ -1,0 +1,318 @@
+object FcontrolA: TFcontrolA
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'FcontrolA'
+  ClientHeight = 860
+  ClientWidth = 1128
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1128
+    Height = 860
+    Align = alClient
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 1128
+      Height = 145
+      Align = alTop
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 32
+        Top = 63
+        Width = 63
+        Height = 13
+        Caption = 'No. Contrato'
+      end
+      object Label2: TLabel
+        Left = 159
+        Top = 63
+        Width = 53
+        Height = 13
+        Caption = 'No. Cliente'
+      end
+      object Label3: TLabel
+        Left = 284
+        Top = 63
+        Width = 51
+        Height = 13
+        Caption = 'No. Anexo'
+        FocusControl = cxDBCalcEdit1
+      end
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 1125
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        Align = alTop
+        TabOrder = 0
+      end
+      object cxDBCalcEdit1: TcxDBCalcEdit
+        Left = 284
+        Top = 82
+        DataBinding.DataField = 'anexoid'
+        DataBinding.DataSource = DataSource1
+        TabOrder = 1
+        Width = 121
+      end
+      object cxDBLabel2: TcxDBLabel
+        Left = 157
+        Top = 82
+        DataBinding.DataField = 'clienteid'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 121
+      end
+      object JvDBComboEdit1: TJvDBComboEdit
+        Left = 32
+        Top = 82
+        Width = 121
+        Height = 21
+        DataField = 'contratoid'
+        DataSource = DataSource1
+        TabOrder = 3
+        OnButtonClick = JvDBComboEdit1ButtonClick
+      end
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 145
+      Width = 1128
+      Height = 392
+      Align = alTop
+      TabOrder = 1
+      object Label4: TLabel
+        Left = 32
+        Top = 61
+        Width = 94
+        Height = 13
+        Caption = 'C'#243'digo de Producto'
+      end
+      object Label5: TLabel
+        Left = 200
+        Top = 61
+        Width = 54
+        Height = 13
+        Caption = 'Descripci'#243'n'
+      end
+      object Label6: TLabel
+        Left = 535
+        Top = 61
+        Width = 53
+        Height = 13
+        Caption = 'Precio CUC'
+      end
+      object Label7: TLabel
+        Left = 639
+        Top = 61
+        Width = 52
+        Height = 13
+        Caption = 'Precio CUP'
+      end
+      object Label8: TLabel
+        Left = 743
+        Top = 61
+        Width = 85
+        Height = 13
+        Caption = 'Unidad de Medida'
+      end
+      object Label9: TLabel
+        Left = 847
+        Top = 61
+        Width = 19
+        Height = 13
+        Caption = 'UEB'
+      end
+      object cxDBNavigator2: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 1125
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource3
+        Align = alTop
+        TabOrder = 0
+      end
+      object JvDBComboEdit2: TJvDBComboEdit
+        Left = 32
+        Top = 80
+        Width = 145
+        Height = 21
+        DataField = 'productoid'
+        DataSource = DataSource3
+        TabOrder = 1
+        OnButtonClick = JvDBComboEdit2ButtonClick
+      end
+      object cxDBLabel1: TcxDBLabel
+        Left = 200
+        Top = 80
+        DataBinding.DataField = 'descripcion'
+        DataBinding.DataSource = Fmain.DataSource5
+        Height = 21
+        Width = 329
+      end
+      object cxDBLabel3: TcxDBLabel
+        Left = 535
+        Top = 80
+        DataBinding.DataField = 'precio_cuc'
+        DataBinding.DataSource = Fmain.DataSource5
+        Height = 21
+        Width = 98
+        AnchorX = 633
+      end
+      object cxDBLabel4: TcxDBLabel
+        Left = 639
+        Top = 80
+        DataBinding.DataField = 'precio_cup'
+        DataBinding.DataSource = Fmain.DataSource5
+        Height = 21
+        Width = 98
+        AnchorX = 737
+      end
+      object cxDBLabel5: TcxDBLabel
+        Left = 847
+        Top = 80
+        DataBinding.DataField = 'ueb'
+        DataBinding.DataSource = Fmain.DataSource5
+        Height = 21
+        Width = 98
+      end
+      object cxDBLabel6: TcxDBLabel
+        Left = 743
+        Top = 80
+        DataBinding.DataField = 'um'
+        DataBinding.DataSource = Fmain.DataSource5
+        Height = 21
+        Width = 98
+      end
+      object CurvyPanel5: TCurvyPanel
+        Left = 0
+        Top = 112
+        Width = 1128
+        Height = 280
+        Align = alBottom
+        TabOrder = 7
+        ExplicitTop = 192
+        object cxGrid1: TcxGrid
+          Left = 0
+          Top = 0
+          Width = 1128
+          Height = 280
+          Align = alClient
+          TabOrder = 0
+          ExplicitLeft = 200
+          ExplicitTop = 48
+          ExplicitWidth = 250
+          ExplicitHeight = 200
+          object cxGrid1DBTableView1: TcxGridDBTableView
+            Navigator.Buttons.CustomButtons = <>
+            DataController.DataSource = DataSource3
+            DataController.Summary.DefaultGroupSummaryItems = <>
+            DataController.Summary.FooterSummaryItems = <>
+            DataController.Summary.SummaryGroups = <>
+            object cxGrid1DBTableView1contratoid: TcxGridDBColumn
+              DataBinding.FieldName = 'contratoid'
+            end
+            object cxGrid1DBTableView1clienteid: TcxGridDBColumn
+              DataBinding.FieldName = 'clienteid'
+            end
+            object cxGrid1DBTableView1anexoid: TcxGridDBColumn
+              DataBinding.FieldName = 'anexoid'
+            end
+            object cxGrid1DBTableView1productoid: TcxGridDBColumn
+              DataBinding.FieldName = 'productoid'
+            end
+          end
+          object cxGrid1Level1: TcxGridLevel
+            GridView = cxGrid1DBTableView1
+          end
+        end
+      end
+    end
+    object CurvyPanel4: TCurvyPanel
+      Left = 0
+      Top = 537
+      Width = 1128
+      Height = 323
+      Align = alClient
+      TabOrder = 2
+      ExplicitHeight = 264
+      object Label10: TLabel
+        Left = 32
+        Top = 64
+        Width = 43
+        Height = 13
+        Caption = 'Cantidad'
+        FocusControl = cxDBCalcEdit2
+      end
+      object Label11: TLabel
+        Left = 159
+        Top = 64
+        Width = 29
+        Height = 13
+        Caption = 'Fecha'
+        FocusControl = cxDBDateEdit1
+      end
+      object cxDBNavigator3: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 1125
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource4
+        Align = alTop
+        TabOrder = 0
+      end
+      object cxDBCalcEdit2: TcxDBCalcEdit
+        Left = 32
+        Top = 80
+        DataBinding.DataField = 'cantidad_contratada'
+        DataBinding.DataSource = DataSource4
+        TabOrder = 1
+        Width = 121
+      end
+      object cxDBDateEdit1: TcxDBDateEdit
+        Left = 159
+        Top = 80
+        DataBinding.DataField = 'fecha_entrega'
+        DataBinding.DataSource = DataSource4
+        TabOrder = 2
+        Width = 121
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Fmain.Qanexos
+    Left = 880
+    Top = 88
+  end
+  object DataSource2: TDataSource
+    DataSet = Fmain.QContratos
+    Left = 880
+    Top = 160
+  end
+  object DataSource3: TDataSource
+    DataSet = Fmain.Qproductos_anexos
+    Left = 880
+    Top = 256
+  end
+  object DataSource4: TDataSource
+    DataSet = Fmain.Qplazos_entrega
+    Left = 872
+    Top = 360
+  end
+end

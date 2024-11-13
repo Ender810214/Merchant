@@ -1,0 +1,345 @@
+object Fprefacturas: TFprefacturas
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'Fprefacturas'
+  ClientHeight = 674
+  ClientWidth = 1044
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1044
+    Height = 674
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 944
+    ExplicitHeight = 648
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 1044
+      Height = 217
+      Align = alTop
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 66
+        Top = 95
+        Width = 71
+        Height = 13
+        Caption = 'No. Prefactura'
+      end
+      object Label2: TLabel
+        Left = 151
+        Top = 95
+        Width = 63
+        Height = 13
+        Caption = 'Id del Cliente'
+      end
+      object Label3: TLabel
+        Left = 278
+        Top = 95
+        Width = 73
+        Height = 13
+        Caption = 'Id del Contrato'
+        FocusControl = cxDBSpinEdit3
+      end
+      object Label4: TLabel
+        Left = 405
+        Top = 95
+        Width = 84
+        Height = 13
+        Caption = 'CI del Comprador'
+      end
+      object Label5: TLabel
+        Left = 532
+        Top = 95
+        Width = 100
+        Height = 13
+        Caption = 'Fecha de Confecci'#243'n'
+        FocusControl = cxDBDateEdit1
+      end
+      object Label6: TLabel
+        Left = 659
+        Top = 95
+        Width = 100
+        Height = 13
+        Caption = 'Importe de la Transp'
+        FocusControl = cxDBCalcEdit1
+      end
+      object CurvyPanel3: TCurvyPanel
+        Left = 0
+        Top = 0
+        Width = 1044
+        Height = 57
+        Align = alTop
+        TabOrder = 0
+        ExplicitWidth = 944
+        object AdvSmoothButton1: TAdvSmoothButton
+          Left = 3
+          Top = 16
+          Width = 120
+          Height = 35
+          Appearance.Font.Charset = DEFAULT_CHARSET
+          Appearance.Font.Color = clBlack
+          Appearance.Font.Height = -11
+          Appearance.Font.Name = 'Tahoma'
+          Appearance.Font.Style = []
+          Status.Caption = '0'
+          Status.Appearance.Fill.Color = clRed
+          Status.Appearance.Fill.ColorMirror = clNone
+          Status.Appearance.Fill.ColorMirrorTo = clNone
+          Status.Appearance.Fill.GradientType = gtSolid
+          Status.Appearance.Fill.GradientMirrorType = gtSolid
+          Status.Appearance.Fill.BorderColor = clGray
+          Status.Appearance.Fill.Rounding = 0
+          Status.Appearance.Fill.ShadowOffset = 0
+          Status.Appearance.Fill.Glow = gmNone
+          Status.Appearance.Font.Charset = DEFAULT_CHARSET
+          Status.Appearance.Font.Color = clWhite
+          Status.Appearance.Font.Height = -11
+          Status.Appearance.Font.Name = 'Tahoma'
+          Status.Appearance.Font.Style = []
+          Caption = 'A'#241'adir Producto'
+          Color = 15784647
+          ParentFont = False
+          TabOrder = 0
+          Version = '2.1.3.0'
+          OnClick = AdvSmoothButton1Click
+          TMSStyle = 13
+        end
+        object AdvSmoothButton2: TAdvSmoothButton
+          Left = 803
+          Top = 16
+          Width = 120
+          Height = 35
+          Appearance.Font.Charset = DEFAULT_CHARSET
+          Appearance.Font.Color = clBlack
+          Appearance.Font.Height = -11
+          Appearance.Font.Name = 'Tahoma'
+          Appearance.Font.Style = []
+          Status.Caption = '0'
+          Status.Appearance.Fill.Color = clRed
+          Status.Appearance.Fill.ColorMirror = clNone
+          Status.Appearance.Fill.ColorMirrorTo = clNone
+          Status.Appearance.Fill.GradientType = gtSolid
+          Status.Appearance.Fill.GradientMirrorType = gtSolid
+          Status.Appearance.Fill.BorderColor = clGray
+          Status.Appearance.Fill.Rounding = 0
+          Status.Appearance.Fill.ShadowOffset = 0
+          Status.Appearance.Fill.Glow = gmNone
+          Status.Appearance.Font.Charset = DEFAULT_CHARSET
+          Status.Appearance.Font.Color = clWhite
+          Status.Appearance.Font.Height = -11
+          Status.Appearance.Font.Name = 'Tahoma'
+          Status.Appearance.Font.Style = []
+          Caption = 'Convertir en Faxtura'
+          Color = 15784647
+          ParentFont = False
+          TabOrder = 1
+          Visible = False
+          Version = '2.1.3.0'
+          TMSStyle = 13
+        end
+      end
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 57
+        Width = 1035
+        Height = 32
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        Align = alTop
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        ExplicitWidth = 930
+      end
+      object cxDBSpinEdit3: TcxDBSpinEdit
+        Left = 278
+        Top = 111
+        DataBinding.DataField = 'contratoid'
+        DataBinding.DataSource = DataSource2
+        TabOrder = 2
+        Width = 121
+      end
+      object cxDBDateEdit1: TcxDBDateEdit
+        Left = 532
+        Top = 111
+        DataBinding.DataField = 'fecha'
+        DataBinding.DataSource = DataSource2
+        TabOrder = 3
+        Width = 121
+      end
+      object cxDBCalcEdit1: TcxDBCalcEdit
+        Left = 659
+        Top = 111
+        DataBinding.DataField = 'transp_mn'
+        DataBinding.DataSource = DataSource2
+        TabOrder = 4
+        Width = 121
+      end
+      object cxDBButtonEdit1: TcxDBButtonEdit
+        Left = 151
+        Top = 111
+        DataBinding.DataField = 'clienteid'
+        DataBinding.DataSource = DataSource1
+        Properties.Buttons = <
+          item
+            Default = True
+            Kind = bkEllipsis
+          end>
+        Properties.OnButtonClick = cxDBButtonEdit1PropertiesButtonClick
+        TabOrder = 5
+        Width = 121
+      end
+      object cxDBButtonEdit2: TcxDBButtonEdit
+        Left = 405
+        Top = 111
+        DataBinding.DataField = 'compradorid'
+        DataBinding.DataSource = DataSource1
+        Properties.Buttons = <
+          item
+            Default = True
+            Kind = bkEllipsis
+          end>
+        Properties.OnButtonClick = cxDBButtonEdit2PropertiesButtonClick
+        TabOrder = 6
+        Width = 121
+      end
+      object cxDBLabel1: TcxDBLabel
+        Left = 24
+        Top = 111
+        DataBinding.DataField = 'prefacturaid'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 113
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 217
+      Width = 1044
+      Height = 457
+      Align = alClient
+      TabOrder = 1
+      ExplicitTop = 257
+      ExplicitWidth = 944
+      ExplicitHeight = 391
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1prefacturaid: TcxGridDBColumn
+          Caption = 'No. Pre Factura'
+          DataBinding.FieldName = 'prefacturaid'
+        end
+        object cxGrid1DBTableView1clienteid: TcxGridDBColumn
+          DataBinding.FieldName = 'clienteid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1contratoid: TcxGridDBColumn
+          DataBinding.FieldName = 'contratoid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1compradorid: TcxGridDBColumn
+          DataBinding.FieldName = 'compradorid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1fecha: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha'
+          Width = 118
+        end
+        object cxGrid1DBTableView1transp_mn: TcxGridDBColumn
+          DataBinding.FieldName = 'transp_mn'
+          Width = 106
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 448
+    Top = 312
+  end
+  object UniQuery1: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO prefacturas'
+      '  ( clienteid, contratoid, compradorid, fecha, transp_mn)'
+      'VALUES'
+      '  ( :clienteid, :contratoid, :compradorid, :fecha, :transp_mn)')
+    SQLDelete.Strings = (
+      'DELETE FROM prefacturas'
+      'WHERE'
+      '  prefacturaid = :Old_prefacturaid')
+    SQLUpdate.Strings = (
+      'UPDATE prefacturas'
+      'SET'
+      
+        '  prefacturaid = :prefacturaid, clienteid = :clienteid, contrato' +
+        'id = :contratoid, compradorid = :compradorid, fecha = :fecha, tr' +
+        'ansp_mn = :transp_mn'
+      'WHERE'
+      '  prefacturaid = :Old_prefacturaid')
+    SQLRefresh.Strings = (
+      
+        'SELECT prefacturaid, clienteid, contratoid, compradorid, fecha, ' +
+        'transp_mn FROM prefacturas'
+      'WHERE'
+      '  prefacturaid = :prefacturaid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from prefacturas')
+    Left = 512
+    Top = 320
+    object UniQuery1prefacturaid: TIntegerField
+      FieldName = 'prefacturaid'
+    end
+    object UniQuery1clienteid: TIntegerField
+      DisplayLabel = 'Id del Cliente'
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object UniQuery1contratoid: TIntegerField
+      DisplayLabel = 'Id del Contrato'
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object UniQuery1compradorid: TStringField
+      DisplayLabel = 'CI del Comprador'
+      FieldName = 'compradorid'
+      Required = True
+      Size = 11
+    end
+    object UniQuery1fecha: TDateField
+      DisplayLabel = 'Fecha de Confecci'#243'n'
+      FieldName = 'fecha'
+      Required = True
+    end
+    object UniQuery1transp_mn: TFloatField
+      DisplayLabel = 'Importe de la Transp'
+      FieldName = 'transp_mn'
+      Required = True
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = UniQuery1
+    Left = 600
+    Top = 328
+  end
+end

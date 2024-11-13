@@ -1,0 +1,24 @@
+unit provincias;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFProvincias = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FProvincias: TFProvincias;
+
+implementation
+
+{$R *.dfm}
+  uses main;
+end.

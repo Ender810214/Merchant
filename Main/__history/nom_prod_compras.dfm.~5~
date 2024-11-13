@@ -1,0 +1,105 @@
+object Fnom_prod_compras: TFnom_prod_compras
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  ClientHeight = 819
+  ClientWidth = 1076
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 1076
+    Height = 819
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 616
+    ExplicitTop = 408
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 1076
+      Height = 57
+      Align = alTop
+      TabOrder = 0
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 1065
+        Height = 57
+        Buttons.CustomButtons = <>
+        Align = alTop
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 57
+      Width = 1076
+      Height = 762
+      Align = alClient
+      TabOrder = 1
+      ExplicitLeft = 320
+      ExplicitTop = 184
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1codum: TcxGridDBColumn
+          DataBinding.FieldName = 'codum'
+          Width = 100
+        end
+        object cxGrid1DBTableView1descripcion: TcxGridDBColumn
+          DataBinding.FieldName = 'descripcion'
+          Width = 300
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object QCompras_UM: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from compras.unidades_medida')
+    Left = 648
+    Top = 472
+    object QCompras_UMumid: TIntegerField
+      FieldName = 'umid'
+    end
+    object QCompras_UMcodum: TStringField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'codum'
+      Required = True
+      Size = 5
+    end
+    object QCompras_UMdescripcion: TStringField
+      DisplayLabel = 'Descripci'#243'n'
+      FieldName = 'descripcion'
+      Required = True
+      Size = 25
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = QCompras_UM
+    Left = 536
+    Top = 512
+  end
+end

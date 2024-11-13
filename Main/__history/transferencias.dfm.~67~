@@ -1,0 +1,1088 @@
+object FTransferencias: TFTransferencias
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'FTransferencias'
+  ClientHeight = 860
+  ClientWidth = 890
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnCreate = FormCreate
+  TextHeight = 13
+  object Label8: TLabel
+    Left = 24
+    Top = 200
+    Width = 86
+    Height = 13
+    Caption = 'No. Transferencia'
+  end
+  object Label9: TLabel
+    Left = 151
+    Top = 200
+    Width = 45
+    Height = 13
+    Caption = 'Ubicacion'
+  end
+  object Label10: TLabel
+    Left = 278
+    Top = 200
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'd. Contrato'
+  end
+  object Label11: TLabel
+    Left = 405
+    Top = 200
+    Width = 59
+    Height = 13
+    Caption = 'C'#243'd. Cliente'
+  end
+  object Label12: TLabel
+    Left = 532
+    Top = 200
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'd. Producto'
+  end
+  object Label13: TLabel
+    Left = 32
+    Top = 96
+    Width = 86
+    Height = 13
+    Caption = 'No. Transferencia'
+  end
+  object Label14: TLabel
+    Left = 159
+    Top = 96
+    Width = 45
+    Height = 13
+    Caption = 'Ubicacion'
+  end
+  object Label15: TLabel
+    Left = 286
+    Top = 96
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'd. Contrato'
+  end
+  object Label16: TLabel
+    Left = 413
+    Top = 96
+    Width = 59
+    Height = 13
+    Caption = 'C'#243'd. Cliente'
+  end
+  object Label17: TLabel
+    Left = 540
+    Top = 96
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'd. Producto'
+  end
+  object Label24: TLabel
+    Left = 401
+    Top = 182
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'digo Cliente'
+  end
+  object Label25: TLabel
+    Left = 488
+    Top = 182
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Contrato'
+  end
+  object Label26: TLabel
+    Left = 619
+    Top = 182
+    Width = 38
+    Height = 13
+    Caption = 'Posici'#243'n'
+  end
+  object Label27: TLabel
+    Left = 663
+    Top = 182
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Producto'
+  end
+  object Label28: TLabel
+    Left = 748
+    Top = 182
+    Width = 54
+    Height = 13
+    Caption = 'Descripci'#243'n'
+  end
+  object Label29: TLabel
+    Left = 282
+    Top = 96
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'digo Cliente'
+  end
+  object Label30: TLabel
+    Left = 369
+    Top = 96
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Contrato'
+  end
+  object Label31: TLabel
+    Left = 500
+    Top = 96
+    Width = 38
+    Height = 13
+    Caption = 'Posici'#243'n'
+  end
+  object Label32: TLabel
+    Left = 544
+    Top = 96
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Producto'
+  end
+  object Label33: TLabel
+    Left = 629
+    Top = 96
+    Width = 54
+    Height = 13
+    Caption = 'Descripci'#243'n'
+  end
+  object Label34: TLabel
+    Left = 290
+    Top = 104
+    Width = 69
+    Height = 13
+    Caption = 'C'#243'digo Cliente'
+  end
+  object Label35: TLabel
+    Left = 377
+    Top = 104
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Contrato'
+  end
+  object Label36: TLabel
+    Left = 508
+    Top = 104
+    Width = 38
+    Height = 13
+    Caption = 'Posici'#243'n'
+  end
+  object Label37: TLabel
+    Left = 552
+    Top = 104
+    Width = 79
+    Height = 13
+    Caption = 'C'#243'digo Producto'
+  end
+  object Label38: TLabel
+    Left = 637
+    Top = 104
+    Width = 54
+    Height = 13
+    Caption = 'Descripci'#243'n'
+  end
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 890
+    Height = 860
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 890
+      Height = 329
+      Align = alTop
+      Caption = ''
+      TabOrder = 0
+      object Label7: TLabel
+        Left = 20
+        Top = 140
+        Width = 281
+        Height = 19
+        Caption = 'Datos de Destino de Transferencia'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 20
+        Top = 63
+        Width = 273
+        Height = 19
+        Caption = 'Datos de Origen de Transferencia'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 20
+        Top = 88
+        Width = 80
+        Height = 13
+        Caption = 'ID Transferencia'
+      end
+      object Label2: TLabel
+        Left = 147
+        Top = 88
+        Width = 110
+        Height = 13
+        Caption = 'Id de Ubicacion Fuente'
+      end
+      object Label4: TLabel
+        Left = 20
+        Top = 181
+        Width = 77
+        Height = 13
+        Caption = 'ID Plazo destino'
+      end
+      object Label5: TLabel
+        Left = 629
+        Top = 178
+        Width = 102
+        Height = 13
+        Caption = 'Cantidad a Transferir'
+        FocusControl = cxDBCalcEdit2
+      end
+      object Label6: TLabel
+        Left = 544
+        Top = 224
+        Width = 33
+        Height = 13
+        Caption = 'Estado'
+      end
+      object Label18: TLabel
+        Left = 274
+        Top = 88
+        Width = 69
+        Height = 13
+        Caption = 'C'#243'digo Cliente'
+      end
+      object Label19: TLabel
+        Left = 361
+        Top = 88
+        Width = 79
+        Height = 13
+        Caption = 'C'#243'digo Contrato'
+      end
+      object Label20: TLabel
+        Left = 455
+        Top = 88
+        Width = 31
+        Height = 13
+        Caption = 'Anexo'
+      end
+      object Label21: TLabel
+        Left = 492
+        Top = 88
+        Width = 38
+        Height = 13
+        Caption = 'Posici'#243'n'
+      end
+      object Label22: TLabel
+        Left = 536
+        Top = 88
+        Width = 79
+        Height = 13
+        Caption = 'C'#243'digo Producto'
+      end
+      object Label23: TLabel
+        Left = 621
+        Top = 88
+        Width = 54
+        Height = 13
+        Caption = 'Descripci'#243'n'
+      end
+      object Label39: TLabel
+        Left = 159
+        Top = 178
+        Width = 69
+        Height = 13
+        Caption = 'C'#243'digo Cliente'
+      end
+      object Label40: TLabel
+        Left = 246
+        Top = 178
+        Width = 79
+        Height = 13
+        Caption = 'C'#243'digo Contrato'
+      end
+      object Label41: TLabel
+        Left = 377
+        Top = 178
+        Width = 38
+        Height = 13
+        Caption = 'Posici'#243'n'
+      end
+      object Label42: TLabel
+        Left = 421
+        Top = 178
+        Width = 79
+        Height = 13
+        Caption = 'C'#243'digo Producto'
+      end
+      object Label44: TLabel
+        Left = 336
+        Top = 178
+        Width = 31
+        Height = 13
+        Caption = 'Anexo'
+      end
+      object Label43: TLabel
+        Left = 506
+        Top = 178
+        Width = 101
+        Height = 13
+        Caption = 'Cantidad Contratada'
+      end
+      object Label45: TLabel
+        Left = 643
+        Top = 224
+        Width = 87
+        Height = 13
+        Caption = 'Fecha de Registro'
+        FocusControl = cxDBDateEdit1
+      end
+      object Label46: TLabel
+        Left = 246
+        Top = 224
+        Width = 86
+        Height = 13
+        Caption = 'Nuevo Precio USD'
+      end
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 885
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = cxdbbuu
+        Align = alTop
+        TabOrder = 0
+      end
+      object CurvyPanel3: TCurvyPanel
+        Left = 0
+        Top = 280
+        Width = 890
+        Height = 49
+        Align = alBottom
+        Caption = ''
+        TabOrder = 1
+        object AdvSmoothButton1: TAdvSmoothButton
+          Left = 748
+          Top = 3
+          Width = 120
+          Height = 35
+          Appearance.Font.Charset = DEFAULT_CHARSET
+          Appearance.Font.Color = clBlack
+          Appearance.Font.Height = -11
+          Appearance.Font.Name = 'Tahoma'
+          Appearance.Font.Style = []
+          Appearance.SimpleLayout = False
+          Status.Caption = '0'
+          Status.Appearance.Fill.Color = clRed
+          Status.Appearance.Fill.ColorMirror = clNone
+          Status.Appearance.Fill.ColorMirrorTo = clNone
+          Status.Appearance.Fill.GradientType = gtSolid
+          Status.Appearance.Fill.GradientMirrorType = gtSolid
+          Status.Appearance.Fill.BorderColor = clGray
+          Status.Appearance.Fill.Rounding = 0
+          Status.Appearance.Fill.ShadowOffset = 0
+          Status.Appearance.Fill.Glow = gmNone
+          Status.Appearance.Font.Charset = DEFAULT_CHARSET
+          Status.Appearance.Font.Color = clWhite
+          Status.Appearance.Font.Height = -11
+          Status.Appearance.Font.Name = 'Tahoma'
+          Status.Appearance.Font.Style = []
+          Caption = 'Reg. Tranferencia'
+          Color = 14922381
+          ParentFont = False
+          TabOrder = 0
+          Version = '2.2.3.1'
+          OnClick = AdvSmoothButton1Click
+          TMSStyle = 8
+        end
+        object AdvSmoothButton2: TAdvSmoothButton
+          Left = 20
+          Top = 11
+          Width = 141
+          Height = 35
+          Appearance.Font.Charset = DEFAULT_CHARSET
+          Appearance.Font.Color = clBlack
+          Appearance.Font.Height = -11
+          Appearance.Font.Name = 'Tahoma'
+          Appearance.Font.Style = []
+          Appearance.SimpleLayout = False
+          Status.Caption = '0'
+          Status.Appearance.Fill.Color = clRed
+          Status.Appearance.Fill.ColorMirror = clNone
+          Status.Appearance.Fill.ColorMirrorTo = clNone
+          Status.Appearance.Fill.GradientType = gtSolid
+          Status.Appearance.Fill.GradientMirrorType = gtSolid
+          Status.Appearance.Fill.BorderColor = clGray
+          Status.Appearance.Fill.Rounding = 0
+          Status.Appearance.Fill.ShadowOffset = 0
+          Status.Appearance.Fill.Glow = gmNone
+          Status.Appearance.Font.Charset = DEFAULT_CHARSET
+          Status.Appearance.Font.Color = clWhite
+          Status.Appearance.Font.Height = -11
+          Status.Appearance.Font.Name = 'Segoe UI'
+          Status.Appearance.Font.Style = []
+          Caption = 'Revertir Transferencia'
+          Color = 15784647
+          ParentFont = False
+          TabOrder = 1
+          Version = '2.2.3.1'
+          OnClick = AdvSmoothButton2Click
+          UIStyle = tsOffice2010Blue
+          TMSStyle = 13
+        end
+      end
+      object cxDBCalcEdit2: TcxDBCalcEdit
+        Left = 629
+        Top = 197
+        DataBinding.DataField = 'cantidad_transf'
+        DataBinding.DataSource = cxdbbuu
+        TabOrder = 2
+        Width = 121
+      end
+      object cxDBLabel1: TcxDBLabel
+        Left = 20
+        Top = 104
+        DataBinding.DataField = 'transferenciaid'
+        DataBinding.DataSource = cxdbbuu
+        Height = 21
+        Width = 121
+      end
+      object cxDBButtonEdit1: TcxDBButtonEdit
+        Left = 147
+        Top = 107
+        DataBinding.DataField = 'ubicacionf'
+        DataBinding.DataSource = cxdbbuu
+        Properties.Buttons = <
+          item
+            Default = True
+            Kind = bkEllipsis
+          end>
+        Properties.OnButtonClick = cxDBButtonEdit1PropertiesButtonClick
+        TabOrder = 4
+        Width = 121
+      end
+      object cxDBLabel2: TcxDBLabel
+        Left = 274
+        Top = 107
+        DataBinding.DataField = 'codcliente'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 81
+      end
+      object cxDBLabel3: TcxDBLabel
+        Left = 360
+        Top = 107
+        DataBinding.DataField = 'codcontrato'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 88
+      end
+      object cxDBLabel4: TcxDBLabel
+        Left = 454
+        Top = 107
+        DataBinding.DataField = 'anexo'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 31
+      end
+      object cxDBLabel5: TcxDBLabel
+        Left = 491
+        Top = 107
+        DataBinding.DataField = 'posicion_anexo'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 38
+      end
+      object cxDBLabel6: TcxDBLabel
+        Left = 535
+        Top = 107
+        DataBinding.DataField = 'codigo_producto'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 81
+      end
+      object cxDBLabel7: TcxDBLabel
+        Left = 621
+        Top = 107
+        DataBinding.DataField = 'descripcion_producto'
+        DataBinding.DataSource = DataSource1
+        Height = 21
+        Width = 234
+      end
+      object cxDBButtonEdit2: TcxDBButtonEdit
+        Left = 20
+        Top = 200
+        DataBinding.DataField = 'plazoid'
+        DataBinding.DataSource = cxdbbuu
+        Properties.Buttons = <
+          item
+            Default = True
+            Kind = bkEllipsis
+          end>
+        Properties.OnButtonClick = cxDBButtonEdit2PropertiesButtonClick
+        TabOrder = 11
+        Width = 121
+      end
+      object cxDBDateEdit1: TcxDBDateEdit
+        Left = 643
+        Top = 243
+        DataBinding.DataField = 'fecha'
+        DataBinding.DataSource = cxdbbuu
+        TabOrder = 12
+        Width = 121
+      end
+      object Edit1: TEdit
+        Left = 246
+        Top = 243
+        Width = 121
+        Height = 21
+        TabOrder = 13
+        Visible = False
+      end
+      object CheckBox1: TCheckBox
+        Left = 20
+        Top = 245
+        Width = 220
+        Height = 17
+        Caption = 'Cambio de Precio USD para Exportaci'#243'n'
+        TabOrder = 14
+        OnClick = CheckBox1Click
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 329
+      Width = 890
+      Height = 531
+      Align = alClient
+      TabOrder = 1
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = cxdbbuu
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        OptionsData.Editing = False
+        object cxGrid1DBTableView1transferenciaid: TcxGridDBColumn
+          DataBinding.FieldName = 'transferenciaid'
+          Width = 106
+        end
+        object cxGrid1DBTableView1ubicacionf: TcxGridDBColumn
+          DataBinding.FieldName = 'ubicacionf'
+          Width = 132
+        end
+        object cxGrid1DBTableView1plazoid: TcxGridDBColumn
+          DataBinding.FieldName = 'plazoid'
+          Width = 88
+        end
+        object cxGrid1DBTableView1cantidad_transf: TcxGridDBColumn
+          DataBinding.FieldName = 'cantidad_transf'
+          Width = 108
+        end
+        object cxGrid1DBTableView1estado: TcxGridDBColumn
+          DataBinding.FieldName = 'estado'
+          Width = 69
+        end
+        object cxGrid1DBTableView1fecha: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha'
+          Width = 93
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object cxDBLabel8: TcxDBLabel
+    Left = 159
+    Top = 197
+    DataBinding.DataField = 'codcliente'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 81
+  end
+  object cxDBLabel9: TcxDBLabel
+    Left = 245
+    Top = 197
+    DataBinding.DataField = 'codcontrato'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 88
+  end
+  object cxDBLabel10: TcxDBLabel
+    Left = 339
+    Top = 197
+    DataBinding.DataField = 'anexoid'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 31
+  end
+  object cxDBLabel11: TcxDBLabel
+    Left = 376
+    Top = 197
+    DataBinding.DataField = 'posicion_anexo'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 38
+  end
+  object cxDBLabel12: TcxDBLabel
+    Left = 420
+    Top = 197
+    DataBinding.DataField = 'codproducto'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 81
+  end
+  object cxDBLabel13: TcxDBLabel
+    Left = 506
+    Top = 197
+    DataBinding.DataField = 'cantidad_contratada'
+    DataBinding.DataSource = DataSource2
+    Height = 21
+    Width = 81
+  end
+  object cxDBLabel14: TcxDBLabel
+    Left = 544
+    Top = 243
+    DataBinding.DataField = 'estado'
+    DataBinding.DataSource = cxdbbuu
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clRed
+    Style.Font.Height = -16
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+    Height = 21
+    Width = 81
+  end
+  object Qtransf: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO tranf_contratos'
+      '  ( ubicacionf, plazoid, cantidad_transf, estado, fecha)'
+      'VALUES'
+      '  (:ubicacionf, :plazoid, :cantidad_transf, :estado, :fecha)')
+    SQLDelete.Strings = (
+      'DELETE FROM tranf_contratos'
+      'WHERE'
+      '  transferenciaid = :Old_transferenciaid')
+    SQLUpdate.Strings = (
+      'UPDATE tranf_contratos'
+      'SET'
+      
+        '  transferenciaid = :transferenciaid, ubicacionf = :ubicacionf, ' +
+        'plazoid = :plazoid, cantidad_transf = :cantidad_transf, estado =' +
+        ' :estado, fecha = :fecha'
+      'WHERE'
+      '  transferenciaid = :Old_transferenciaid')
+    SQLRefresh.Strings = (
+      
+        'SELECT transferenciaid, ubicacionf, plazoid, cantidad_transf, es' +
+        'tado, fecha FROM tranf_contratos'
+      'WHERE'
+      '  transferenciaid = :transferenciaid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      
+        'select * from tranf_contratos where fecha between :infecha1 and ' +
+        ':infecha2')
+    AfterCancel = QtransfAfterCancel
+    AfterScroll = QtransfAfterScroll
+    Left = 456
+    Top = 496
+    ParamData = <
+      item
+        DataType = ftDate
+        Name = 'infecha1'
+        Value = nil
+      end
+      item
+        DataType = ftDate
+        Name = 'infecha2'
+        Value = nil
+      end>
+    object Qtransftransferenciaid: TIntegerField
+      DisplayLabel = 'ID Transferencia'
+      FieldName = 'transferenciaid'
+    end
+    object Qtransfubicacionf: TIntegerField
+      DisplayLabel = 'Id de Ubicacion Fuente'
+      FieldName = 'ubicacionf'
+      Required = True
+    end
+    object Qtransfplazoid: TIntegerField
+      DisplayLabel = 'ID Plazo destino'
+      FieldName = 'plazoid'
+      Required = True
+    end
+    object Qtransfcantidad_transf: TFloatField
+      DisplayLabel = 'Cantidad a Transferir'
+      FieldName = 'cantidad_transf'
+      Required = True
+    end
+    object Qtransfestado: TStringField
+      DisplayLabel = 'Estado'
+      FieldName = 'estado'
+      Size = 10
+    end
+    object Qtransffecha: TDateField
+      DisplayLabel = 'Fecha de Registro'
+      FieldName = 'fecha'
+      Required = True
+    end
+  end
+  object cxdbbuu: TDataSource
+    DataSet = Qtransf
+    Left = 528
+    Top = 416
+  end
+  object Qubicacion: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO ubicacion'
+      
+        '  (almacenid, ubicacionid, contratoid, clienteid, productoid, co' +
+        'dcontrato, anexo, posicion_anexo, cant_facturada, facturado, res' +
+        'ervado, precio_cup, precio_cuc, precio_usd, codigo_producto, des' +
+        'cripcion_producto, existencia, costo_unitario, costo_total, codc' +
+        'liente, fecha_entrada, vale, ueb, tranfid)'
+      'VALUES'
+      
+        '  (:almacenid, :ubicacionid, :contratoid, :clienteid, :productoi' +
+        'd, :codcontrato, :anexo, :posicion_anexo, :cant_facturada, :fact' +
+        'urado, :reservado, :precio_cup, :precio_cuc, :precio_usd, :codig' +
+        'o_producto, :descripcion_producto, :existencia, :costo_unitario,' +
+        ' :costo_total, :codcliente, :fecha_entrada, :vale, :ueb, :tranfi' +
+        'd)')
+    SQLDelete.Strings = (
+      'DELETE FROM ubicacion'
+      'WHERE'
+      
+        '  almacenid = :Old_almacenid AND ubicacionid = :Old_ubicacionid ' +
+        'AND contratoid = :Old_contratoid AND clienteid = :Old_clienteid ' +
+        'AND productoid = :Old_productoid AND anexo = :Old_anexo AND posi' +
+        'cion_anexo = :Old_posicion_anexo')
+    SQLUpdate.Strings = (
+      'UPDATE ubicacion'
+      'SET'
+      
+        '  almacenid = :almacenid, ubicacionid = :ubicacionid, contratoid' +
+        ' = :contratoid, clienteid = :clienteid, productoid = :productoid' +
+        ', codcontrato = :codcontrato, anexo = :anexo, posicion_anexo = :' +
+        'posicion_anexo, cant_facturada = :cant_facturada, facturado = :f' +
+        'acturado, reservado = :reservado, precio_cup = :precio_cup, prec' +
+        'io_cuc = :precio_cuc, precio_usd = :precio_usd, codigo_producto ' +
+        '= :codigo_producto, descripcion_producto = :descripcion_producto' +
+        ', existencia = :existencia, costo_unitario = :costo_unitario, co' +
+        'sto_total = :costo_total, codcliente = :codcliente, fecha_entrad' +
+        'a = :fecha_entrada, vale = :vale, ueb = :ueb, tranfid = :tranfid'
+      'WHERE'
+      
+        '  almacenid = :Old_almacenid AND ubicacionid = :Old_ubicacionid ' +
+        'AND contratoid = :Old_contratoid AND clienteid = :Old_clienteid ' +
+        'AND productoid = :Old_productoid AND anexo = :Old_anexo AND posi' +
+        'cion_anexo = :Old_posicion_anexo')
+    SQLRefresh.Strings = (
+      
+        'SELECT almacenid, ubicacionid, contratoid, clienteid, productoid' +
+        ', codcontrato, anexo, posicion_anexo, cant_facturada, facturado,' +
+        ' reservado, precio_cup, precio_cuc, precio_usd, codigo_producto,' +
+        ' descripcion_producto, existencia, costo_unitario, costo_total, ' +
+        'codcliente, fecha_entrada, vale, ueb, tranfid FROM ubicacion'
+      'WHERE'
+      
+        '  almacenid = :almacenid AND ubicacionid = :ubicacionid AND cont' +
+        'ratoid = :contratoid AND clienteid = :clienteid AND productoid =' +
+        ' :productoid AND anexo = :anexo AND posicion_anexo = :posicion_a' +
+        'nexo')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from ubicacion ')
+    MasterSource = cxdbbuu
+    MasterFields = 'ubicacionf'
+    DetailFields = 'ubicacionid'
+    Left = 528
+    Top = 536
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ubicacionf'
+        Value = nil
+      end>
+    object Qubicacionalmacenid: TStringField
+      FieldName = 'almacenid'
+      Required = True
+      Size = 10
+    end
+    object Qubicacionubicacionid: TIntegerField
+      FieldName = 'ubicacionid'
+    end
+    object Qubicacioncontratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object Qubicacionclienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object Qubicacionproductoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object Qubicacioncodcontrato: TStringField
+      FieldName = 'codcontrato'
+    end
+    object Qubicacionanexo: TIntegerField
+      FieldName = 'anexo'
+      Required = True
+    end
+    object Qubicacionposicion_anexo: TIntegerField
+      FieldName = 'posicion_anexo'
+      Required = True
+    end
+    object Qubicacioncant_facturada: TFloatField
+      FieldName = 'cant_facturada'
+      Required = True
+    end
+    object Qubicacionfacturado: TStringField
+      FieldName = 'facturado'
+      Required = True
+      Size = 1
+    end
+    object Qubicacionreservado: TFloatField
+      FieldName = 'reservado'
+      Required = True
+    end
+    object Qubicacionprecio_cup: TCurrencyField
+      FieldName = 'precio_cup'
+      Required = True
+    end
+    object Qubicacionprecio_cuc: TCurrencyField
+      FieldName = 'precio_cuc'
+    end
+    object Qubicacionprecio_usd: TCurrencyField
+      FieldName = 'precio_usd'
+      Required = True
+    end
+    object Qubicacioncodigo_producto: TStringField
+      FieldName = 'codigo_producto'
+    end
+    object Qubicaciondescripcion_producto: TStringField
+      FieldName = 'descripcion_producto'
+      Size = 150
+    end
+    object Qubicacionexistencia: TFloatField
+      FieldName = 'existencia'
+      Required = True
+    end
+    object Qubicacioncosto_unitario: TCurrencyField
+      FieldName = 'costo_unitario'
+      Required = True
+    end
+    object Qubicacioncosto_total: TCurrencyField
+      FieldName = 'costo_total'
+    end
+    object Qubicacioncodcliente: TStringField
+      FieldName = 'codcliente'
+      Size = 15
+    end
+    object Qubicacionfecha_entrada: TDateField
+      FieldName = 'fecha_entrada'
+    end
+    object Qubicacionvale: TStringField
+      FieldName = 'vale'
+      Required = True
+      Size = 10
+    end
+    object Qubicacionueb: TStringField
+      FieldName = 'ueb'
+      Size = 5
+    end
+    object Qubicaciontranfid: TIntegerField
+      FieldName = 'tranfid'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qubicacion
+    Left = 584
+    Top = 464
+  end
+  object Qplazos: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from plazos_entrega')
+    MasterSource = cxdbbuu
+    MasterFields = 'plazoid'
+    DetailFields = 'plazoid'
+    Left = 208
+    Top = 472
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'plazoid'
+        Value = nil
+      end>
+    object Qplazoscontratoid: TIntegerField
+      FieldName = 'contratoid'
+      Required = True
+    end
+    object Qplazosclienteid: TIntegerField
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object Qplazosanexoid: TIntegerField
+      FieldName = 'anexoid'
+      Required = True
+    end
+    object Qplazosplazoid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'plazoid'
+    end
+    object Qplazosproductoid: TIntegerField
+      FieldName = 'productoid'
+      Required = True
+    end
+    object Qplazoscantidad_contratada: TFloatField
+      FieldName = 'cantidad_contratada'
+      Required = True
+    end
+    object Qplazosfecha_entrega: TDateField
+      FieldName = 'fecha_entrega'
+      Required = True
+    end
+    object Qplazoscant_facturada: TIntegerField
+      FieldName = 'cant_facturada'
+      Required = True
+    end
+    object Qplazosnumero_factura: TIntegerField
+      FieldName = 'numero_factura'
+    end
+    object Qplazoscodcontrato: TStringField
+      FieldName = 'codcontrato'
+      Required = True
+    end
+    object Qplazoscodcliente: TStringField
+      FieldName = 'codcliente'
+      Required = True
+      Size = 15
+    end
+    object Qplazoscodproducto: TStringField
+      FieldName = 'codproducto'
+      Required = True
+    end
+    object Qplazosposicion_anexo: TIntegerField
+      FieldName = 'posicion_anexo'
+    end
+    object Qplazoscant_entrada: TFloatField
+      FieldName = 'cant_entrada'
+      Required = True
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = Qplazos
+    Left = 336
+    Top = 448
+  end
+  object UniStoredProc1: TUniStoredProc
+    StoredProcName = 'f_transf_contratos'
+    SQL.Strings = (
+      
+        'SELECT * FROM f_transf_contratos(:in_ubicacion, :in_plazo, :in_c' +
+        'ant, :in_fecha, :in_tranf, :in_cambio_precio, :in_nuevo_precio_u' +
+        'sd)')
+    Connection = Fmain.UniConnection1
+    Left = 432
+    Top = 600
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'in_ubicacion'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_plazo'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftFloat
+        Name = 'in_cant'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftDate
+        Name = 'in_fecha'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftInteger
+        Name = 'in_tranf'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftString
+        Name = 'in_cambio_precio'
+        ParamType = ptInput
+        Value = nil
+      end
+      item
+        DataType = ftFloat
+        Name = 'in_nuevo_precio_usd'
+        ParamType = ptInput
+        Value = nil
+      end>
+    CommandStoredProcName = 'f_transf_contratos'
+  end
+  object Qperiodo: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from periodo where activo='#39'S'#39)
+    Left = 664
+    Top = 584
+    object Qperiodoperiodoid: TIntegerField
+      FieldName = 'periodoid'
+      Required = True
+    end
+    object Qperiododesde: TDateField
+      FieldName = 'desde'
+      Required = True
+    end
+    object Qperiodohasta: TDateField
+      FieldName = 'hasta'
+      Required = True
+    end
+    object Qperiodoactivo: TStringField
+      FieldName = 'activo'
+      Required = True
+      Size = 1
+    end
+  end
+end

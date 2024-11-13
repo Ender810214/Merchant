@@ -1,0 +1,38 @@
+unit ajustes_ubicaion;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls;
+
+type
+  TForm3 = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    Qubicacion: TUniQuery;
+    Qubicacioncodcontrato: TStringField;
+    Qubicacionanexo: TIntegerField;
+    Qubicacionposicion_anexo: TIntegerField;
+    Qubicacionprecio_cup: TFloatField;
+    Qubicacionprecio_usd: TFloatField;
+    Qubicacioncodigo_producto: TStringField;
+    Qubicaciondescripcion_producto: TStringField;
+    Qubicacioncosto_unitario: TFloatField;
+    Qubicacioncodcliente: TStringField;
+    Qubicacionfecha_entrada: TDateField;
+    Qubicacionvale: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+  uses main;
+end.

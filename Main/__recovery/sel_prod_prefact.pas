@@ -1,0 +1,116 @@
+unit sel_prod_prefact;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, Data.DB, MemDS, DBAccess,
+  Uni, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, cxDBData, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView, cxGrid,
+  cxDBNavigator, AdvSmoothButton, dxSkinsCore, dxSkinBasic, dxSkinBlack,
+  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkroom,
+  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinOffice2019Black, dxSkinOffice2019Colorful, dxSkinOffice2019DarkGray,
+  dxSkinOffice2019White, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringtime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinTheBezier,
+  dxSkinsDefaultPainters, dxSkinValentine, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxSkinVS2010,
+  dxSkinWhiteprint, dxSkinXmas2008Blue, dxScrollbarAnnotations, dxSkinWXI;
+
+type
+  TFsel_prod_prefact = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    UniQuery1: TUniQuery;
+    cxDBNavigator1: TcxDBNavigator;
+    CurvyPanel2: TCurvyPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataSource1: TDataSource;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    UniQuery1almacenid: TStringField;
+    UniQuery1ubicacionid: TIntegerField;
+    UniQuery1contratoid: TIntegerField;
+    UniQuery1clienteid: TIntegerField;
+    UniQuery1productoid: TIntegerField;
+    UniQuery1codcontrato: TStringField;
+    UniQuery1anexo: TIntegerField;
+    UniQuery1posicion_anexo: TIntegerField;
+    UniQuery1cant_facturada: TFloatField;
+    UniQuery1facturado: TStringField;
+    UniQuery1reservado: TFloatField;
+    UniQuery1precio_cup: TFloatField;
+    UniQuery1precio_cuc: TFloatField;
+    UniQuery1precio_usd: TFloatField;
+    UniQuery1codigo_producto: TStringField;
+    UniQuery1descripcion_producto: TStringField;
+    UniQuery1existencia: TFloatField;
+    UniQuery1costo_unitario: TFloatField;
+    UniQuery1costo_total: TFloatField;
+    UniQuery1codcliente: TStringField;
+    UniQuery1fecha_entrada: TDateField;
+    UniQuery1vale: TStringField;
+    UniQuery1ueb: TStringField;
+    UniQuery1tranfid: TIntegerField;
+    cxGrid1DBTableView1codcontrato: TcxGridDBColumn;
+    cxGrid1DBTableView1anexo: TcxGridDBColumn;
+    cxGrid1DBTableView1posicion_anexo: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_cup: TcxGridDBColumn;
+    cxGrid1DBTableView1precio_usd: TcxGridDBColumn;
+    cxGrid1DBTableView1codigo_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1descripcion_producto: TcxGridDBColumn;
+    cxGrid1DBTableView1existencia: TcxGridDBColumn;
+    cxGrid1DBTableView1costo_unitario: TcxGridDBColumn;
+    cxGrid1DBTableView1codcliente: TcxGridDBColumn;
+    procedure AdvSmoothButton2Click(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fsel_prod_prefact: TFsel_prod_prefact;
+
+implementation
+
+uses main, prod_prefact, prefacturas;
+{$R *.dfm}
+
+procedure TFsel_prod_prefact.AdvSmoothButton1Click(Sender: TObject);
+begin
+  Fprod_prefact.Qprod_prefactproductoid.Value := UniQuery1productoid.Value;
+  Fprod_prefact.Qprod_prefactcodigo.Value := UniQuery1codigo_producto.Value;
+  Fprod_prefact.Qprod_prefactdescripcion.Value := UniQuery1descripcion_producto.Value;
+  Fprod_prefact.Qprod_prefactubicacionid.Value:=UniQuery1ubicacionid.Value;
+  Close;
+
+end;
+
+procedure TFsel_prod_prefact.AdvSmoothButton2Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFsel_prod_prefact.FormCreate(Sender: TObject);
+begin
+  UniQuery1.ParamByName('inclienteid').Value:=Fprefacturas.UniQuery1clienteid.Value;
+  UniQuery1.ParamByName('incontratoid').Value:=Fprefacturas.UniQuery1contratoid.Value;
+  UniQuery1.Open;
+end;
+
+end.

@@ -1,0 +1,67 @@
+object Fsel_Cliente: TFsel_Cliente
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 338
+  ClientWidth = 651
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGrid1: TcxGrid
+    Left = 0
+    Top = 41
+    Width = 651
+    Height = 224
+    Align = alTop
+    TabOrder = 0
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = FContratos.DataSource2
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object cxGrid1DBTableView1clienteid: TcxGridDBColumn
+        DataBinding.FieldName = 'clienteid'
+      end
+      object cxGrid1DBTableView1nombre: TcxGridDBColumn
+        DataBinding.FieldName = 'nombre'
+        Width = 307
+      end
+      object cxGrid1DBTableView1organismoid: TcxGridDBColumn
+        DataBinding.FieldName = 'organismoid'
+      end
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
+  end
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 265
+    Width = 651
+    Height = 73
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 216
+    ExplicitTop = 280
+    ExplicitWidth = 200
+    ExplicitHeight = 100
+  end
+  object cxDBNavigator1: TcxDBNavigator
+    Left = 0
+    Top = 0
+    Width = 645
+    Height = 41
+    Buttons.CustomButtons = <>
+    DataSource = FContratos.DataSource2
+    Align = alTop
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,54 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, dxSkinsCore, dxSkinsDefaultPainters, cxStyles,
+  cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, cxDataControllerConditionalFormattingRulesManagerDialog,
+  Data.DB, cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGrid, MemDS, DBAccess, Uni,
+  cxDBNavigator, CurvyControls;
+
+type
+  TForm2 = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    UniQuery1: TUniQuery;
+    UniQuery1clienteid: TIntegerField;
+    UniQuery1contratoid: TIntegerField;
+    UniQuery1productoid: TIntegerField;
+    UniQuery1fecha_entrega: TDateField;
+    UniQuery1codcliente: TStringField;
+    UniQuery1nomcliente: TStringField;
+    UniQuery1codcontrato: TStringField;
+    UniQuery1codproducto: TStringField;
+    UniQuery1desproducto: TStringField;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataSource1: TDataSource;
+    cxGrid1DBTableView1fecha_entrega: TcxGridDBColumn;
+    cxGrid1DBTableView1codcliente: TcxGridDBColumn;
+    cxGrid1DBTableView1nomcliente: TcxGridDBColumn;
+    cxGrid1DBTableView1codcontrato: TcxGridDBColumn;
+    cxGrid1DBTableView1codproducto: TcxGridDBColumn;
+    cxGrid1DBTableView1desproducto: TcxGridDBColumn;
+    UniQuery1cantidad_contratada: TFloatField;
+    cxGrid1DBTableView1cantidad_contratada: TcxGridDBColumn;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+ uses main;
+end.
