@@ -1,0 +1,66 @@
+unit sel_comp_prefact;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter,
+  cxData, cxDataStorage, cxEdit, cxNavigator, dxDateRanges, Data.DB, cxDBData,
+  AdvSmoothButton, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
+  cxDBNavigator, MemDS, DBAccess, Uni, dxScrollbarAnnotations;
+
+type
+  TFsel_comp_prefact = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    CurvyPanel2: TCurvyPanel;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    AdvSmoothButton1: TAdvSmoothButton;
+    AdvSmoothButton2: TAdvSmoothButton;
+    UniQuery1: TUniQuery;
+    UniQuery1nombre_comprador: TStringField;
+    UniQuery1comprador_ci: TStringField;
+    UniQuery1clienteid: TIntegerField;
+    DataSource1: TDataSource;
+    cxGrid1DBTableView1nombre_comprador: TcxGridDBColumn;
+    cxGrid1DBTableView1comprador_ci: TcxGridDBColumn;
+    procedure FormCreate(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure AdvSmoothButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fsel_comp_prefact: TFsel_comp_prefact;
+
+implementation
+
+uses main, prefacturas;
+{$R *.dfm}
+
+procedure TFsel_comp_prefact.AdvSmoothButton1Click(Sender: TObject);
+begin
+  Fprefacturas.UniQuery1compradorid.Value := UniQuery1comprador_ci.Value;
+  Close;
+
+end;
+
+procedure TFsel_comp_prefact.AdvSmoothButton2Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFsel_comp_prefact.FormCreate(Sender: TObject);
+begin
+  UniQuery1.Open;
+end;
+
+end.
