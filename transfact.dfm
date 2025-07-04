@@ -1,0 +1,304 @@
+object Ftransportista: TFtransportista
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Ftransportista'
+  ClientHeight = 573
+  ClientWidth = 653
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  TextHeight = 13
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 653
+    Height = 573
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 515
+      Width = 653
+      Height = 58
+      Align = alBottom
+      Caption = ''
+      TabOrder = 0
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 267
+        Top = 6
+        Width = 120
+        Height = 43
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -11
+        Appearance.Font.Name = 'Tahoma'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cerrar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton1Click
+        TMSStyle = 8
+      end
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 653
+      Height = 273
+      Align = alTop
+      Caption = ''
+      TabOrder = 1
+      object cxDBNavigator1: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 645
+        Height = 49
+        Buttons.CustomButtons = <>
+        DataSource = DataSource1
+        Align = alTop
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object cxGrid1: TcxGrid
+        Left = 0
+        Top = 49
+        Width = 653
+        Height = 224
+        Align = alClient
+        TabOrder = 1
+        object cxGrid1DBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          ScrollbarAnnotations.CustomAnnotations = <>
+          DataController.DataSource = DataSource1
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          object cxGrid1DBTableView1id: TcxGridDBColumn
+            DataBinding.FieldName = 'id'
+          end
+          object cxGrid1DBTableView1clienteid: TcxGridDBColumn
+            DataBinding.FieldName = 'clienteid'
+            Width = 91
+          end
+          object cxGrid1DBTableView1transp_ci: TcxGridDBColumn
+            DataBinding.FieldName = 'transp_ci'
+            Width = 123
+          end
+          object cxGrid1DBTableView1nombre_apellidos: TcxGridDBColumn
+            DataBinding.FieldName = 'nombre_apellidos'
+            Width = 97
+          end
+          object cxGrid1DBTableView1lic_conduccion: TcxGridDBColumn
+            Caption = 'Lic. Conduccci'#243'n'
+            DataBinding.FieldName = 'lic_conduccion'
+            Width = 80
+          end
+        end
+        object cxGrid1Level1: TcxGridLevel
+          GridView = cxGrid1DBTableView1
+        end
+      end
+    end
+    object CurvyPanel4: TCurvyPanel
+      Left = 0
+      Top = 273
+      Width = 653
+      Height = 242
+      Align = alClient
+      Caption = ''
+      TabOrder = 2
+      object cxDBNavigator2: TcxDBNavigator
+        Left = 0
+        Top = 0
+        Width = 645
+        Height = 41
+        Buttons.CustomButtons = <>
+        DataSource = DataSource2
+        Align = alTop
+        TabOrder = 0
+      end
+      object cxGrid2: TcxGrid
+        Left = 0
+        Top = 41
+        Width = 653
+        Height = 201
+        Align = alClient
+        TabOrder = 1
+        object cxGrid2DBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          ScrollbarAnnotations.CustomAnnotations = <>
+          DataController.DataSource = DataSource2
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          object cxGrid2DBTableView1transpid: TcxGridDBColumn
+            DataBinding.FieldName = 'transpid'
+          end
+          object cxGrid2DBTableView1facturaid: TcxGridDBColumn
+            DataBinding.FieldName = 'facturaid'
+          end
+        end
+        object cxGrid2Level1: TcxGridLevel
+          GridView = cxGrid2DBTableView1
+        end
+      end
+    end
+  end
+  object Qtrans_fac: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO transp_fac'
+      '  (facturaid, transpid, fecha_factura)'
+      'VALUES'
+      '  (:facturaid, :transpid, :fecha_factura)')
+    SQLDelete.Strings = (
+      'DELETE FROM transp_fac'
+      'WHERE'
+      '  facturaid = :Old_facturaid AND transpid = :Old_transpid')
+    SQLUpdate.Strings = (
+      'UPDATE transp_fac'
+      'SET'
+      
+        '  facturaid = :facturaid, transpid = :transpid, fecha_factura = ' +
+        ':fecha_factura'
+      'WHERE'
+      '  facturaid = :Old_facturaid AND transpid = :Old_transpid')
+    SQLRefresh.Strings = (
+      'SELECT facturaid, transpid, fecha_factura FROM transp_fac'
+      'WHERE'
+      '  facturaid = :facturaid AND transpid = :transpid')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from transp_fac')
+    MasterSource = Ffacturas.DataSource5
+    MasterFields = 'facturaid;fecha'
+    DetailFields = 'facturaid;fecha_factura'
+    RefreshOptions = [roAfterInsert, roAfterUpdate]
+    AfterInsert = Qtrans_facAfterInsert
+    Left = 128
+    Top = 112
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'facturaid'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'fecha'
+        Value = nil
+      end>
+    object Qtrans_factranspid: TIntegerField
+      FieldName = 'transpid'
+      Required = True
+    end
+    object Qtrans_facfacturaid: TIntegerField
+      FieldName = 'facturaid'
+      Required = True
+    end
+    object Qtrans_facfecha_factura: TDateField
+      FieldName = 'fecha_factura'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = Qtransportista
+    Left = 528
+    Top = 152
+  end
+  object Qtransportista: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO transportistas'
+      '  ( clienteid, transp_ci, nombre_apellidos, lic_conduccion)'
+      'VALUES'
+      '  ( :clienteid, :transp_ci, :nombre_apellidos, :lic_conduccion)')
+    SQLDelete.Strings = (
+      'DELETE FROM transportistas'
+      'WHERE'
+      '  id = :Old_id')
+    SQLUpdate.Strings = (
+      'UPDATE transportistas'
+      'SET'
+      
+        '  id = :id, clienteid = :clienteid, transp_ci = :transp_ci, nomb' +
+        're_apellidos = :nombre_apellidos, lic_conduccion = :lic_conducci' +
+        'on'
+      'WHERE'
+      '  id = :Old_id')
+    SQLRefresh.Strings = (
+      
+        'SELECT id, clienteid, transp_ci, nombre_apellidos, lic_conduccio' +
+        'n FROM transportistas'
+      'WHERE'
+      '  id = :id')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from transportistas')
+    MasterSource = Ffacturas.DataSource5
+    MasterFields = 'clienteid'
+    DetailFields = 'clienteid'
+    Left = 248
+    Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'clienteid'
+        Value = nil
+      end>
+    object Qtransportistaclienteid: TIntegerField
+      DisplayLabel = 'Id del Cliente'
+      FieldName = 'clienteid'
+      Required = True
+    end
+    object Qtransportistatransp_ci: TStringField
+      DisplayLabel = 'Carnet del Transportista'
+      FieldName = 'transp_ci'
+      Required = True
+      Size = 11
+    end
+    object Qtransportistanombre_apellidos: TStringField
+      DisplayLabel = 'Nombre y Apellidos'
+      FieldName = 'nombre_apellidos'
+      Required = True
+      Size = 150
+    end
+    object Qtransportistalic_conduccion: TStringField
+      FieldName = 'lic_conduccion'
+      Required = True
+      Size = 11
+    end
+    object Qtransportistaid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'id'
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = Qtrans_fac
+    Left = 472
+    Top = 192
+  end
+end
