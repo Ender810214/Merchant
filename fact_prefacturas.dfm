@@ -1,0 +1,255 @@
+object Ffact_prefacturas: TFfact_prefacturas
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Ffact_prefacturas'
+  ClientHeight = 498
+  ClientWidth = 813
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  TextHeight = 15
+  object CurvyPanel1: TCurvyPanel
+    Left = 0
+    Top = 0
+    Width = 813
+    Height = 498
+    Align = alClient
+    Caption = ''
+    TabOrder = 0
+    object CurvyPanel2: TCurvyPanel
+      Left = 0
+      Top = 0
+      Width = 813
+      Height = 145
+      Align = alTop
+      Caption = ''
+      TabOrder = 0
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 813
+        Height = 145
+        Align = alClient
+        DataSource = DataSource1
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'facturador_ci'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'nombre_apellidos'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cargo'
+            Visible = True
+          end>
+      end
+    end
+    object cxDBNavigator1: TcxDBNavigator
+      Left = 0
+      Top = 145
+      Width = 810
+      Height = 25
+      Buttons.CustomButtons = <>
+      DataSource = DataSource2
+      Align = alTop
+      TabOrder = 1
+    end
+    object cxGrid1: TcxGrid
+      Left = 0
+      Top = 170
+      Width = 813
+      Height = 262
+      Align = alClient
+      TabOrder = 2
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource2
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1facturadorid: TcxGridDBColumn
+          DataBinding.FieldName = 'facturadorid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1prefacturadid: TcxGridDBColumn
+          DataBinding.FieldName = 'prefacturadid'
+          Width = 100
+        end
+        object cxGrid1DBTableView1fecha_factura: TcxGridDBColumn
+          DataBinding.FieldName = 'fecha_factura'
+          Width = 100
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+    object CurvyPanel3: TCurvyPanel
+      Left = 0
+      Top = 432
+      Width = 813
+      Height = 66
+      Align = alBottom
+      Caption = ''
+      TabOrder = 3
+      object AdvSmoothButton1: TAdvSmoothButton
+        Left = 320
+        Top = 14
+        Width = 120
+        Height = 35
+        Appearance.Font.Charset = DEFAULT_CHARSET
+        Appearance.Font.Color = clBlack
+        Appearance.Font.Height = -12
+        Appearance.Font.Name = 'Segoe UI'
+        Appearance.Font.Style = []
+        Appearance.SimpleLayout = False
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Segoe UI'
+        Status.Appearance.Font.Style = []
+        Caption = 'Cerrar'
+        Color = 15784647
+        ParentFont = False
+        TabOrder = 0
+        Version = '2.2.3.1'
+        OnClick = AdvSmoothButton1Click
+        UIStyle = tsOffice2010Blue
+        TMSStyle = 13
+      end
+    end
+  end
+  object QFacturadores: TUniQuery
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from facturadores')
+    Active = True
+    Left = 208
+    Top = 248
+    object QFacturadoresid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'id'
+    end
+    object QFacturadoresfacturador_ci: TStringField
+      FieldName = 'facturador_ci'
+      Required = True
+      Size = 11
+    end
+    object QFacturadoresnombre_apellidos: TStringField
+      FieldName = 'nombre_apellidos'
+      Required = True
+      Size = 150
+    end
+    object QFacturadorescargo: TStringField
+      FieldName = 'cargo'
+      Required = True
+      Size = 100
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = QFacturadores
+    Left = 320
+    Top = 312
+  end
+  object Qfact_prefact: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO fact_prefacturas'
+      '  (facturadorid, prefacturadid, fecha_factura)'
+      'VALUES'
+      '  (:facturadorid, :prefacturadid, :fecha_factura)')
+    SQLDelete.Strings = (
+      'DELETE FROM fact_prefacturas'
+      'WHERE'
+      
+        '  facturadorid = :Old_facturadorid AND prefacturadid = :Old_pref' +
+        'acturadid AND fecha_factura = :Old_fecha_factura')
+    SQLUpdate.Strings = (
+      'UPDATE fact_prefacturas'
+      'SET'
+      
+        '  facturadorid = :facturadorid, prefacturadid = :prefacturadid, ' +
+        'fecha_factura = :fecha_factura'
+      'WHERE'
+      
+        '  facturadorid = :Old_facturadorid AND prefacturadid = :Old_pref' +
+        'acturadid AND fecha_factura = :Old_fecha_factura')
+    SQLRefresh.Strings = (
+      
+        'SELECT facturadorid, prefacturadid, fecha_factura FROM fact_pref' +
+        'acturas'
+      'WHERE'
+      
+        '  facturadorid = :facturadorid AND prefacturadid = :prefacturadi' +
+        'd AND fecha_factura = :fecha_factura')
+    Connection = Fmain.UniConnection1
+    SQL.Strings = (
+      'select * from fact_prefacturas')
+    MasterSource = Fprefacturas.DataSource1
+    MasterFields = 'prefacturaid;fecha'
+    DetailFields = 'prefacturadid;fecha_factura'
+    AfterInsert = Qfact_prefactAfterInsert
+    Left = 344
+    Top = 264
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'prefacturaid'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'fecha'
+        Value = nil
+      end>
+    object Qfact_prefactfacturadorid: TIntegerField
+      FieldName = 'facturadorid'
+      Required = True
+    end
+    object Qfact_prefactprefacturadid: TIntegerField
+      FieldName = 'prefacturadid'
+      Required = True
+    end
+    object Qfact_prefactfecha_factura: TDateField
+      FieldName = 'fecha_factura'
+      Required = True
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = Qfact_prefact
+    Left = 432
+    Top = 304
+  end
+end

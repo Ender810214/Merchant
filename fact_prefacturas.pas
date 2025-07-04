@@ -1,0 +1,71 @@
+unit fact_prefacturas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, DBAccess, Uni,
+  CurvyControls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  dxDateRanges, dxScrollbarAnnotations, cxDBData, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGrid, cxDBNavigator, Vcl.Grids, Vcl.DBGrids, AdvSmoothButton;
+
+type
+  TFfact_prefacturas = class(TForm)
+    CurvyPanel1: TCurvyPanel;
+    QFacturadores: TUniQuery;
+    CurvyPanel2: TCurvyPanel;
+    QFacturadoresid: TIntegerField;
+    QFacturadoresfacturador_ci: TStringField;
+    QFacturadoresnombre_apellidos: TStringField;
+    QFacturadorescargo: TStringField;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    cxDBNavigator1: TcxDBNavigator;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    Qfact_prefact: TUniQuery;
+    Qfact_prefactfacturadorid: TIntegerField;
+    Qfact_prefactprefacturadid: TIntegerField;
+    Qfact_prefactfecha_factura: TDateField;
+    DataSource2: TDataSource;
+    cxGrid1DBTableView1facturadorid: TcxGridDBColumn;
+    cxGrid1DBTableView1prefacturadid: TcxGridDBColumn;
+    cxGrid1DBTableView1fecha_factura: TcxGridDBColumn;
+    CurvyPanel3: TCurvyPanel;
+    AdvSmoothButton1: TAdvSmoothButton;
+    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Qfact_prefactAfterInsert(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Ffact_prefacturas: TFfact_prefacturas;
+
+implementation
+
+{$R *.dfm}
+ uses main, prefacturas;
+procedure TFfact_prefacturas.AdvSmoothButton1Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TFfact_prefacturas.FormCreate(Sender: TObject);
+begin
+QFacturadores.open;
+Qfact_prefact.open;
+end;
+
+procedure TFfact_prefacturas.Qfact_prefactAfterInsert(DataSet: TDataSet);
+begin
+Qfact_prefactfacturadorid.value:=QfacturadoresId.value;
+end;
+
+end.
